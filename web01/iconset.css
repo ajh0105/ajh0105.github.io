@@ -1,0 +1,60 @@
+@charset "utf-8";
+
+.icon_bar li {
+    width: 150px;
+    height: 150px;
+    background-image: url("./images/iconset.png");
+    background-repeat: no-repeat;
+}
+
+.icon1 {
+    background-position: 0 0;
+}
+
+.icon2 {
+    background-position: -190px 0;
+}
+
+.icon3 {
+    background-position: -380px 0;
+}
+
+.icon4 {
+    background-position: -570px 0;
+}
+
+.icon5 {
+    background-position: -760px 0;
+}
+
+.icon6 {
+    background-position: -950px 0;
+}
+
+.icon7 {
+    background-position: 0 -190px;
+}
+
+.icon8 {
+    background-position: -190px -190px;
+}
+
+.icon9 {
+    background-position: -380px -190px;
+}
+
+.icon10 {
+    background-position: -570px -190px;
+}
+
+.icon11 {
+    background-position: -760px -190px;
+}
+
+.icon12 {
+    background-position: -950px -190px;
+}
+
+.icon13 {
+    background-position: 0 -380px;
+}

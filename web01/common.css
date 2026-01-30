@@ -1,0 +1,315 @@
+@charset "utf-8";
+
+* { box-sizing: border-box; }
+body, html { font-family: 'FT', sans-serif; font-weight:300; }
+body {overflow-x: hidden;}
+
+a { text-decoration: none; color: #1f1f1f; }
+.wrap { width: 100%; min-width: 320px; }
+.container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#hd {
+    border-bottom: 1px solid #ddd;
+}
+
+#hd .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+}
+
+.logo img {
+    height: 34px;
+    width: auto;
+}
+
+.gnb:before {
+    content: "";
+    display:block;
+    width:100vw;
+    height:0px;
+    overflow-y:hidden;
+    background-color: #fff;
+    position:absolute;
+    z-index:90;
+    left: 0; 
+    top: 60px;
+    border-top: 1px solid #ccd;
+    border-bottom: 2px solid #999;
+    transition: 0.6s;
+}
+
+.gnb:hover::before {
+    height: 225px;
+}
+
+.gnb .menu {
+    display: flex;
+    gap: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+
+.gnb .menu > li {
+    position:relative;
+    text-align: center;
+    min-width: 120px;
+}
+
+.gnb .menu .dp1 {
+    font-weight: 500;
+    font-size: 22px;
+    padding-left: 35px;
+}
+
+.gnb .menu > li:hover a.dp1{
+    color: #BF3434;   /*#6b82a8, #5FA65D, #BF3434*/
+    font-weight: 800;
+
+    
+}
+
+.gnb .sub {
+    position: absolute;
+    top: 43px;
+    left: 0;
+    z-index: 100;
+    background-color: #fff;
+    min-width: 120px;
+    flex-direction: column;
+    transition: 0.6s;
+    height:0px;
+    overflow-y: hidden;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+/* 서브메뉴 개별 항목 hover */
+.gnb .sub li:hover {
+    background-color: #205f55;   /* 원하는 강조 색 */
+}
+
+.gnb .menu > li:hover .sub a {
+    text-decoration: none; color: #fff;
+}
+
+.gnb .sub li a:hover {
+    text-decoration-color: #fff;
+}
+
+.gnb:hover .menu li .sub { /*상단메뉴 내려오는 동작*/
+    display: flex;
+    height: 220px;
+}
+
+.gnb .menu li:hover .sub {  /*상단 메뉴 호버 시 색상 변경*/
+    background-color: #19273f;  /*#19273f*/
+    text-align: center;
+
+}
+
+.gnb .sub li {
+    min-width: 120px;
+    padding: 5px;
+    text-align: center;
+}
+
+.gnb .sub li a{     /*상단 메뉴 리스트 초과 글씨 숨기기*/
+    display: block;
+    width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tnb a {
+    padding: 4px 8px;
+}
+
+.tnb a:hover {  /*로그인 메뉴 호버 시 강조*/
+    color: #292929;
+    font-weight:800;
+}
+
+.content {
+    clear: both;
+}
+
+.content::after {
+    content: "";
+    display: block;
+    width: 100%;
+}
+
+#ft {
+    clear: both;
+    background-image: url("./images/ft_bg.png");
+    background-repeat: repeat-x;
+    height: 60%;
+    padding-left: 62px;
+    padding-right: 62px;
+}
+
+#ft::after {
+    content: "";
+    display: block;
+    width: 100%;
+}
+
+#relation {
+    height: 40px;
+}
+
+#relation ul {
+    display: flex;
+}
+
+#relation ul li {
+    width: 35%;
+    position: relative;
+}
+
+#relation ul li label {
+    display: block;
+    line-height: 50px;
+    color: #ffffff;
+    font-weight: 400;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #aaa;
+    padding-left: 24px;
+}
+
+#ra11, #ra12, #ra13, #ra14 {
+    display: none;
+}
+
+.sel a {
+    display:block;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 24px;
+}
+
+input[type=radio] ~ .sel {
+    transition: 0.8s;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    line-height: 40px; 
+    bottom: 48px;
+    z-index:10;
+    height: 0;
+    overflow: hidden;
+    background-color: #fff;
+    border:1px solid #ececec;
+}
+
+#ra11:checked ~ #sel1 {
+    display:block;
+    height: 200px;
+}
+
+#ra12:checked ~ #sel2 {
+    display:block;
+    height: 200px;
+}
+
+#ra13:checked ~ #sel3 {
+    display:block;
+    height: 200px;
+}
+
+#ra14:checked ~ #sel4 {
+    display:block;
+    height: 200px;
+}
+
+#banner_bar {
+    clear:both;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#banner_bar ul {
+    display: flex;
+    height: 42px;
+}
+
+#banner_bar ul li {
+    height: 42px;
+    overflow: hidden;
+}
+
+#banner_bar ul li a {
+    display:block; 
+}
+
+#banner_bar ul li a img {
+    display:block;
+}
+
+#fnb {
+    clear:both;
+    display: flex; 
+    padding-top: 12px;
+}
+
+#fnb a {
+    line-height: 36px;
+    display:block;
+    padding-right: 24px;
+    color: #1e1d1d;
+    font-weight: 600;
+}
+
+#fnb a:hover {
+    color:navy;
+}
+
+.copyright {
+    line-height: 1.6;
+    padding-top: 8px;
+    font-size: 0.85em;
+}
+
+.copyright p {
+    margin-bottom: 4px;
+}
+
+/* 푸터 배너 사이즈 고정 */
+#banner_bar ul {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: auto;
+}
+
+#banner_bar ul li {
+    width: 107.46px;
+    height: 38.8px;
+    flex: 0 0 auto;
+    overflow: visible;
+}
+
+#banner_bar ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#banner_bar ul li img {
+    width: 107.46px;
+    height: 38.8px;
+    object-fit: contain;
+    display: block;
+
+    /* 기존 깨트리던 속성 무력화 */
+    min-width: auto;
+    padding-top: 0;
+}
