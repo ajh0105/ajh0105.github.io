@@ -13,8 +13,8 @@
 #vs1 {
     clear:both;
     min-height: 450px;
-    width: 100vw;
-    background-image: url("./images/bg_visual-1.gif");
+    width: 100%;
+    background-image: url("./images/bg_visual-9.jpg");
     background-position:center top;
     background-repeat: no-repeat;
 }
@@ -23,16 +23,17 @@
     text-align: center;
     font-size: 48px;
     padding-top: 1.5em;
-    color: #fff;
-    font-weight: 500;
+    color: #ffffff;
+    font-weight: 800;
 }
 
 .vs_sub_tit {
     text-align: center;
-    color:#fff; 
-    font-weight: 400;
+    color:#ffffff; 
+    font-weight: 500;
     font-size:24px;
-    padding-top: 1.5em;
+    padding-top: 0;
+    margin-top: -40px;
 }
 
 .content_wrap {
@@ -52,9 +53,9 @@
 }
 
 .lnb_tit {
-    background-color: #2e70b4;
+    background-color: #35528C;
     color: #fff;
-    font-weight: 500;
+    font-weight: 700;
     line-height: 130px;
     font-size: 30px;
     text-align: center;
@@ -62,7 +63,7 @@
 
 #lnb {
     clear:both;
-    min-height: 170vh;
+    min-height: 200vh;
     border-top: 1px solid #ccc;
     border-left: 1px solid #ccc;
     border-right: 1px solid #ccc;
@@ -83,13 +84,13 @@
 }
 
 #lnb li a.active {
-    background-color: #0b99e0;
+    background-color: #5FA65D;
     color: #fff;
 }
 
 .page_tit_box {
     height: 130px;
-    background-color: rgba(255,255,255,0.85);
+    background-color: rgba(0, 0, 0, 0.40);
     padding-left: 24px;
 }
 
@@ -97,11 +98,14 @@
     line-height:60px;
     font-size: 28px;
     padding-top: 18px;
+    color: #fff;
+    font-weight: 500;
 }
 
 .breadcrumb a, .breadcrumb span {
     padding-right: 10px;
     font-weight: 400;
+    color: #fff;
 }
 
 .breadcrumb span {
@@ -196,7 +200,7 @@
 }
 
 .table {
-    width: 80%;
+    width: 95.5%;
     margin-left: 24px;
     clear: both;
     margin-top: 18px;
@@ -243,7 +247,7 @@
 
 .info_content_wrap {
     margin: 16px auto;
-    min-height: 600px;
+    min-height: 400px;
 }
 
 .info_content_box {
@@ -476,3 +480,13 @@
 bg_visual-1.gif
 
 */
+
+#ft .container {
+    width: 1280px;
+    margin: 0 auto;
+    box-sizing: border-box;
+ }
+
+.ck_item {
+    display: none;
+}
