@@ -53,7 +53,7 @@
 }
 
 .lnb_tit {
-    background-color: #35528C;
+    background-color: #0a173e;
     color: #fff;
     font-weight: 700;
     line-height: 130px;
@@ -84,7 +84,7 @@
 }
 
 #lnb li a.active {
-    background-color: #5FA65D;
+    background-color: #2558bf;
     color: #fff;
 }
 
@@ -161,23 +161,23 @@
 }
 
 #tab_ra1:checked ~ .btn_box #tab_btn1 {
-    background-color: gold;
+    background-color: #64a257;
 } 
 
 #tab_ra2:checked ~ .btn_box #tab_btn2 {
-    background-color: gold;
+    background-color: #64a257;
 } 
 
 #tab_ra3:checked ~ .btn_box #tab_btn3 {
-    background-color: gold;
+    background-color: #64a257;
 } 
 
 #tab_ra4:checked ~ .btn_box #tab_btn4 {
-    background-color: gold;
+    background-color: #64a257;
 } 
 
 #tab_ra5:checked ~ .btn_box #tab_btn5 {
-    background-color: gold;
+    background-color: #64a257;
 } 
 
 /* 인포 박스 */
