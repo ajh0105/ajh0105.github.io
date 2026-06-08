@@ -1,368 +1,560 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 ,maximum-scale=1.0, minimum-scale=1.0,user-scalable=no,target-densitydpi=medium-dpi">
-    <title>청도군 문화 관광</title>
-    <!-- 메타포: 바로 가기 아이콘, 홈페이지 제목, 검색어, 설명 -->
-    <meta name="title" content="청도군청 관광문화 홈페이지">
-    <meta name="keywords" content="청도관광문화, 청도군청 관광문화, 청도군 여행정보">
-    <meta name="description" content="청도관광문화 홈페이지">
-    <!-- 오픈 그래프 -->
-    <meta property="og:locale" content="ko_KR">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="청도군청 관광문화 홈페이지">
-    <meta property="og:description" content="청도관광문화 홈페이지">
-    <meta property="og:site_name" content="청도관광문화">
-    <meta property="og:url" content="https://ajh0105.github.io/web01">   <!-- 실제 사이트 주소로 변경 -->
-    <meta property="og:image" content="https://ajh0105.github.io/images/og-image.jpg">
-    <!-- 폰트, 초기화(reset.css), 아이콘 셋 -->
-    <link rel="stylesheet" href="reset.css">
-    <!-- <link rel="stylesheet" href="normalize.css"> -->
-    <link rel="stylesheet" href="font2.css">
-    <link rel="stylesheet" href="iconset.css">
-    <link rel="stylesheet" href="common.css">
-    <link rel="stylesheet" href="vs.css">
-    <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="main2.css">
-    <link rel="stylesheet" href="responsive.css">
-    <style>
-    h1, h2, h3, h4, h5, h6 { font-family: 'FT', sans-serif; line-height:1.6; padding-top:0.6em; padding-bottom:0.6em; }
-    h1 { font-weight: 900; font-size:72px; }
-    h2 { font-weight: 800; font-size:60px; }
-    h3 { font-weight: 700; font-size:48px; }
-    h4 { font-weight: 600; font-size:36px; }
-    h5 { font-weight: 500; font-size:20px; }
-    h6 { font-weight: 400; font-size:12px; }
-    p { font-family: 'FT', sans-serif; font-weight:400; }
-    p.bold { font-weight:700; }
-    p.light { font-weight: 300;}
-    p.GS { font-family: 'GS'; font-weight: 900; }
-    .sub_tit { font-size:100px; clear:both; text-align: center;
-    margin-top:100px; } 
-    </style> 
-    <style>
-    ul { list-style: none; }
-    .icon_list { clear:both; width: 1200px; margin: 0 auto; }
-    .icon_list li { float:left; width: 150px; height: 150px; 
-    font-family: 'xeicon'; font-size:72px; line-height: 150px;  }
-    .icon_bar li { float:left; border:1px solid #333;  }    
-    </style>
-    <style>
-    .color_lst { clear:both; width: 1200px; margin: 0 auto;  } 
-    .color_lst li { text-align: center; float:left; }
-    .color_lst li div { width: 120px; height: 120px; }    
-    .main_color div { background-color: #35528C; }
-    .base_color div { background-color: #5FA65D; }
-    .point_color div { background-color: #BF3434; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>청도군 문화관광</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="font2.css">
+  <link rel="stylesheet" href="iconset.css">
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="components.css">
+  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="responsive.css">
 </head>
 <body>
-<div class="wrap">
-    <header id="hd">
-        <div class="container">
-            <a href="/" class="logo">
-                <img src="./images/logo.png" alt="청도군 로고">
-            </a>
-            <nav class="gnb">
-                <ul class="menu">
-                    <li>
-                        <a href="sub1.html" class="dp1">청도5GO!</a>
-                        <ul class="sub">
-                            <li><a href="sub11.html">보Go!</a></li>
-                            <li><a href="sub12.html">먹Go!</a></li>
-                            <li><a href="sub13.html">즐기Go!</a></li>
-                            <li><a href="#">쇼핑하Go!</a></li>
-                            <li><a href="#">숙박하Go!</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="sub2.html" class="dp1">청도관광9경</a>
-                        <ul class="sub">
-                            <li><a href="sub21.html">청도읍성</a></li>
-                            <li><a href="sub22.html">새마을운동 발상지기념공원</a></li>
-                            <li><a href="#">청도 신화랑풍류마을</a></li>
-                            <li><a href="#">운문사</a></li>
-                            <li><a href="#">섶마리한옥마을</a></li>
-                            <li><a href="#">낙대폭포</a></li>
-                            <li><a href="#">유등연지</a></li>
-                            <li><a href="#">와인터널</a></li>
-                            <li><a href="#">청도레일바이크</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="sub3.html" class="dp1">역사/문화</a>
-                        <ul class="sub">
-                            <li><a href="sub31.html">국가유산</a></li>
-                            <li><a href="sub32.html">청도의 인물</a></li>
-                            <li><a href="#">역사와 전설</a></li>
-                            <li><a href="#">청도읍성체(무료폰트)</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="sub4.html" class="dp1">추천관광코스</a>
-                        <ul class="sub">
-                            <li><a href="sub41.html">연인 추천 코스</a></li>
-                            <li><a href="sub42.html">가족 추천 코스</a></li>
-                            <li><a href="#">계절별 추천 코스</a></li>
-                            <li><a href="#">청도군민의 추천 코스</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="sub5.html" class="dp1">커뮤니티</a>
-                        <ul class="sub">
-                            <li><a href="sub51.html">주요 소식</a></li>
-                            <li><a href="sub52.html">나만의 청도군 사진전</a></li>
-                            <li><a href="#">여행후기</a></li>
-                            <li><a href="#">여행 Q&A</a></li>
-                            <li><a href="#">불편신고</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-            <nav class="tnb">
-                <a href="log.html">로그인</a>
-                <a href="member.html">회원가입</a>
-                <a href="contact.html">Contact US</a>
-            </nav>
+
+<!-- ══════════════════════════════════════════
+     HEADER
+══════════════════════════════════════════ -->
+<header class="gnb-header">
+  <div class="u-container">
+    <a class="gnb-logo" href="index.html">
+      <img src="./images/logo.png" alt="청도군 문화관광">
+    </a>
+    <ul class="gnb-nav">
+      <li>
+        <a href="sub/tour/sub21.html">청도관광</a>
+        <div class="gnb-drop">
+          <a href="sub/tour/sub21.html">청도관광9경</a>
+          <a href="sub/tour/sub22.html">테마관광</a>
+          <a href="sub/tour/sub23.html">추천관광코스</a>
         </div>
-    </header>
-    <main class="content">
-        <figure id="vs">
-            <input type="radio" id="ra1" class="ra" name="ra" checked>
-            <input type="radio" id="ra2" class="ra" name="ra">
-            <input type="radio" id="ra3" class="ra" name="ra">
-            <ul class="img_box">
-                <li>
-                    <img src="./images/vs01.jpg" alt="청도읍성">
-                    <div class="tit_box">
-                        <h3>청도읍성</h3>
-                        <a href="sub31.html">자세히보기</a>
-                    </div>
-                </li>
-                <li>
-                    <img src="./images/vs02.jpg" alt="새마을운동 발상지 기념공원">
-                    <div class="tit_box">
-                        <h3>새마을운동 발상지 기념공원</h3>
-                        <a href="sub11.html">자세히보기</a>
-                    </div>
-                </li>
-                <li>
-                    <img src="./images/vs03.jpg" alt="청도 신화랑풍류마을">
-                    <div class="tit_box">
-                        <h3>청도 신화랑풍류마을</h3>
-                        <a href="sub12.html">자세히보기</a>
-                    </div>
-                </li>
-            </ul>
-             <div class="btn_box">
-                <ul class="btn_wrap">
-                    <li><label for="ra1" class="vs_btn" id="vs_btn1"></label></li>
-                    <li><label for="ra2" class="vs_btn" id="vs_btn2"></label></li>
-                    <li><label for="ra3" class="vs_btn" id="vs_btn3"></label></li>
-                </ul>
-            </div>
-        </figure>
-        <section class="page" id="page1">
+      </li>
+      <li>
+        <a href="sub/festival/sub31.html">축제/행사</a>
+        <div class="gnb-drop">
+          <a href="sub/festival/sub31.html">정기축제</a>
+          <a href="sub/festival/sub32.html">이벤트/행사</a>
+        </div>
+      </li>
+      <li>
+        <a href="sub/stay/sub41.html">숙박/맛집</a>
+        <div class="gnb-drop">
+          <a href="sub/stay/sub41.html">숙박</a>
+          <a href="sub/stay/sub42.html">맛집</a>
+          <a href="sub/stay/sub43.html">쇼핑</a>
+        </div>
+      </li>
+      <li>
+        <a href="sub/info/sub51.html">여행정보</a>
+        <div class="gnb-drop">
+          <a href="sub/info/sub51.html">교통/접근</a>
+          <a href="sub/info/sub52.html">날씨/계절</a>
+          <a href="sub/info/sub53.html">지도</a>
+        </div>
+      </li>
+      <li>
+        <a href="sub/intro/sub11.html">청도소개</a>
+        <div class="gnb-drop">
+          <a href="sub/intro/sub11.html">청도이야기</a>
+          <a href="sub/intro/sub12.html">역사/문화</a>
+          <a href="sub/intro/sub13.html">인물/인재</a>
+        </div>
+      </li>
+      <li>
+        <a href="sub/community/sub61.html">여행커뮤니티</a>
+        <div class="gnb-drop">
+          <a href="sub/community/sub61.html">공지사항</a>
+          <a href="sub/community/sub62.html">자유게시판</a>
+          <a href="sub/community/sub63.html">여행후기</a>
+          <a href="sub/community/sub64.html">여행 Q&amp;A</a>
+        </div>
+      </li>
+    </ul>
+    <div class="gnb-util">
+      <a href="log.html">로그인</a>
+      <span class="sep">|</span>
+      <a href="member.html">회원가입</a>
+      <span class="sep">|</span>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</header>
 
-            <div class="page_wrap">
-                <h2 class="page_title">한 눈에 청도축제</h2>
-                <div class="page_grid">
-                    <div class="row1">
-                        <figure id="big_thumb1" class="big_thumb">
-                            <div class="col span" id="row1"></div>
-                            <a href="">
-                                <img src="./images/bigthum01.jpg" alt="청도세계코미디아트페스티벌">
-                                <div class="thumb_content">
-                                </div>
-                    </div>
-                            </a>    
-                        </figure>
-                    <div class="row2">
-                        <figure id="big_thumb2" class="big_thumb">
-                            <a href="">
-                                <img src="./images/row02.jpg" alt="청도소싸움축제">
-                                <div class="thumb_content">
-                                    <h6 class="tit1">청도의 축제</h6>
-                                    <h5 class="tit2">청도소싸움축제</h5>
-                                </div>
-                            </a>    
-                        </figure>
-                        <figure id="big_thumb3" class="big_thumb">
-                            <a href="">
-                                <img src="./images/row03.jpg" alt="청도유등제">
-                                <div class="thumb_content">
-                                    <h5 class="tit2">청도유등제</h5>
-                                </div>
-                            </a>
-                        </figure>
-                    </div>
-                    <div class="row3">
-                        <figure id="big_thumb4" class="big_thumb">
-                            <a href="">
-                                <img src="./images/row4.jpg" alt="청도반시축제">
-                                <div class="thumb_content">
-                                    <h5 class="tit2">청도반시축제</h5>
-                                </div>
-                            </a>
-                        </figure>
-                        <figure id="big_thumb5" class="big_thumb">
-                            <a href="">
-                                <img src="./images/row01.jpg" alt="청도반시마라톤">
-                                <div class="thumb_content">
-                                    <h5 class="tit2">청도반시마라톤</h5>
-                                </div>
-                            </a>
-                        </figure>
-                    </div>
-                </div>
-            </div>
+<!-- ══════════════════════════════════════════
+     01. HERO SLIDER
+══════════════════════════════════════════ -->
+<section class="hero" id="heroSlider">
 
-        </section>
-        <section class="page" id="page2">
-            <div class="page_wrap">
-                <h2 class="page_title">낭만의 도시 <span class="txt_color">청도 </span></h2>
-                <div class="page_grid2">
-                    <div class="row3">
-                        <div class="movie_wrap" id="movie_wrap2">
-                            <ul class="movie_lst">
-                                <li class="col" id="movie1"><a href="" class="movie" title="새 창 열림"></a></li>
-                                <li class="col" id="movie2"><a href="" class="movie" title="새 창 열림"></a></li>
-                                <li class="col" id="movie3"><a href="" class="movie" title="새 창 열림"></a></li>
-                                <li class="col" id="movie4"><a href="" class="mov0.ie" title="새 창 열림"></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="row4">
-                        <h4 class="box_tit">자주 찾는 메뉴</h4>
-                        <ul class="box_lst">
-                            <li class="box_item" id="box_item1">
-                                <a href="">
-                                    <div class="box_img"></div>
-                                    <h5 class="box_item_tit">모바일 스탬프 투어</h5>
-                                </a>
-                            </li>
-                            <li class="box_item" id="box_item2">
-                                <a href="">
-                                    <div class="box_img"></div>
-                                    <h5 class="box_item_tit">문화관광해설사</h5>
-                                </a>
-                            </li>
-                            <li class="box_item" id="box_item3">
-                                <a href="">
-                                    <div class="box_img"></div>
-                                    <h5 class="box_item_tit">청도여행자센터</h5>
-                                </a>
-                            </li>
-                            <li class="box_item" id="box_item4">
-                                <a href="">
-                                    <div class="box_img"></div>
-                                    <h5 class="box_item_tit">톡톡한 관광택시</h5>
-                                </a>
-                            </li>
-                            <li class="box_item" id="box_item5">
-                                <a href="">
-                                    <div class="box_img"></div>
-                                    <h5 class="box_item_tit">교통정보</h5>
-                                </a>
-                            </li>
-                            <li class="box_item" id="box_item6">
-                                <a href="">
-                                    <div class="box_img"></div>
-                                    <h5 class="box_item_tit">숙소정보</h5>
-                                </a>
-                            </li>
-                            <li class="box_item" id="box_item7">
-                                <a href="">
-                                    <div class="box_img"></div>
-                                    <h5 class="box_item_tit">렌터카</h5>
-                                </a>
-                            </li>
-                            <li class="box_item" id="box_item8">
-                                <a href="">
-                                    <div class="box_img"></div>
-                                    <h5 class="box_item_tit">청도 문화관광 SNS</h5>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>    
-            </div>
-        </section>
-    </main>
-   <footer id="ft">
-         <div class="container">
-            <nav id="relation">
-                <ul>
-                    <li>
-                        <input type="radio" name="sel" id="ra11">
-                        <label for="ra11">관광사업소</label>
-                        <div class="sel" id="sel1">
-                            <a href="">기획예산담당관</a>
-                            <a href="">선택2</a>
-                            <a href="">선택3</a>
-                            <a href="">선택4</a>
-                            <a href="">선택5</a>
-                        </div>
-                    </li>
-                    <li>
-                        <input type="radio" name="sel" id="ra12">
-                        <label for="ra12">면/동</label>
-                        <div class="sel" id="sel2">
-                            <a href="">기획예산담당관</a>
-                            <a href="">선택2</a>
-                            <a href="">선택3</a>
-                            <a href="">선택4</a>
-                            <a href="">선택5</a>
-                        </div>
-                    </li>
-                    <li>
-                        <input type="radio" name="sel" id="ra13">
-                        <label for="ra13">시/군청</label>
-                        <div class="sel" id="sel3">
-                            <a href="">기획예산담당관</a>
-                            <a href="">선택2</a>
-                            <a href="">선택3</a>
-                            <a href="">선택4</a>
-                            <a href="">선택5</a>
-                        </div>
-                    </li>
-                    <li>
-                        <input type="radio" name="sel" id="ra14">
-                        <label for="ra14">패밀리사이트</label>
-                        <div class="sel" id="sel4">
-                            <a href="">기획예산담당관</a>
-                            <a href="">선택2</a>
-                            <a href="">선택3</a>
-                            <a href="">선택4</a>
-                            <a href="">선택5</a>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-            <nav id="banner_bar">
-                <ul>
-                    <li><a href="https://www.budongsan24.kr/" target="_blank"><img src="./images/ban01.gif" alt="통합신고센터"></a></li>
-                    <li><a href="https://www.laiis.go.kr/lips/mlo/lcl/organizationList.do" target="_blank"><img src="./images/ban02.gif" alt="행정안전부 내고장 알리미"></a></li>
-                    <li><a href="https://hometax.go.kr/websquare/websquare.html?w2xPath=/ui/pp/index_pp.xml&menuCd=index3" target="_blank"><img src="./images/ban03.png" alt="국세청홈택스"></a></li>
-                    <li><a href="https://www.nhis.or.kr/nbinfo/index.do" target="_blank"><img src="./images/ban04.png" alt="국민건강보험 비급여 정보 포털"></a></li>
-                    <li><a href="https://www.gov.kr/portal/main" target="_blank"><img src="./images/ban05.jpg" alt="행정안전부 공직비리 익명신고"></a></li>
-                    <li><a href="https://www.wetax.go.kr/static/sim/SimpleCar.html" target="_blank"><img src="./images/ban06.png" alt="WeTAX"></a></li>
-                </ul>
-            </nav>
-            <nav id="fnb">
-                <a href="privacy.html">개인정보처리방침</a>
-                <a href="#">이메일무단수집거부</a>
-                <a href="#">저작권정책</a>
-                <a href="#">홈페이지 의견접수</a>
-                <a href="#" download>뷰어 다운로드</a>
-            </nav>
-            <div class="copyright">
-                <p class="addr">(38330) 경상북도 청도군 화양읍 청화로 70 청도군청 / 대표전화 : 054)370-6114</p>
-                <p class="copy">Copyright ⓒ CHEONGDO city. All Rights Reserved.</p>
-            </div>
-         </div>   
-    </footer>
-</div>
+  <div class="hero__track" id="heroTrack">
+    <!-- 슬라이드 1 -->
+    <div class="hero__slide">
+      <img class="hero__slide-bg" src="./images/vs01.jpg" alt="청도 와인터널">
+      <div class="hero__slide-veil"></div>
+      <div class="hero__slide-content">
+        <span class="hero__badge">CHEONGDO WINE TUNNEL</span>
+        <h1 class="hero__title">천년의 시간이<br>흐르는 곳,<br><em>청도 와인터널</em></h1>
+        <p class="hero__desc">대한민국 유일의 지하 동굴 와인 저장고.<br>천정에서 흐르는 지하수와 청도 반시의 만남.</p>
+        <div class="hero__btns">
+          <a class="btn btn--primary" href="sub/tour/sub21.html">관광지 둘러보기</a>
+          <a class="btn btn--ghost" href="sub/tour/sub23.html">추천 코스 보기</a>
+        </div>
+      </div>
+    </div>
+    <!-- 슬라이드 2 -->
+    <div class="hero__slide">
+      <img class="hero__slide-bg" src="./images/vs02.jpg" alt="청도 레일바이크">
+      <div class="hero__slide-veil"></div>
+      <div class="hero__slide-content">
+        <span class="hero__badge">CHEONGDO RAIL BIKE</span>
+        <h1 class="hero__title">바람을 가르며<br>달리는<br><em>청도 레일바이크</em></h1>
+        <p class="hero__desc">옛 철로 위를 달리며 청도의 자연을 만끽.<br>가족·연인과 함께하는 특별한 하루.</p>
+        <div class="hero__btns">
+          <a class="btn btn--primary" href="sub/tour/sub21.html">레일바이크 정보</a>
+          <a class="btn btn--ghost" href="sub/festival/sub31.html">축제 일정</a>
+        </div>
+      </div>
+    </div>
+    <!-- 슬라이드 3 -->
+    <div class="hero__slide">
+      <img class="hero__slide-bg" src="./images/vs03.jpg" alt="청도 운문사">
+      <div class="hero__slide-veil"></div>
+      <div class="hero__slide-content">
+        <span class="hero__badge">UNMUNSA TEMPLE</span>
+        <h1 class="hero__title">천년 고찰의<br>고요한 새벽,<br><em>운문사</em></h1>
+        <p class="hero__desc">비구니 사찰로 유명한 운문사.<br>솔숲과 계곡이 어우러진 사계절 명소.</p>
+        <div class="hero__btns">
+          <a class="btn btn--primary" href="sub/tour/sub21.html">운문사 안내</a>
+          <a class="btn btn--ghost" href="sub/intro/sub11.html">청도 이야기</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 이전/다음 버튼 -->
+  <button class="hero__arrow hero__arrow--prev" id="heroPrev" aria-label="이전 슬라이드">
+    <i class="xi-angle-left"></i>
+  </button>
+  <button class="hero__arrow hero__arrow--next" id="heroNext" aria-label="다음 슬라이드">
+    <i class="xi-angle-right"></i>
+  </button>
+
+  <!-- 인디케이터 -->
+  <div class="hero__dots" id="heroDots">
+    <button class="hero__dot is-active" data-index="0" aria-label="슬라이드 1"></button>
+    <button class="hero__dot" data-index="1" aria-label="슬라이드 2"></button>
+    <button class="hero__dot" data-index="2" aria-label="슬라이드 3"></button>
+  </div>
+
+  <div class="hero__count" id="heroCount">01 / 03</div>
+
+</section>
+
+<script>
+(function () {
+  var track   = document.getElementById('heroTrack');
+  var dots    = document.querySelectorAll('#heroDots .hero__dot');
+  var count   = document.getElementById('heroCount');
+  var origSlides = Array.from(track.children);
+  var total   = origSlides.length;
+  var INTERVAL = 5000;
+  var DURATION = '0.75s cubic-bezier(0.22,0.61,0.36,1)';
+  var timer, pos = 1;
+
+  /* 앞뒤에 클론 슬라이드 삽입 → 무한 루프 */
+  var cFirst = origSlides[0].cloneNode(true);
+  var cLast  = origSlides[total - 1].cloneNode(true);
+  track.appendChild(cFirst);
+  track.insertBefore(cLast, origSlides[0]);
+
+  /* 트랙 초기화: 전환 없이 실제 첫 슬라이드로 */
+  track.style.transition = 'none';
+
+  function enableTransition() {
+    track.style.transition = 'transform ' + DURATION;
+  }
+  function disableTransition(cb) {
+    track.style.transition = 'none';
+    requestAnimationFrame(function() { requestAnimationFrame(cb); });
+  }
+
+  function move(p, animate) {
+    if (animate) {
+      enableTransition();
+      track.style.transform = 'translateX(-' + (p * 100) + 'vw)';
+    } else {
+      disableTransition(function() {
+        track.style.transform = 'translateX(-' + (p * 100) + 'vw)';
+      });
+    }
+  }
+
+  function updateUI() {
+    var realIdx = pos - 1;
+    dots.forEach(function(d, i) {
+      d.classList.toggle('is-active', i === realIdx);
+    });
+    count.textContent = String(realIdx + 1).padStart(2, '0') + ' / 0' + total;
+  }
+
+  function goTo(p) {
+    pos = p;
+    move(pos, true);
+    var realIdx = ((pos - 1) % total + total) % total;
+    dots.forEach(function(d, i) {
+      d.classList.toggle('is-active', i === realIdx);
+    });
+    count.textContent = String(realIdx + 1).padStart(2, '0') + ' / 0' + total;
+  }
+
+  /* transitionend 시 클론 위치면 silently 실제 위치로 점프 */
+  track.addEventListener('transitionend', function() {
+    if (pos === 0) {
+      pos = total;
+      move(pos, false);
+    } else if (pos === total + 1) {
+      pos = 1;
+      move(pos, false);
+    }
+  });
+
+  function startAuto() {
+    clearInterval(timer);
+    timer = setInterval(function() { goTo(pos + 1); }, INTERVAL);
+  }
+
+  document.getElementById('heroNext').addEventListener('click', function() {
+    goTo(pos + 1); startAuto();
+  });
+  document.getElementById('heroPrev').addEventListener('click', function() {
+    goTo(pos - 1); startAuto();
+  });
+  dots.forEach(function(d) {
+    d.addEventListener('click', function() {
+      goTo(parseInt(this.dataset.index) + 1); startAuto();
+    });
+  });
+
+  /* 초기 위치: 실제 첫 슬라이드 (pos=1), 전환 없이 */
+  move(1, false);
+  updateUI();
+  startAuto();
+})();
+</script>
+
+<!-- ══════════════════════════════════════════
+     02. 통계 바
+══════════════════════════════════════════ -->
+<section class="stat-bar">
+  <div class="u-container">
+    <div class="stat-bar__inner">
+      <div class="stat-item">
+        <div class="stat-item__num">9<sup>경</sup></div>
+        <div class="stat-item__label">청도 대표 관광명소</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-item__num">4<sup>+</sup></div>
+        <div class="stat-item__label">연간 정기 축제</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-item__num">1000<sup>년</sup></div>
+        <div class="stat-item__label">유구한 역사와 전통</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-item__num">30<sup>분</sup></div>
+        <div class="stat-item__label">대구에서 KTX 이동시간</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     03. 관광 9경 다크 섹션
+══════════════════════════════════════════ -->
+<section class="u-section u-section--dark">
+  <div class="sec-hd">
+    <div class="sec-hd__echo sec-hd__echo--light">9GYEONG</div>
+    <h2 class="sec-hd__title sec-hd__title--light">청도 관광 9경</h2>
+    <p class="sec-hd__sub sec-hd__sub--light">청도를 대표하는 아홉 가지 빼어난 경관</p>
+  </div>
+  <div class="nine-grid">
+    <a class="nine-card" href="sub/tour/sub21.html">
+      <div class="nine-card__bg"><img src="./images/sub2_1_1.jpg" alt="와인터널"></div>
+      <div class="nine-card__body">
+        <div class="nine-card__num">01 KYEONG</div>
+        <h3 class="nine-card__name">청도 와인터널</h3>
+        <p class="nine-card__sub">화양읍 삼신리</p>
+      </div>
+    </a>
+    <a class="nine-card" href="sub/tour/sub21.html">
+      <div class="nine-card__bg"><img src="./images/sub2_1_2.jpg" alt="레일바이크"></div>
+      <div class="nine-card__body">
+        <div class="nine-card__num">02 KYEONG</div>
+        <h3 class="nine-card__name">청도 레일바이크</h3>
+        <p class="nine-card__sub">청도읍 원리</p>
+      </div>
+    </a>
+    <a class="nine-card" href="sub/tour/sub21.html">
+      <div class="nine-card__bg"><img src="./images/sub1_1_1.jpg" alt="운문사"></div>
+      <div class="nine-card__body">
+        <div class="nine-card__num">03 KYEONG</div>
+        <h3 class="nine-card__name">운문사</h3>
+        <p class="nine-card__sub">운문면 신원리</p>
+      </div>
+    </a>
+    <a class="nine-card" href="sub/tour/sub21.html">
+      <div class="nine-card__bg"><img src="./images/sub3_1_1.jpg" alt="청도읍성"></div>
+      <div class="nine-card__body">
+        <div class="nine-card__num">04 KYEONG</div>
+        <h3 class="nine-card__name">청도읍성</h3>
+        <p class="nine-card__sub">화양읍 동천리</p>
+      </div>
+    </a>
+    <a class="nine-card" href="sub/tour/sub21.html">
+      <div class="nine-card__bg"><img src="./images/sub1_1_2.jpg" alt="운문댐"></div>
+      <div class="nine-card__body">
+        <div class="nine-card__num">05 KYEONG</div>
+        <h3 class="nine-card__name">운문댐 생태공원</h3>
+        <p class="nine-card__sub">운문면 지촌리</p>
+      </div>
+    </a>
+    <a class="nine-card" href="sub/tour/sub21.html">
+      <div class="nine-card__bg"><img src="./images/sub2_1_3.jpg" alt="자계서원"></div>
+      <div class="nine-card__body">
+        <div class="nine-card__num">06 KYEONG</div>
+        <h3 class="nine-card__name">자계서원</h3>
+        <p class="nine-card__sub">금천면 신지리</p>
+      </div>
+    </a>
+    <a class="nine-card" href="sub/tour/sub21.html">
+      <div class="nine-card__bg"><img src="./images/sub3_1_2.jpg" alt="박곡지"></div>
+      <div class="nine-card__body">
+        <div class="nine-card__num">07 KYEONG</div>
+        <h3 class="nine-card__name">박곡지 수변공원</h3>
+        <p class="nine-card__sub">각북면 박곡리</p>
+      </div>
+    </a>
+    <a class="nine-card" href="sub/tour/sub21.html">
+      <div class="nine-card__bg"><img src="./images/sub3_1_3.jpg" alt="적천사"></div>
+      <div class="nine-card__body">
+        <div class="nine-card__num">08 KYEONG</div>
+        <h3 class="nine-card__name">적천사</h3>
+        <p class="nine-card__sub">청도읍 원리</p>
+      </div>
+    </a>
+    <a class="nine-card" href="sub/tour/sub21.html">
+      <div class="nine-card__bg"><img src="./images/row03_3.jpg" alt="청도향교"></div>
+      <div class="nine-card__body">
+        <div class="nine-card__num">09 KYEONG</div>
+        <h3 class="nine-card__name">청도향교</h3>
+        <p class="nine-card__sub">청도읍 고수리</p>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     04. 축제/행사 그리드
+══════════════════════════════════════════ -->
+<section class="u-section u-section--white">
+  <div class="u-container">
+    <div class="sec-hd">
+      <div class="sec-hd__echo">FESTIVAL</div>
+      <h2 class="sec-hd__title">축제 &amp; 행사</h2>
+      <p class="sec-hd__sub">사계절 청도를 더욱 풍성하게 만드는 축제와 이벤트</p>
+    </div>
+    <div class="fest-grid">
+      <a class="fest-card fest-card--main" href="sub/festival/sub31.html">
+        <img class="fest-card__img" src="./images/bigthum01.jpg" alt="청도 소싸움축제">
+        <div class="fest-card__overlay"></div>
+        <div class="fest-card__body">
+          <span class="badge badge--event badge--pill">매년 2~3월</span>
+          <h3 class="fest-card__title">청도 소싸움 축제</h3>
+        </div>
+      </a>
+      <a class="fest-card" href="sub/festival/sub31.html">
+        <img class="fest-card__img" src="./images/row02.jpg" alt="청도 와인축제">
+        <div class="fest-card__overlay"></div>
+        <div class="fest-card__body">
+          <div class="fest-card__date">10월</div>
+          <h3 class="fest-card__title">청도 와인 축제</h3>
+        </div>
+      </a>
+      <a class="fest-card" href="sub/festival/sub31.html">
+        <img class="fest-card__img" src="./images/row03.jpg" alt="청도 감 축제">
+        <div class="fest-card__overlay"></div>
+        <div class="fest-card__body">
+          <div class="fest-card__date">11월</div>
+          <h3 class="fest-card__title">청도 반시 감 축제</h3>
+        </div>
+      </a>
+    </div>
+    <div class="more-wrap">
+      <a class="btn btn--line" href="sub/festival/sub31.html">축제 전체 보기</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     07. 빠른 메뉴
+══════════════════════════════════════════ -->
+<section class="u-section u-section--alt">
+  <div class="u-container">
+    <div class="sec-hd">
+      <div class="sec-hd__echo">QUICK MENU</div>
+      <h2 class="sec-hd__title">청도 여행 바로가기</h2>
+    </div>
+    <div class="quick-grid">
+      <a class="quick-item" href="sub/tour/sub21.html">
+        <div class="quick-item__icon"><img src="./images/box_icon1.png" alt="관광명소"></div>
+        <span class="quick-item__label">관광명소</span>
+      </a>
+      <a class="quick-item" href="sub/festival/sub31.html">
+        <div class="quick-item__icon"><img src="./images/box_icon2.png" alt="축제/행사"></div>
+        <span class="quick-item__label">축제/행사</span>
+      </a>
+      <a class="quick-item" href="sub/stay/sub41.html">
+        <div class="quick-item__icon"><img src="./images/box_icon3.png" alt="숙박"></div>
+        <span class="quick-item__label">숙박</span>
+      </a>
+      <a class="quick-item" href="sub/stay/sub42.html">
+        <div class="quick-item__icon"><img src="./images/box_icon4.png" alt="맛집"></div>
+        <span class="quick-item__label">맛집</span>
+      </a>
+      <a class="quick-item" href="sub/tour/sub23.html">
+        <div class="quick-item__icon"><img src="./images/box_icon5.png" alt="추천코스"></div>
+        <span class="quick-item__label">추천코스</span>
+      </a>
+      <a class="quick-item" href="sub/info/sub51.html">
+        <div class="quick-item__icon"><img src="./images/box_icon6.png" alt="교통정보"></div>
+        <span class="quick-item__label">교통정보</span>
+      </a>
+      <a class="quick-item" href="sub/community/sub63.html">
+        <div class="quick-item__icon"><img src="./images/box_icon7.png" alt="여행후기"></div>
+        <span class="quick-item__label">여행후기</span>
+      </a>
+      <a class="quick-item" href="contact.html">
+        <div class="quick-item__icon"><img src="./images/box_icon8.png" alt="문의하기"></div>
+        <span class="quick-item__label">문의하기</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     08. 최신 소식
+══════════════════════════════════════════ -->
+<section class="u-section u-section--white">
+  <div class="u-container">
+    <div class="sec-hd">
+      <div class="sec-hd__echo">NEWS</div>
+      <h2 class="sec-hd__title">청도 최신 소식</h2>
+      <p class="sec-hd__sub">청도군의 새로운 소식과 이벤트 정보를 만나보세요</p>
+    </div>
+    <div class="news-grid">
+      <a class="news-card" href="sub/community/sub61.html">
+        <img class="news-card__img" src="./images/row01.jpg" alt="소싸움축제 개최">
+        <div class="news-card__body">
+          <div class="news-card__meta">
+            <span class="badge badge--event badge--pill">축제</span>
+            <span class="news-card__date">2025. 02. 15</span>
+          </div>
+          <h3 class="news-card__title">2025 청도 소싸움 축제 개최 안내</h3>
+          <p class="news-card__desc">전통과 힘의 대결! 청도의 봄을 알리는 소싸움 축제가 2월 중순 개막합니다.</p>
+        </div>
+      </a>
+      <a class="news-card" href="sub/community/sub61.html">
+        <img class="news-card__img" src="./images/row4.jpg" alt="와인터널 리뉴얼">
+        <div class="news-card__body">
+          <div class="news-card__meta">
+            <span class="badge badge--primary badge--pill">공지</span>
+            <span class="news-card__date">2025. 01. 20</span>
+          </div>
+          <h3 class="news-card__title">청도 와인터널 신규 체험 공간 오픈</h3>
+          <p class="news-card__desc">리뉴얼 된 와인터널 체험 공간과 함께 더욱 풍성한 청도 여행을 즐기세요.</p>
+        </div>
+      </a>
+      <a class="news-card" href="sub/community/sub61.html">
+        <img class="news-card__img" src="./images/row03_4.jpg" alt="관광코스">
+        <div class="news-card__body">
+          <div class="news-card__meta">
+            <span class="badge badge--notice badge--pill">이벤트</span>
+            <span class="news-card__date">2025. 01. 10</span>
+          </div>
+          <h3 class="news-card__title">2025년 청도 추천 봄 여행 코스 발표</h3>
+          <p class="news-card__desc">봄꽃과 함께 즐기는 청도 1박2일 추천 코스를 공개합니다.</p>
+        </div>
+      </a>
+    </div>
+    <div class="more-wrap">
+      <a class="btn btn--line" href="sub/community/sub61.html">공지사항 전체 보기</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<footer class="site-footer">
+
+  <div class="footer-banner">
+    <div class="u-container">
+      <a class="ft-banner-item" href="#"><i class="xi-map-o"></i>청도 관광지도</a>
+      <a class="ft-banner-item" href="#"><i class="xi-calendar"></i>축제 캘린더</a>
+      <a class="ft-banner-item" href="#"><i class="xi-bus-o"></i>대중교통 안내</a>
+      <a class="ft-banner-item" href="#"><i class="xi-mobile-o"></i>모바일 앱</a>
+    </div>
+  </div>
+  <div class="footer-body">
+    <div class="u-container">
+      <div class="footer-col footer-info">
+        <img src="./images/logo.png" alt="청도군 문화관광" style="height:36px;margin-bottom:20px;opacity:0.7;">
+        <p><strong>청도군청 문화관광과</strong></p>
+        <p>경상북도 청도군 화양읍 청도로 219<br>TEL: 054-370-6114 / FAX: 054-373-8855</p>
+        <p>COPYRIGHT © 청도군. ALL RIGHTS RESERVED.</p>
+      </div>
+      <div class="footer-col">
+        <h4>청도관광</h4>
+        <ul>
+          <li><a href="sub/tour/sub21.html">청도관광9경</a></li>
+          <li><a href="sub/tour/sub22.html">테마관광</a></li>
+          <li><a href="sub/tour/sub23.html">추천관광코스</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>여행정보</h4>
+        <ul>
+          <li><a href="sub/stay/sub41.html">숙박</a></li>
+          <li><a href="sub/stay/sub42.html">맛집</a></li>
+          <li><a href="sub/info/sub51.html">교통/접근</a></li>
+          <li><a href="sub/info/sub53.html">관광지도</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>고객센터</h4>
+        <ul>
+          <li><a href="sub/community/sub61.html">공지사항</a></li>
+          <li><a href="sub/community/sub64.html">여행 Q&amp;A</a></li>
+          <li><a href="contact.html">Contact US</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="u-container">
+      <p class="footer-copyright">© 2025 청도군 문화관광. All rights reserved.</p>
+      <nav class="footer-fnb">
+        <a href="#" class="strong">개인정보처리방침</a>
+        <a href="#">이용약관</a>
+        <a href="#">이메일무단수집거부</a>
+        <a href="contact.html">사이트맵</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
 </body>
 </html>

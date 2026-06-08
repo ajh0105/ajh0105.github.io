@@ -1,0 +1,375 @@
+@charset "utf-8";
+/* ================================================================
+   sub.css — 서브페이지 전용 공통 스타일
+================================================================ */
+
+/* ────────────────────────────────────────────
+   관광지 상세 페이지
+──────────────────────────────────────────── */
+.spot-gallery {
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  grid-template-rows:1fr 1fr;
+  gap:var(--sp-2);
+  height:460px;
+  border-radius:var(--r-xl);
+  overflow:hidden;
+  margin-bottom:var(--sp-7);
+}
+.spot-gallery__main {
+  grid-row:1 / 3;
+  position:relative;
+  overflow:hidden;
+}
+.spot-gallery__main img { width:100%; height:100%; object-fit:cover; display:block; }
+.spot-gallery__sub {
+  position:relative;
+  overflow:hidden;
+}
+.spot-gallery__sub img { width:100%; height:100%; object-fit:cover; display:block; }
+.spot-gallery__count {
+  position:absolute;
+  bottom:var(--sp-3);
+  right:var(--sp-3);
+  background:rgba(0,0,0,0.55);
+  color:#fff;
+  font-size:var(--fs-xs);
+  font-weight:var(--fw-bold);
+  padding:4px 10px;
+  border-radius:var(--r-pill);
+}
+
+/* 관광지 본문 메타 태그 */
+.spot-tags { display:flex; flex-wrap:wrap; gap:var(--sp-2); margin-bottom:var(--sp-5); }
+.spot-tag {
+  display:inline-block;
+  padding:4px 12px;
+  background:var(--c-primary-100);
+  color:var(--c-primary);
+  border-radius:var(--r-pill);
+  font-size:var(--fs-xs);
+  font-weight:var(--fw-bold);
+}
+
+/* ────────────────────────────────────────────
+   축제 이벤트 카드 리스트
+──────────────────────────────────────────── */
+.event-grid {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:var(--sp-6);
+}
+.event-card {
+  display:flex;
+  gap:var(--sp-5);
+  background:#fff;
+  border:1px solid var(--c-border);
+  border-radius:var(--r-lg);
+  overflow:hidden;
+  box-shadow:var(--sh-card);
+  transition:transform var(--t-fast),box-shadow var(--t-fast);
+  text-decoration:none;
+  color:inherit;
+}
+.event-card:hover {
+  transform:translateY(-4px);
+  box-shadow:var(--sh-card-hover);
+}
+.event-card__thumb {
+  min-width:180px;
+  background:var(--c-bg-alt);
+  overflow:hidden;
+}
+.event-card__thumb img { width:100%; height:100%; object-fit:cover; display:block; }
+.event-card__body { padding:var(--sp-5); flex:1; }
+.event-card__period {
+  font-size:var(--fs-xs);
+  color:var(--c-primary);
+  font-weight:var(--fw-bold);
+  margin-bottom:var(--sp-2);
+}
+.event-card__title {
+  font-family:var(--ff-display);
+  font-size:var(--fs-lg);
+  font-weight:var(--fw-bold);
+  color:var(--c-navy-800);
+  margin-bottom:var(--sp-3);
+  word-break:keep-all;
+}
+.event-card__loc {
+  display:flex;
+  align-items:center;
+  gap:var(--sp-1);
+  font-size:var(--fs-sm);
+  color:var(--c-text-mute);
+}
+
+/* ────────────────────────────────────────────
+   숙박 / 맛집 카드
+──────────────────────────────────────────── */
+.stay-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:var(--sp-6);
+}
+.stay-card {
+  background:#fff;
+  border:1px solid var(--c-border);
+  border-radius:var(--r-lg);
+  overflow:hidden;
+  box-shadow:var(--sh-card);
+  transition:transform var(--t-fast),box-shadow var(--t-fast);
+  display:block;
+  text-decoration:none;
+  color:inherit;
+}
+.stay-card:hover { transform:translateY(-6px); box-shadow:var(--sh-card-hover); }
+.stay-card__img { width:100%; aspect-ratio:4/3; object-fit:cover; background:var(--c-bg-alt); }
+.stay-card__body { padding:var(--sp-5) var(--sp-5); }
+.stay-card__cat {
+  font-size:var(--fs-xs);
+  font-weight:var(--fw-bold);
+  color:var(--c-green);
+  margin-bottom:var(--sp-2);
+  letter-spacing:0.04em;
+}
+.stay-card__name {
+  font-family:var(--ff-display);
+  font-size:var(--fs-md);
+  font-weight:var(--fw-bold);
+  color:var(--c-navy-800);
+  margin-bottom:var(--sp-2);
+}
+.stay-card__info {
+  font-size:var(--fs-sm);
+  color:var(--c-text-mute);
+  line-height:var(--lh-normal);
+}
+.stay-card__price {
+  font-size:var(--fs-base);
+  font-weight:var(--fw-bold);
+  color:var(--c-red);
+  margin-top:var(--sp-3);
+}
+.stay-card__stars { color:#f5a623; font-size:var(--fs-sm); margin-top:var(--sp-1); }
+
+/* ────────────────────────────────────────────
+   교통/접근 안내
+──────────────────────────────────────────── */
+.transport-grid {
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:var(--sp-5);
+  margin-bottom:var(--sp-7);
+}
+.transport-card {
+  background:var(--c-bg-alt);
+  border:1px solid var(--c-border);
+  border-radius:var(--r-lg);
+  padding:var(--sp-6);
+}
+.transport-card__head {
+  display:flex;
+  align-items:center;
+  gap:var(--sp-3);
+  margin-bottom:var(--sp-4);
+}
+.transport-card__icon {
+  width:44px; height:44px;
+  background:var(--c-primary-100);
+  border-radius:var(--r-md);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  color:var(--c-primary);
+}
+.transport-card__title {
+  font-family:var(--ff-display);
+  font-size:var(--fs-md);
+  font-weight:var(--fw-bold);
+  color:var(--c-navy-800);
+}
+.transport-card__desc {
+  font-size:var(--fs-sm);
+  color:#555;
+  line-height:var(--lh-normal);
+}
+
+/* ────────────────────────────────────────────
+   안내 (공지사항 등) 전용
+──────────────────────────────────────────── */
+.notice-list { list-style:none; padding:0; margin:0; }
+.notice-item {
+  display:flex;
+  align-items:center;
+  gap:var(--sp-4);
+  padding:16px 0;
+  border-bottom:1px solid var(--c-line);
+}
+.notice-item:last-child { border-bottom:none; }
+.notice-item__badge { flex-shrink:0; }
+.notice-item__title {
+  flex:1;
+  font-size:var(--fs-base);
+  color:var(--c-navy-800);
+  font-weight:var(--fw-semibold);
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.notice-item a:hover .notice-item__title { color:var(--c-primary); }
+.notice-item__date {
+  flex-shrink:0;
+  font-size:var(--fs-xs);
+  color:var(--c-text-faint);
+}
+.notice-item__pin {
+  flex-shrink:0;
+  color:var(--c-red);
+  font-size:var(--fs-xs);
+}
+
+/* 공지 상세 */
+.view-hd {
+  border-top:2px solid var(--c-navy-800);
+  border-bottom:1px solid var(--c-border);
+  padding:var(--sp-6) 0 var(--sp-5);
+  margin-bottom:var(--sp-7);
+}
+.view-hd__title {
+  font-family:var(--ff-display);
+  font-size:var(--fs-d3);
+  font-weight:var(--fw-bold);
+  color:var(--c-navy-800);
+  margin:0 0 var(--sp-3);
+}
+.view-meta { display:flex; gap:var(--sp-6); font-size:var(--fs-sm); color:var(--c-text-mute); }
+.view-body {
+  font-size:var(--fs-md);
+  color:#444;
+  line-height:var(--lh-loose);
+  padding-bottom:var(--sp-9);
+  border-bottom:1px solid var(--c-border);
+  margin-bottom:var(--sp-7);
+}
+.view-nav {
+  display:flex;
+  flex-direction:column;
+  gap:0;
+  border:1px solid var(--c-border);
+  border-radius:var(--r-md);
+  overflow:hidden;
+  margin-bottom:var(--sp-7);
+}
+.view-nav__item {
+  display:flex;
+  align-items:center;
+  gap:var(--sp-4);
+  padding:13px var(--sp-5);
+  border-bottom:1px solid var(--c-border);
+  font-size:var(--fs-sm);
+}
+.view-nav__item:last-child { border-bottom:none; }
+.view-nav__dir {
+  min-width:52px;
+  font-weight:var(--fw-bold);
+  color:var(--c-text-mute);
+}
+.view-nav__item a { color:var(--c-navy-800); font-weight:var(--fw-semibold); }
+.view-nav__item a:hover { color:var(--c-primary); }
+.view-back {
+  display:inline-flex;
+  align-items:center;
+  gap:var(--sp-2);
+  border:1.5px solid var(--c-border);
+  border-radius:var(--r-sm);
+  padding:10px 22px;
+  font-size:var(--fs-sm);
+  font-weight:var(--fw-semibold);
+  color:var(--c-text-mute);
+  transition:all var(--t-fast);
+}
+.view-back:hover { border-color:var(--c-primary); color:var(--c-primary); }
+
+/* ────────────────────────────────────────────
+   소개 레이아웃 (청도소개 등)
+──────────────────────────────────────────── */
+.intro-hero {
+  position:relative;
+  height:420px;
+  border-radius:var(--r-xl);
+  overflow:hidden;
+  margin-bottom:var(--sp-9);
+}
+.intro-hero img { width:100%; height:100%; object-fit:cover; }
+.intro-hero__veil {
+  position:absolute;
+  inset:0;
+  background:linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.5));
+}
+.intro-hero__caption {
+  position:absolute;
+  bottom:var(--sp-7);
+  left:var(--sp-7);
+  font-family:var(--ff-display);
+  font-size:var(--fs-d3);
+  font-weight:var(--fw-black);
+  color:#fff;
+}
+
+.intro-grid {
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+  gap:var(--sp-9);
+  align-items:start;
+  margin-bottom:var(--sp-9);
+}
+.intro-grid--reverse { direction:rtl; }
+.intro-grid--reverse > * { direction:ltr; }
+.intro-grid__img {
+  border-radius:var(--r-xl);
+  overflow:hidden;
+  aspect-ratio:4/3;
+}
+.intro-grid__img img { width:100%; height:100%; object-fit:cover; }
+.intro-grid__body {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.intro-grid__body h3 {
+  font-family:var(--ff-display);
+  font-size:var(--fs-d3);
+  font-weight:var(--fw-black);
+  color:var(--c-navy-800);
+  margin:0 0 var(--sp-5);
+}
+.intro-grid__body p {
+  font-size:var(--fs-base);
+  color:#555;
+  line-height:var(--lh-loose);
+  margin-bottom:var(--sp-5);
+}
+
+/* 인트로 KPI 배너 */
+.kpi-strip {
+  background:var(--c-navy-800);
+  border-radius:var(--r-xl);
+  padding:var(--sp-7) var(--sp-9);
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+  margin-bottom:var(--sp-9);
+}
+.kpi-item { text-align:center; padding:var(--sp-5); border-right:1px solid rgba(255,255,255,0.08); }
+.kpi-item:last-child { border-right:none; }
+.kpi-item__num {
+  font-family:var(--ff-display);
+  font-size:var(--fs-d2);
+  font-weight:var(--fw-black);
+  color:#fff;
+  margin-bottom:var(--sp-2);
+  line-height:1;
+}
+.kpi-item__label { font-size:var(--fs-sm); color:rgba(255,255,255,0.5); }

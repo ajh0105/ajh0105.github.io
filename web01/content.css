@@ -1,0 +1,198 @@
+@charset "utf-8";
+
+/* =========================================================
+   content.css — 새 콘텐츠 영역 공통 스타일
+========================================================= */
+
+/* ── 섹션 인트로 페이지 ───────────────────────── */
+.sec_intro { padding: 60px 0 80px; background: #fff; }
+.sec_intro .intro_hd { text-align: center; margin-bottom: 48px; }
+.sec_intro .intro_hd h2 { font-size: 40px; font-weight: 800; color: #0a173e; margin-bottom: 12px; }
+.sec_intro .intro_hd p  { font-size: 16px; color: #555; font-weight: 400; line-height: 1.8; }
+
+/* 카드 그리드 */
+.card_grid { display: grid; gap: 24px; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.card_grid.col2 { grid-template-columns: repeat(2, 1fr); }
+.card_grid.col3 { grid-template-columns: repeat(3, 1fr); }
+.card_grid.col4 { grid-template-columns: repeat(4, 1fr); }
+.card_grid.col5 { grid-template-columns: repeat(5, 1fr); }
+
+.card { border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.10); transition: transform 0.3s, box-shadow 0.3s; background: #fff; }
+.card:hover { transform: translateY(-6px); box-shadow: 0 12px 32px rgba(0,0,0,0.16); }
+.card a { display: block; text-decoration: none; color: inherit; }
+.card .card_img { width: 100%; height: 200px; object-fit: cover; display: block; background: #e8eef6; }
+.card .card_img_placeholder { width: 100%; height: 200px; display: flex; align-items: center; justify-content: center; font-size: 64px; background: linear-gradient(135deg, #35528C, #5FA65D); }
+.card .card_body { padding: 20px; }
+.card .card_body h4 { font-size: 18px; font-weight: 700; color: #0a173e; margin-bottom: 8px; }
+.card .card_body p  { font-size: 14px; color: #666; line-height: 1.7; }
+.card .card_badge { display: inline-block; padding: 4px 12px; background: #35528C; color: #fff; border-radius: 999px; font-size: 12px; font-weight: 700; margin-bottom: 10px; }
+.card .card_badge.green { background: #5FA65D; }
+.card .card_badge.red   { background: #BF3434; }
+
+/* 섹션 인트로 배너 */
+.intro_banner { width: 100%; min-height: 360px; background: linear-gradient(160deg, #0a173e 60%, #35528C 100%); display: flex; align-items: center; justify-content: center; text-align: center; padding: 60px 24px; }
+.intro_banner h1 { font-size: 56px; font-weight: 900; color: #fff; margin-bottom: 16px; }
+.intro_banner p  { font-size: 20px; color: rgba(255,255,255,0.85); font-weight: 300; }
+
+/* ── 관광9경 그리드 ───────────────────────────── */
+.nine_grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1200px; margin: 0 auto; padding: 0 24px 60px; }
+.nine_item { position: relative; border-radius: 16px; overflow: hidden; height: 260px; cursor: pointer; box-shadow: 0 4px 16px rgba(0,0,0,0.12); transition: transform 0.3s; }
+.nine_item:hover { transform: translateY(-4px); }
+.nine_item a { display: block; width: 100%; height: 100%; text-decoration: none; }
+.nine_item .nine_bg { width: 100%; height: 100%; background: linear-gradient(135deg, #35528C, #0a173e); display: flex; align-items: center; justify-content: center; font-size: 72px; }
+.nine_item .nine_overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 20px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); color: #fff; }
+.nine_item .nine_num { font-size: 12px; font-weight: 700; color: #5FA65D; margin-bottom: 4px; }
+.nine_item .nine_tit { font-size: 20px; font-weight: 800; }
+.nine_item .nine_sub { font-size: 13px; font-weight: 300; margin-top: 4px; opacity: 0.9; }
+
+/* ── 역사/문화 타임라인 ──────────────────────── */
+.timeline { max-width: 800px; margin: 0 auto; padding: 0 24px 60px; }
+.timeline_item { display: flex; gap: 24px; margin-bottom: 48px; }
+.timeline_year { min-width: 80px; text-align: center; }
+.timeline_year span { display: inline-block; background: #35528C; color: #fff; padding: 6px 12px; border-radius: 999px; font-weight: 700; font-size: 14px; }
+.timeline_body { flex: 1; border-left: 2px solid #e0e8f0; padding-left: 24px; padding-bottom: 24px; }
+.timeline_body h4 { font-size: 18px; font-weight: 700; color: #0a173e; margin-bottom: 8px; }
+.timeline_body p  { font-size: 14px; color: #555; line-height: 1.8; }
+
+/* ── 인물 카드 ───────────────────────────────── */
+.person_grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; max-width: 1200px; margin: 0 auto; padding: 0 24px 60px; }
+.person_card { text-align: center; padding: 32px 20px; border: 1px solid #e8eef6; border-radius: 16px; background: #fff; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+.person_icon { width: 80px; height: 80px; background: linear-gradient(135deg, #35528C, #5FA65D); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 40px; margin: 0 auto 16px; }
+.person_card h4 { font-size: 18px; font-weight: 800; color: #0a173e; margin-bottom: 4px; }
+.person_card .person_era { font-size: 13px; color: #5FA65D; font-weight: 600; margin-bottom: 12px; }
+.person_card p  { font-size: 14px; color: #666; line-height: 1.7; }
+
+/* ── 국가유산 목록 ────────────────────────────── */
+.heritage_list { max-width: 1200px; margin: 0 auto; padding: 0 24px 60px; }
+.heritage_item { display: flex; gap: 32px; padding: 32px 0; border-bottom: 1px solid #eee; align-items: flex-start; }
+.heritage_item:last-child { border-bottom: none; }
+.heritage_thumb { min-width: 200px; height: 150px; background: linear-gradient(135deg, #35528C20, #35528C40); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 56px; }
+.heritage_info h4 { font-size: 20px; font-weight: 800; color: #0a173e; margin-bottom: 8px; }
+.heritage_info .heritage_grade { display: inline-block; padding: 3px 10px; background: #BF3434; color: #fff; border-radius: 999px; font-size: 12px; font-weight: 700; margin-bottom: 10px; }
+.heritage_info p { font-size: 14px; color: #555; line-height: 1.8; }
+
+/* ── 추천 코스 ───────────────────────────────── */
+.course_wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px 60px; }
+.course_steps { display: flex; align-items: flex-start; gap: 0; flex-wrap: wrap; }
+.course_step { flex: 1; min-width: 180px; text-align: center; position: relative; padding: 0 8px; }
+.course_step::after { content: "→"; position: absolute; right: -12px; top: 30px; font-size: 24px; color: #35528C; font-weight: 700; }
+.course_step:last-child::after { display: none; }
+.step_num { width: 56px; height: 56px; background: #35528C; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 800; margin: 0 auto 12px; }
+.step_icon { font-size: 32px; margin-bottom: 8px; }
+.step_name { font-size: 15px; font-weight: 700; color: #0a173e; margin-bottom: 4px; }
+.step_time { font-size: 12px; color: #5FA65D; font-weight: 600; }
+.course_detail { margin-top: 40px; }
+.course_detail_item { border: 1px solid #e8eef6; border-radius: 16px; padding: 28px; margin-bottom: 20px; background: #fff; box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
+.course_detail_item h4 { font-size: 18px; font-weight: 800; color: #0a173e; margin-bottom: 8px; }
+.course_detail_item p  { font-size: 14px; color: #555; line-height: 1.8; }
+.course_map { width: 100%; height: 400px; border: none; border-radius: 12px; margin-top: 32px; }
+
+/* ── 포토 갤러리 ─────────────────────────────── */
+.photo_grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; max-width: 1200px; margin: 0 auto; padding: 0 24px 60px; }
+.photo_item { position: relative; border-radius: 10px; overflow: hidden; aspect-ratio: 1; background: linear-gradient(135deg, #35528C, #5FA65D); display: flex; align-items: center; justify-content: center; font-size: 48px; cursor: pointer; transition: transform 0.2s; }
+.photo_item:hover { transform: scale(1.03); }
+.photo_item .photo_overlay { position: absolute; inset: 0; background: rgba(0,0,0,0); transition: background 0.2s; display: flex; align-items: flex-end; padding: 12px; }
+.photo_item:hover .photo_overlay { background: rgba(0,0,0,0.4); }
+.photo_item .photo_caption { color: #fff; font-size: 13px; font-weight: 600; opacity: 0; transition: opacity 0.2s; }
+.photo_item:hover .photo_caption { opacity: 1; }
+
+/* ── 여행후기 / Q&A ──────────────────────────── */
+.review_list { max-width: 900px; margin: 0 auto; padding: 0 24px 60px; }
+.review_item { border: 1px solid #e8eef6; border-radius: 16px; padding: 28px; margin-bottom: 20px; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+.review_hd { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.review_hd h4 { font-size: 17px; font-weight: 700; color: #0a173e; }
+.review_meta { font-size: 13px; color: #888; }
+.review_stars { color: #f5c518; font-size: 16px; margin-bottom: 8px; }
+.review_body { font-size: 14px; color: #555; line-height: 1.8; }
+.review_tags { margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; }
+.review_tags span { padding: 3px 10px; background: #f0f4ff; color: #35528C; border-radius: 999px; font-size: 12px; font-weight: 600; }
+
+.qna_item { border: 1px solid #e8eef6; border-radius: 12px; overflow: hidden; margin-bottom: 12px; }
+.qna_q { background: #f6f9ff; padding: 18px 24px; font-weight: 700; color: #0a173e; display: flex; justify-content: space-between; align-items: center; cursor: pointer; }
+.qna_q::after { content: "＋"; font-size: 20px; color: #35528C; }
+.qna_a { padding: 18px 24px; font-size: 14px; color: #555; line-height: 1.8; border-top: 1px solid #e8eef6; background: #fff; }
+
+/* ── 불편신고 / contact 폼 ──────────────────── */
+.report_form, .contact_form { max-width: 800px; margin: 0 auto; padding: 0 24px 60px; }
+.form_section { background: #fff; border: 1px solid #e8eef6; border-radius: 16px; padding: 36px; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+.form_section h3 { font-size: 22px; font-weight: 800; color: #0a173e; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 2px solid #35528C; }
+.form_group { margin-bottom: 20px; }
+.form_group label { display: block; font-size: 14px; font-weight: 700; color: #1d2b52; margin-bottom: 8px; }
+.form_group input[type="text"],
+.form_group input[type="email"],
+.form_group input[type="tel"],
+.form_group select,
+.form_group textarea { width: 100%; padding: 12px 16px; border: 1px solid #d8e2f2; border-radius: 10px; font-family: 'FT', sans-serif; font-size: 14px; color: #333; transition: border-color 0.2s; box-sizing: border-box; }
+.form_group input:focus,
+.form_group select:focus,
+.form_group textarea:focus { outline: none; border-color: #35528C; }
+.form_group textarea { resize: vertical; min-height: 140px; }
+.form_group .required { color: #BF3434; }
+.form_submit { width: 100%; padding: 14px; background: #0a173e; color: #fff; border: none; border-radius: 10px; font-size: 16px; font-weight: 700; font-family: 'FT', sans-serif; cursor: pointer; transition: background 0.2s; margin-top: 8px; }
+.form_submit:hover { background: #35528C; }
+
+/* ── 소식/공지 목록 ─────────────────────────── */
+.news_list { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.news_item { display: flex; gap: 24px; padding: 24px 0; border-bottom: 1px solid #eee; align-items: flex-start; }
+.news_thumb { min-width: 120px; height: 90px; background: linear-gradient(135deg, #35528C, #5FA65D); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 36px; overflow: hidden; }
+.news_content h4 { font-size: 17px; font-weight: 700; color: #0a173e; margin-bottom: 8px; }
+.news_content p  { font-size: 14px; color: #666; line-height: 1.7; }
+.news_meta { display: flex; gap: 16px; margin-top: 8px; font-size: 12px; color: #999; }
+.news_badge { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 700; margin-right: 8px; }
+.news_badge.notice { background: #35528C; color: #fff; }
+.news_badge.event  { background: #5FA65D; color: #fff; }
+.news_badge.news   { background: #BF3434; color: #fff; }
+
+/* ── 숙박/쇼핑 카드 ─────────────────────────── */
+.shop_grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1200px; margin: 0 auto; padding: 0 24px 60px; }
+.shop_card { border: 1px solid #e8eef6; border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 2px 12px rgba(0,0,0,0.06); transition: transform 0.3s; }
+.shop_card:hover { transform: translateY(-4px); }
+.shop_card .shop_img { width: 100%; height: 180px; background: linear-gradient(135deg, #35528C20, #5FA65D30); display: flex; align-items: center; justify-content: center; font-size: 64px; }
+.shop_card .shop_body { padding: 20px; }
+.shop_card h4 { font-size: 17px; font-weight: 700; color: #0a173e; margin-bottom: 6px; }
+.shop_card .shop_tag { font-size: 12px; color: #5FA65D; font-weight: 600; margin-bottom: 8px; }
+.shop_card p  { font-size: 14px; color: #666; line-height: 1.7; }
+.shop_card .shop_price { margin-top: 12px; font-size: 15px; font-weight: 700; color: #BF3434; }
+
+/* ── 폰트 소개 (sub34) ────────────────────────── */
+.font_showcase { max-width: 1000px; margin: 0 auto; padding: 0 24px 60px; }
+.font_sample { background: #f6f9ff; border: 1px solid #e8eef6; border-radius: 16px; padding: 40px; margin-bottom: 24px; text-align: center; }
+.font_sample .fs_big { font-family: 'FT', sans-serif; font-weight: 700; font-size: 48px; color: #0a173e; line-height: 1.4; margin-bottom: 12px; }
+.font_sample .fs_med { font-family: 'FT', sans-serif; font-size: 24px; color: #35528C; margin-bottom: 8px; }
+.font_sample .fs_sml { font-family: 'FT', sans-serif; font-size: 16px; color: #555; }
+.font_dl_btn { display: inline-block; padding: 14px 40px; background: #35528C; color: #fff; border-radius: 10px; font-size: 16px; font-weight: 700; text-decoration: none; margin-top: 16px; transition: background 0.2s; }
+.font_dl_btn:hover { background: #0a173e; }
+
+/* ── 지도 wrap ───────────────────────────────── */
+.map_wrap { width: 100%; margin: 24px 0; border-radius: 12px; overflow: hidden; }
+.map_wrap iframe { display: block; width: 100%; border: none; }
+
+/* ── 유틸 ────────────────────────────────────── */
+.sec_divider { max-width: 1200px; margin: 0 auto; border: none; border-top: 1px solid #eee; }
+.txt_center { text-align: center; }
+.mt20 { margin-top: 20px; }
+.mt40 { margin-top: 40px; }
+.mb40 { margin-bottom: 40px; }
+.color_blue { color: #35528C; }
+.color_green { color: #5FA65D; }
+.color_red   { color: #BF3434; }
+
+/* ── 반응형 ─────────────────────────────────── */
+@media (max-width: 900px) {
+    .card_grid.col3, .card_grid.col4, .card_grid.col5 { grid-template-columns: repeat(2, 1fr); }
+    .nine_grid { grid-template-columns: repeat(2, 1fr); }
+    .person_grid { grid-template-columns: repeat(2, 1fr); }
+    .shop_grid   { grid-template-columns: repeat(2, 1fr); }
+    .photo_grid  { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 600px) {
+    .card_grid.col2, .card_grid.col3, .card_grid.col4, .card_grid.col5 { grid-template-columns: 1fr; }
+    .nine_grid   { grid-template-columns: 1fr; }
+    .person_grid { grid-template-columns: 1fr; }
+    .shop_grid   { grid-template-columns: 1fr; }
+    .photo_grid  { grid-template-columns: repeat(2, 1fr); }
+    .heritage_item { flex-direction: column; }
+    .course_steps { flex-direction: column; }
+    .course_step::after { content: "↓"; right: auto; left: 50%; top: auto; }
+    .intro_banner h1 { font-size: 36px; }
+}

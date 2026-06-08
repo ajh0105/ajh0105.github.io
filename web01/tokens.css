@@ -1,0 +1,107 @@
+@charset "utf-8";
+/* ================================================================
+   tokens.css — Design System Variables
+   청도군 문화관광 웹사이트 디자인 토큰
+================================================================ */
+:root {
+  /* ── Brand / Primary (Navy) ── */
+  --c-navy-900:#071026;
+  --c-navy-800:#0a173e;
+  --c-navy-700:#19273f;
+  --c-navy-600:#1e3a6e;
+  --c-primary:#35528C;
+  --c-primary-hover:#0a173e;
+  --c-primary-100:#eef2fa;
+  --c-primary-50:#f5f8ff;
+
+  /* ── Secondary (Green) / Accent (Red) ── */
+  --c-green:#5FA65D;
+  --c-green-light:#7dd47b;
+  --c-green-deep:#326831;
+  --c-red:#BF3434;
+  --c-red-deep:#7a1f1f;
+
+  /* ── Accent — 청도 반시 / 와인 ── */
+  --c-persimmon:#e8732c;
+  --c-wine:#7a2c3e;
+
+  /* ── Surface / Neutral ── */
+  --c-bg:#ffffff;
+  --c-bg-alt:#f5f8ff;
+  --c-bg-dark:#0a173e;
+  --c-surface:#ffffff;
+  --c-border:#e4ecf7;
+  --c-border-strong:#e0e6f0;
+  --c-line:#eeeeee;
+
+  /* ── Text ── */
+  --c-text:#1f1f1f;
+  --c-text-strong:#0a173e;
+  --c-text-mute:#777777;
+  --c-text-faint:#aaaaaa;
+  --c-text-on-dark:#ffffff;
+  --c-text-on-dark-mute:rgba(255,255,255,0.62);
+  --c-text-on-dark-faint:rgba(255,255,255,0.38);
+
+  /* ── Typography ── */
+  --ff-display:'GS','Apple SD Gothic Neo',sans-serif;
+  --ff-body:'FT','Apple SD Gothic Neo',sans-serif;
+  --fw-thin:100; --fw-light:300; --fw-regular:400;
+  --fw-medium:500; --fw-semibold:600; --fw-bold:700;
+  --fw-extrabold:800; --fw-black:900;
+
+  --fs-echo:96px;
+  --fs-hero:88px;
+  --fs-d1:54px;
+  --fs-d2:44px;
+  --fs-d3:32px;
+  --fs-h:24px;
+  --fs-lg:20px;
+  --fs-md:16px;
+  --fs-base:15px;
+  --fs-sm:13px;
+  --fs-xs:11px;
+
+  --lh-tight:1.2;
+  --lh-snug:1.45;
+  --lh-normal:1.7;
+  --lh-loose:2;
+  --ls-eyebrow:0.22em;
+  --ls-label:0.28em;
+
+  /* ── Spacing (8px base) ── */
+  --sp-1:4px;  --sp-2:8px;  --sp-3:12px; --sp-4:16px; --sp-5:20px;
+  --sp-6:24px; --sp-7:32px; --sp-8:40px; --sp-9:48px; --sp-10:56px;
+  --sp-12:64px; --sp-14:80px; --sp-16:88px; --sp-20:120px;
+  --section-pad:88px;
+  --container:1280px;
+  --container-pad:36px;
+
+  /* ── Radius ── */
+  --r-sm:8px; --r-md:12px; --r-lg:16px; --r-xl:22px; --r-pill:999px;
+
+  /* ── Shadow ── */
+  --sh-card:0 2px 16px rgba(0,0,0,0.07);
+  --sh-card-hover:0 12px 36px rgba(53,82,140,0.16);
+  --sh-lift:0 24px 52px rgba(0,0,0,0.22);
+  --sh-focus:0 0 0 3px rgba(53,82,140,0.1);
+  --sh-focus-green:0 0 0 3px rgba(95,166,93,0.12);
+
+  /* ── Motion ── */
+  --ease:cubic-bezier(0.22,0.61,0.36,1);
+  --t-fast:0.25s; --t-base:0.3s; --t-slow:0.6s;
+
+  /* ── Z-index ── */
+  --z-header:90; --z-dropdown:100; --z-overlay:500;
+
+  /* ── Gradients ── */
+  --g-blue:linear-gradient(150deg,#2d4680 0%,#1a2d56 100%);
+  --g-green:linear-gradient(150deg,#4d9b4b 0%,#326831 100%);
+  --g-red:linear-gradient(150deg,#b03030 0%,#7a1f1f 100%);
+  --g-gold:linear-gradient(150deg,#7a5c2a 0%,#52391a 100%);
+  --g-teal:linear-gradient(150deg,#1c5c70 0%,#0e3d4d 100%);
+  --g-hero:linear-gradient(160deg,#071026 0%,#0a173e 40%,#1e3a6e 80%,#35528C 100%);
+  --g-hero-green:linear-gradient(160deg,#0e3318 0%,#1a5c2a 45%,#2d8040 80%,#5FA65D 100%);
+  --g-overlay-dark:linear-gradient(rgba(0,0,0,0.15),rgba(0,0,0,0.55));
+  --g-overlay-bottom:linear-gradient(transparent 38%,rgba(0,0,0,0.72) 100%);
+}

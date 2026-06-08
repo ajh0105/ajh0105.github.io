@@ -25,13 +25,9 @@
 
 .page_title::before,
 .page_title::after {
-    font-size: 100px;
-    display: inline-block;
-    margin-top: 10px;
+    content: '';
+    display: none;
 }
-
-.page_title::before { content: '\201C'; }
-.page_title::after  { content: '\201D'; }
 
 /* PAGE GRID */
 .page_grid {

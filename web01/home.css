@@ -1,0 +1,593 @@
+@charset "utf-8";
+/* ================================================================
+   home.css — 메인 인덱스 페이지 전용 스타일
+================================================================ */
+
+/* ────────────────────────────────────────────
+   01. HERO SLIDER (순수 CSS radio)
+──────────────────────────────────────────── */
+.hero { position:relative; height:100vh; min-height:600px; overflow:hidden; }
+
+/* radio 숨김 */
+.hero__radio { display:none; }
+
+/* 슬라이드 */
+.hero__track {
+  display:flex;
+  height:100%;
+  will-change:transform;
+  transition:transform 0.75s cubic-bezier(0.22,0.61,0.36,1);
+}
+.hero__slide {
+  flex:0 0 100vw;
+  width:100vw;
+  position:relative;
+  overflow:hidden;
+}
+.hero__slide-bg {
+  width:100%; height:100%;
+  object-fit:cover;
+  display:block;
+}
+.hero__slide-veil {
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to right,
+    rgba(7,16,38,0.72) 0%,
+    rgba(7,16,38,0.42) 50%,
+    transparent 100%
+  );
+}
+.hero__slide-content {
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:0 var(--sp-14);
+  max-width:680px;
+}
+.hero__badge {
+  display:inline-flex;
+  align-items:center;
+  gap:var(--sp-2);
+  background:rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.22);
+  border-radius:var(--r-pill);
+  padding:6px 18px;
+  font-size:var(--fs-xs);
+  font-weight:var(--fw-bold);
+  letter-spacing:var(--ls-label);
+  color:rgba(255,255,255,0.82);
+  text-transform:uppercase;
+  margin-bottom:var(--sp-5);
+  width:fit-content;
+}
+.hero__title {
+  font-family:var(--ff-display);
+  font-size:clamp(40px,6vw,var(--fs-hero));
+  font-weight:var(--fw-black);
+  color:#fff;
+  line-height:var(--lh-tight);
+  margin:0 0 var(--sp-5);
+  word-break:keep-all;
+}
+.hero__title em {
+  font-style:normal;
+  color:rgba(142,176,232,0.9);
+}
+.hero__desc {
+  font-size:clamp(14px,1.6vw,var(--fs-lg));
+  color:rgba(255,255,255,0.72);
+  line-height:var(--lh-normal);
+  margin:0 0 var(--sp-8);
+  word-break:keep-all;
+}
+.hero__btns { display:flex; gap:var(--sp-3); flex-wrap:wrap; }
+
+/* 이전/다음 화살표 버튼 */
+.hero__arrow {
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.2);
+  color:#fff;
+  font-size:22px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  z-index:3;
+  transition:background var(--t-fast), transform var(--t-fast);
+  backdrop-filter:blur(4px);
+}
+.hero__arrow:hover {
+  background:rgba(255,255,255,0.25);
+  transform:translateY(-50%) scale(1.08);
+}
+.hero__arrow--prev { left:var(--sp-8); }
+.hero__arrow--next { right:var(--sp-8); }
+
+/* 인디케이터 (하단 점) - JS로 .is-active 토글 */
+.hero__dots {
+  position:absolute;
+  bottom:var(--sp-7);
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:var(--sp-2);
+  z-index:2;
+}
+.hero__dot {
+  width:8px;
+  height:8px;
+  border-radius:var(--r-pill);
+  background:rgba(255,255,255,0.35);
+  border:none;
+  cursor:pointer;
+  transition:all var(--t-fast);
+  padding:0;
+}
+.hero__dot.is-active {
+  width:24px;
+  background:#fff;
+}
+
+/* 슬라이더 번호 */
+.hero__count {
+  position:absolute;
+  bottom:var(--sp-7);
+  right:var(--sp-12);
+  font-size:var(--fs-xs);
+  font-weight:var(--fw-bold);
+  color:rgba(255,255,255,0.45);
+  letter-spacing:0.1em;
+  z-index:2;
+}
+
+/* ────────────────────────────────────────────
+   02. 통계 바 (Stats Bar)
+──────────────────────────────────────────── */
+.stat-bar {
+  background:var(--c-navy-800);
+  padding:var(--sp-7) 0;
+}
+.stat-bar__inner {
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+}
+.stat-item {
+  text-align:center;
+  padding:var(--sp-5) var(--sp-4);
+  border-right:1px solid rgba(255,255,255,0.08);
+}
+.stat-item:last-child { border-right:none; }
+.stat-item__num {
+  font-family:var(--ff-display);
+  font-size:var(--fs-d1);
+  font-weight:var(--fw-black);
+  color:#fff;
+  line-height:1;
+  margin-bottom:6px;
+}
+.stat-item__num sup {
+  font-size:var(--fs-d3);
+  vertical-align:super;
+  color:rgba(142,176,232,0.8);
+  font-weight:var(--fw-bold);
+}
+.stat-item__label {
+  font-size:var(--fs-sm);
+  color:rgba(255,255,255,0.5);
+  letter-spacing:0.04em;
+}
+
+/* ────────────────────────────────────────────
+   03. 청도 5GO! 테마 스트립
+──────────────────────────────────────────── */
+.go5-strip {
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:0;
+}
+.go5-card {
+  position:relative;
+  height:380px;
+  overflow:hidden;
+  display:flex;
+  align-items:flex-end;
+  cursor:pointer;
+  text-decoration:none;
+}
+.go5-card__bg {
+  position:absolute;
+  inset:0;
+  transition:transform var(--t-slow) var(--ease);
+}
+.go5-card:hover .go5-card__bg { transform:scale(1.08); }
+.go5-card--wine .go5-card__bg   { background:linear-gradient(160deg,#3d0a14,#7a2c3e); }
+.go5-card--rail .go5-card__bg   { background:linear-gradient(160deg,#0a2d5c,#1e5caa); }
+.go5-card--temple .go5-card__bg { background:linear-gradient(160deg,#0e2d1a,#2d7040); }
+.go5-card--fest .go5-card__bg   { background:linear-gradient(160deg,#3a2000,#e8732c); }
+.go5-card--nine .go5-card__bg   { background:linear-gradient(160deg,#1a1a2e,#35528C); }
+.go5-card__icon {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%) scale(1);
+  font-size:80px;
+  opacity:0.12;
+  transition:opacity var(--t-base),transform var(--t-base);
+  pointer-events:none;
+}
+.go5-card:hover .go5-card__icon { opacity:0.22; transform:translate(-50%,-50%) scale(1.15); }
+.go5-card__content {
+  position:relative;
+  z-index:2;
+  padding:var(--sp-6);
+  width:100%;
+  background:linear-gradient(transparent,rgba(0,0,0,0.62));
+}
+.go5-card__num {
+  font-family:var(--ff-display);
+  font-size:60px;
+  font-weight:var(--fw-black);
+  color:rgba(255,255,255,0.12);
+  line-height:1;
+  margin-bottom:var(--sp-2);
+}
+.go5-card__tag {
+  display:inline-block;
+  font-size:var(--fs-xs);
+  font-weight:var(--fw-bold);
+  letter-spacing:var(--ls-label);
+  color:rgba(255,255,255,0.6);
+  text-transform:uppercase;
+  margin-bottom:var(--sp-2);
+}
+.go5-card__title {
+  font-family:var(--ff-display);
+  font-size:var(--fs-h);
+  font-weight:var(--fw-black);
+  color:#fff;
+  line-height:var(--lh-snug);
+  margin:0;
+}
+.go5-card__arrow {
+  position:absolute;
+  bottom:var(--sp-5);
+  right:var(--sp-5);
+  width:36px;
+  height:36px;
+  background:rgba(255,255,255,0.12);
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:16px;
+  color:rgba(255,255,255,0.6);
+  opacity:0;
+  transform:translateX(-8px);
+  transition:all var(--t-fast);
+}
+.go5-card:hover .go5-card__arrow { opacity:1; transform:translateX(0); color:#fff; }
+
+/* ────────────────────────────────────────────
+   04. 피처 스플릿 (큰 이미지 + 텍스트)
+──────────────────────────────────────────── */
+.feature-split {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:480px;
+}
+.feature-split--reverse .feature-split__img { order:2; }
+.feature-split--reverse .feature-split__body { order:1; }
+
+.feature-split__img {
+  position:relative;
+  overflow:hidden;
+}
+.feature-split__img img {
+  width:100%; height:100%;
+  object-fit:cover;
+  display:block;
+  transition:transform var(--t-slow) var(--ease);
+}
+.feature-split:hover .feature-split__img img { transform:scale(1.04); }
+
+.feature-split__body {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:var(--sp-14);
+}
+.feature-split__body--dark {
+  background:var(--c-navy-900);
+}
+.feature-split__body--navy {
+  background:var(--c-navy-800);
+}
+.feature-split__eyebrow {
+  font-size:var(--fs-xs);
+  font-weight:var(--fw-bold);
+  letter-spacing:var(--ls-label);
+  text-transform:uppercase;
+  color:rgba(142,176,232,0.7);
+  margin-bottom:var(--sp-4);
+}
+.feature-split__title {
+  font-family:var(--ff-display);
+  font-size:var(--fs-d2);
+  font-weight:var(--fw-black);
+  color:#fff;
+  margin:0 0 var(--sp-5);
+  line-height:var(--lh-snug);
+  word-break:keep-all;
+}
+.feature-split__desc {
+  font-size:var(--fs-base);
+  color:rgba(255,255,255,0.62);
+  line-height:var(--lh-normal);
+  margin:0 0 var(--sp-8);
+  word-break:keep-all;
+}
+.feature-split__kv {
+  display:flex;
+  gap:var(--sp-7);
+  margin-bottom:var(--sp-8);
+}
+.feature-split__kv-item span:first-child {
+  display:block;
+  font-family:var(--ff-display);
+  font-size:var(--fs-d3);
+  font-weight:var(--fw-black);
+  color:#fff;
+  line-height:1;
+}
+.feature-split__kv-item span:last-child {
+  font-size:var(--fs-xs);
+  color:rgba(255,255,255,0.42);
+  letter-spacing:0.04em;
+}
+
+/* ────────────────────────────────────────────
+   05. 축제 그리드
+──────────────────────────────────────────── */
+.fest-grid {
+  display:grid;
+  grid-template-columns:1.4fr 1fr;
+  grid-template-rows:auto auto;
+  gap:var(--sp-3);
+}
+.fest-card {
+  position:relative;
+  overflow:hidden;
+  border-radius:var(--r-lg);
+  cursor:pointer;
+  display:block;
+  text-decoration:none;
+}
+.fest-card--main { grid-row:1 / 3; }
+.fest-card__img {
+  width:100%; height:100%;
+  min-height:200px;
+  object-fit:cover;
+  display:block;
+  transition:transform var(--t-slow) var(--ease);
+}
+.fest-card--main .fest-card__img { min-height:440px; }
+.fest-card:hover .fest-card__img { transform:scale(1.06); }
+.fest-card__overlay {
+  position:absolute;
+  inset:0;
+  background:var(--g-overlay-bottom);
+}
+.fest-card__body {
+  position:absolute;
+  bottom:0; left:0; right:0;
+  padding:var(--sp-5) var(--sp-6);
+}
+.fest-card__date {
+  font-size:var(--fs-xs);
+  font-weight:var(--fw-bold);
+  letter-spacing:0.06em;
+  color:rgba(255,255,255,0.6);
+  text-transform:uppercase;
+  margin-bottom:var(--sp-2);
+}
+.fest-card__title {
+  font-family:var(--ff-display);
+  font-size:var(--fs-h);
+  font-weight:var(--fw-black);
+  color:#fff;
+  margin:0;
+  word-break:keep-all;
+}
+.fest-card--main .fest-card__title { font-size:var(--fs-d3); }
+.fest-card__badge {
+  position:absolute;
+  top:var(--sp-4); left:var(--sp-4);
+}
+
+/* ────────────────────────────────────────────
+   06. 관광 9경 (다크 그리드)
+──────────────────────────────────────────── */
+.nine-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2px;
+}
+.nine-card {
+  position:relative;
+  height:260px;
+  overflow:hidden;
+  display:flex;
+  align-items:flex-end;
+  text-decoration:none;
+  cursor:pointer;
+}
+.nine-card__bg {
+  position:absolute;
+  inset:0;
+  background:var(--c-navy-800);
+  transition:transform var(--t-slow) var(--ease);
+}
+.nine-card__bg img {
+  width:100%; height:100%;
+  object-fit:cover;
+  opacity:0.65;
+  transition:opacity var(--t-base);
+}
+.nine-card:hover .nine-card__bg { transform:scale(1.06); }
+.nine-card:hover .nine-card__bg img { opacity:0.85; }
+.nine-card__body {
+  position:relative;
+  z-index:2;
+  padding:var(--sp-5) var(--sp-6);
+  width:100%;
+  background:linear-gradient(transparent,rgba(0,0,0,0.7));
+}
+.nine-card__num {
+  font-family:var(--ff-display);
+  font-size:var(--fs-xs);
+  font-weight:var(--fw-bold);
+  letter-spacing:var(--ls-label);
+  color:rgba(255,255,255,0.45);
+  margin-bottom:var(--sp-1);
+}
+.nine-card__name {
+  font-family:var(--ff-display);
+  font-size:var(--fs-lg);
+  font-weight:var(--fw-black);
+  color:#fff;
+  margin:0 0 4px;
+}
+.nine-card__sub {
+  font-size:var(--fs-xs);
+  color:rgba(255,255,255,0.5);
+}
+
+/* ────────────────────────────────────────────
+   07. 빠른 메뉴 (Quick Links)
+──────────────────────────────────────────── */
+.quick-grid {
+  display:grid;
+  grid-template-columns:repeat(8,1fr);
+  gap:var(--sp-4);
+}
+.quick-item {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:var(--sp-3);
+  padding:var(--sp-6) var(--sp-3);
+  background:#fff;
+  border:1.5px solid var(--c-border);
+  border-radius:var(--r-xl);
+  text-decoration:none;
+  color:var(--c-text-strong);
+  transition:all var(--t-fast) var(--ease);
+  cursor:pointer;
+}
+.quick-item:hover {
+  border-color:var(--c-primary);
+  background:var(--c-primary-50);
+  transform:translateY(-6px);
+  box-shadow:var(--sh-card-hover);
+  color:var(--c-primary);
+}
+.quick-item__icon {
+  width:56px;
+  height:56px;
+  background:var(--c-bg-alt);
+  border-radius:var(--r-lg);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:26px;
+  transition:background var(--t-fast);
+}
+.quick-item:hover .quick-item__icon { background:var(--c-primary-100); }
+.quick-item__icon img { width:36px; height:36px; object-fit:contain; }
+.quick-item__label {
+  font-size:var(--fs-xs);
+  font-weight:var(--fw-bold);
+  text-align:center;
+  letter-spacing:0.02em;
+  white-space:nowrap;
+}
+
+/* ────────────────────────────────────────────
+   08. 뉴스/소식 그리드
+──────────────────────────────────────────── */
+.news-grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:var(--sp-6);
+}
+.news-card {
+  background:#fff;
+  border-radius:var(--r-lg);
+  overflow:hidden;
+  box-shadow:var(--sh-card);
+  transition:box-shadow var(--t-base),transform var(--t-base);
+  display:block;
+  text-decoration:none;
+  color:inherit;
+}
+.news-card:hover {
+  box-shadow:var(--sh-card-hover);
+  transform:translateY(-6px);
+}
+.news-card__img {
+  width:100%; aspect-ratio:16/9;
+  object-fit:cover;
+  display:block;
+  background:var(--c-bg-alt);
+}
+.news-card__body { padding:var(--sp-5) var(--sp-6); }
+.news-card__meta {
+  display:flex;
+  align-items:center;
+  gap:var(--sp-2);
+  margin-bottom:var(--sp-3);
+}
+.news-card__title {
+  font-family:var(--ff-display);
+  font-size:var(--fs-md);
+  font-weight:var(--fw-bold);
+  color:var(--c-text-strong);
+  margin:0 0 var(--sp-2);
+  line-height:var(--lh-snug);
+  word-break:keep-all;
+  overflow:hidden;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+}
+.news-card:hover .news-card__title { color:var(--c-primary); }
+.news-card__desc {
+  font-size:var(--fs-sm);
+  color:var(--c-text-mute);
+  line-height:var(--lh-normal);
+  overflow:hidden;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+}
+.news-card__date { font-size:var(--fs-xs); color:var(--c-text-faint); margin-top:var(--sp-3); }
+
+/* ────────────────────────────────────────────
+   MORE 버튼 래퍼
+──────────────────────────────────────────── */
+.more-wrap {
+  display:flex;
+  justify-content:center;
+  margin-top:var(--sp-9);
+}

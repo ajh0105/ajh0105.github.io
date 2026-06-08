@@ -1,466 +1,176 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 ,maximum-scale=1.0, minimum-scale=1.0,user-scalable=no,target-densitydpi=medium-dpi">
-    <title>청도군 문화 관광</title>
-    <!-- 메타포: 바로 가기 아이콘, 홈페이지 제목, 검색어, 설명 -->
-    <meta name="title" content="청도군청 관광문화 홈페이지">
-    <meta name="keywords" content="청도관광문화, 청도군청 관광문화, 청도군 여행정보">
-    <meta name="description" content="청도관광문화 홈페이지">
-    <!-- 오픈 그래프 -->
-    <meta property="og:locale" content="ko_KR">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="청도군청 관광문화 홈페이지">
-    <meta property="og:description" content="청도관광문화 홈페이지">
-    <meta property="og:site_name" content="청도관광문화">
-    <meta property="og:url" content="https://ajh0105.github.io/web01">   <!-- 실제 사이트 주소로 변경 -->
-    <meta property="og:image" content="https://ajh0105.github.io/images/og-image.jpg">
-    <!-- 폰트, 초기화(reset.css), 아이콘 셋 -->
-    <link rel="stylesheet" href="reset.css">
-    <!-- <link rel="stylesheet" href="normalize.css"> -->
-    <link rel="stylesheet" href="font2.css">
-    <link rel="stylesheet" href="iconset.css">
-    <style>
-    h1, h2, h3, h4, h5, h6 { font-family: 'FT', sans-serif; line-height:1.6; padding-top:0.6em; padding-bottom:0.6em; }
-    h1 { font-weight: 900; font-size:72px; }
-    h2 { font-weight: 800; font-size:60px; }
-    h3 { font-weight: 700; font-size:48px; }
-    h4 { font-weight: 600; font-size:36px; }
-    h5 { font-weight: 500; font-size:20px; }
-    h6 { font-weight: 400; font-size:12px; }
-    p { font-family: 'FT', sans-serif; font-weight:400; }
-    p.bold { font-weight:700; }
-    p.light { font-weight: 300;}
-    p.GS { font-family: 'GS'; font-weight: 900; }
-    .sub_tit { font-size:100px; clear:both; text-align: center;
-    margin-top:100px; } 
-    </style> 
-    <link rel="stylesheet" href="common.css">
-    <link rel="stylesheet" href="sub_common.css">
-    <link rel="stylesheet" href="responsive.css">
-    <style>
-    #lnb {
-        min-height:150vh;
-    }
-
-    #vs1 {
-        background-image: url("./images/bg_visual-9.jpg");
-        background-size: cover;
-    }   
-
-    .vs_tit {
-        color:#ffffff;
-    }
-
-    .vs_sub_tit {
-        color: #ffffff;
-    }
-
-    .page_tit_box {
-        border-top:1px solid #bbb;
-        border-right: 1px solid #bbb;
-    }
-
-    .sec_tit {
-        font-size: 20px;
-    }
-
-    .form_wrap {
-        width: 960px;
-        margin: 0 auto;
-        position: relative;
-    }
-
-    .form1 {
-        clear:both;
-    }
-
-    .form_con {
-        width: 900px;
-        background-color: #ececec;
-        padding: 24px;
-        padding-top: 48px;
-        padding-bottom: 48px;
-        height: 400px;
-        overflow-y: auto;
-    }
-
-    .cate_tit {
-        font-size: 18px;
-    }
-
-    .txt_ctrl {
-        display:block;
-        width: 80%;
-        line-height: 48px;
-        margin-bottom: 32px;
-        padding-left: 14px;
-    }
-
-    .btn_con {
-        display: flex;
-        gap: 16px;
-        justify-content: space-between;
-    }
-
-    .btn_ctrl {
-        display: block;
-        border-radius: 8px;
-        line-height: 36px;
-        background-color: #0b1d3f;
-        color: #fff;
-        text-align: center;
-        border: none;
-        outline: none;
-        padding: 0 14px;
-        cursor: pointer;
-        padding-left: 28px;
-        background-position: 10px center;
-        background-repeat: no-repeat;
-    }
-
-    .btn_ctrl.login {
-        padding-left: 20px;
-    }
-
-    .btn_ctrl.join {
-        background-image: url("./images/login-icon-mem.png");
-    }
-
-    .btn_ctrl.find {
-        background-image: url("./images/login-icon-search.png");
-    }
-
-    .check_group {
-        clear: both;
-        height: 90px;
-        line-height: 40px;
-    }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원가입 - 청도군 문화관광</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="font2.css">
+  <link rel="stylesheet" href="iconset.css">
+  <link rel="stylesheet" href="tokens.css">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="auth.css">
 </head>
-<body>
-<div class="wrap">
-    <header id="hd">
-        <div class="container">
-            <a href="/" class="logo">
-                <img src="./images/logo.png" alt="청도군 로고">
-            </a>
-            <input type="checkbox" id="ck1" class="ck_item">
-            <div id="smart">
-                <label class="smart_wrap" for="ck1">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </label>
-            </div>
-            <nav class="gnb">
-                <ul class="menu">
-                    <li>
-                        <a href="sub1.html" class="dp1">청도5GO!</a>
-                        <ul class="sub">
-                             <li><a href="sub11.html">보Go!</a></li>
-                            <li><a href="sub12.html">먹Go!</a></li>
-                            <li><a href="sub13.html">즐기Go!</a></li>
-                            <li><a href="#">쇼핑하Go!</a></li>
-                            <li><a href="#">숙박하Go!</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="sub2.html" class="dp1">청도관광9경</a>
-                        <ul class="sub">
-                            <li><a href="sub21.html">청도읍성</a></li>
-                            <li><a href="sub22.html">새마을운동 발상지기념공원</a></li>
-                            <li><a href="#">청도 신화랑풍류마을</a></li>
-                            <li><a href="#">운문사</a></li>
-                            <li><a href="#">섶마리한옥마을</a></li>
-                            <li><a href="#">낙대폭포</a></li>
-                            <li><a href="#">유등연지</a></li>
-                            <li><a href="#">와인터널</a></li>
-                            <li><a href="#">청도레일바이크</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="sub3.html" class="dp1">역사/문화</a>
-                        <ul class="sub">
-                            <li><a href="sub31.html">국가유산</a></li>
-                            <li><a href="sub32.html">청도의 인물</a></li>
-                            <li><a href="#">역사와 전설</a></li>
-                            <li><a href="#">청도읍성체(무료폰트)</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="sub4.html" class="dp1">추천관광코스</a>
-                        <ul class="sub">
-                            <li><a href="sub41.html">연인 추천 코스</a></li>
-                            <li><a href="sub42.html">가족 추천 코스</a></li>
-                            <li><a href="#">계절별 추천 코스</a></li>
-                            <li><a href="#">청도군민의 추천 코스</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="sub5.html" class="dp1">커뮤니티</a>
-                        <ul class="sub">
-                            <li><a href="sub51.html">주요 소식</a></li>
-                            <li><a href="sub52.html">나만의 청도군 사진전</a></li>
-                            <li><a href="#">여행후기</a></li>
-                            <li><a href="#">여행 Q&A</a></li>
-                            <li><a href="#">불편신고</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-            <nav class="tnb">
-                <a href="log.html">로그인</a>
-                <a href="member.html">회원가입</a>
-                <a href="contact.html">Contact US</a>
-            </nav>
+<body class="auth-page">
+
+  <div class="auth-topbar">
+    <a href="index.html"><img src="./images/logo.png" alt="청도군 문화관광"></a>
+    <div class="auth-topbar__links">
+      <a href="index.html">홈으로</a>
+      <span class="sep">|</span>
+      <a href="log.html">로그인</a>
+      <span class="sep">|</span>
+      <a href="contact.html">Contact US</a>
+    </div>
+  </div>
+
+  <div class="auth-wrap">
+
+    <div class="auth-panel auth-panel--signup">
+      <span class="auth-panel__bg-text">JOIN US</span>
+      <span class="auth-panel__badge">회원 가입 혜택</span>
+      <h1>청도 여행의<br>모든 것을<br>함께하세요</h1>
+      <p>
+        청도군 관광문화 회원이 되면<br>
+        더 많은 혜택과 서비스를<br>
+        이용할 수 있습니다.
+      </p>
+      <div class="auth-benefits">
+        <div class="auth-benefit">
+          <div class="auth-benefit__icon">📸</div>
+          나만의 청도 사진 공유 및 공모전 참여
         </div>
-    </header>
-    <main class="content">
-        <figure id="vs1">
-            <h2 class="vs_tit">청도군 관광문화</h2>
-            <h4 class="vs_sub_tit">- 이용안내 -</h4>
-        </figure>
-        <div class="content_wrap">
-            <aside id="left_bar">
-                <div class="lnb_tit_box">
-                    <h3 class="lnb_tit">이용안내</h3>
-                </div>
-                <nav id="lnb">
-                    <ul>
-                        <li><a href="log.html">로그인</a></li>
-                        <li><a href="member.html" class="active">회원가입</a></li>
-                        <li><a href="promotion.html">회원약관</a></li>
-                        <li><a href="privacy.html">개인정보처리방침</a></li>
-                    </ul>
-                </nav>
-            </aside>
-            <div class="content_art">
-                <div class="page_tit_box">
-                    <h3 class="page_tit">회원약관 동의</h3>
-                    <p class="breadcrumb"><a href="/">HOME</a> &gt; 
-                        <span>이용안내</span>
-                    &gt; <span>회원약관 동의</span></p>
-                </div>
-                <section class="con">
-                    <div class="form_wrap">
-                        <h3 class="sec_tit">회원약관 동의</h3>
-                        <form action="" id="agree_form" class="form1">
-                            <div class="form_con">
-                                <h4 class="cate_tit"><strong>제1조 (목적)</strong></h4>
-                                <p class="cate_con">본 약관은 [회사명] (이하 “회사”)가 제공하는 [서비스명] 및 관련 제반 서비스의 이용과 관련하여 회사와 회원 간의 권리, 의무 및 책임사항, 기타 필요한 사항을 규정함을 목적으로 합니다.
-                                <h4 class="cate_tit"><strong>제2조 (정의)</strong></h4>
-                                <p class="cate_con">1. “서비스”라 함은 회사가 제공하는 모든 온라인 및 모바일 기반 서비스를 의미합니다.<br>
-                                2. “회원”이라 함은 본 약관에 동의하고 회원가입을 완료한 자를 말합니다.<br>
-                                3. “아이디(ID)”라 함은 회원 식별과 서비스 이용을 위하여 회원이 정하고 회사가 승인한 문자 또는 숫자의 조합을 말합니다.<br>
-                                4. “비밀번호”라 함은 회원 본인 확인을 위해 회원이 설정한 문자, 숫자, 특수문자의 조합을 말합니다.<br></p>
-                                <h4 class="cate_tit"><strong>제3조 (약관의 효력 및 변경)</strong></h4>
-                                <p class="cate_con">
-                                    1. 본 약관은 서비스 화면에 게시하거나 기타 방법으로 공지함으로써 효력을 발생합니다.<br>
-                                    2. 회사는 관련 법령을 위배하지 않는 범위에서 본 약관을 변경할 수 있습니다.<br>
-                                    3. 약관이 변경될 경우 회사는 변경 내용과 시행일자를 명시하여 사전에 공지합니다.<br>
-                                </p>
-                                <h4 class="cate_tit"><strong>제4조 (회원가입)</strong></h4>
-                                <p class="cate_con">
-                                    1. 회원가입은 이용자가 약관에 동의하고 회사가 정한 가입 양식에 따라 정보를 입력함으로써 이루어집니다.<br>
-                                    2. 회사는 다음 각 호에 해당하는 경우 회원가입을 거부할 수 있습니다.<br>
-                                    - 허위 정보를 기재한 경우<br>
-                                    - 타인의 명의를 도용한 경우<br>
-                                    - 기타 회사가 정한 요건을 충족하지 못한 경우<br>
-                                </p>
-                                <h4 class="cate_tit"><strong>제5조 (회원의 의무)</strong></h4>
-                                <p class="cate_con">
-                                    회원은 다음 행위를 하여서는 안 됩니다.<br>
-                                    1. 타인의 개인정보를 도용하는 행위<br>
-                                    2. 서비스 운영을 방해하는 행위<br>
-                                    3. 법령 또는 공서양속에 반하는 행위<br>
-                                    4. 회사 및 제3자의 권리를 침해하는 행위<br>
-                                </p>
-                                <h4 class="cate_tit"><strong>제6조 (서비스 이용 제한)</strong></h4>
-                                <p class="cate_con">
-                                    회사는 회원이 본 약관을 위반할 경우 사전 통보 없이 서비스 이용을 제한하거나 회원 자격을 상실시킬 수 있습니다.<br>
-                                </p>
-                                <h4 class="cate_tit"><strong>제7조 (계약 해지 및 탈퇴)</strong></h4>
-                                <p class="cate_con">
-                                    회원은 언제든지 서비스 내 회원탈퇴 기능을 통해 이용계약을 해지할 수 있습니다.<br>
-                                </p>
-                                <h4 class="cate_tit"><strong>제8조 (면책조항)</strong></h4>
-                                <p class="cate_con">
-                                    회사는 천재지변, 시스템 장애 등 불가항력적인 사유로 인한 서비스 중단에 대해 책임을 지지 않습니다.<br>
-                                </p>
-                                <h4 class="cate_tit"><strong>제9조 (준거법 및 관할법원)</strong></h4>
-                                <p class="cate_con">
-                                    본 약관은 대한민국 법을 준거법으로 하며, 분쟁 발생 시 회사의 본점 소재지를 관할하는 법원을 전속 관할법원으로 합니다.</p>
-                                </p>
-                            </div>    
-                            <div class="check_group">
-                                <input type="checkbox" name="agree_ck1" id="agree_ck1" class="agree_ck">
-                                <label for="agree_ck1">약관에 동의</label>
-                            </div>
-                            <section class="con">
-                    <div class="form_wrap">
-                        <h3 class="sec_tit">개인정보처리방침</h3>
-                        <form action="" id="agree_form" class="form1">
-                            <div class="form_con">
-                                <h4 class="cate_tit"><strong>1. 개인정보의 수집 및 이용 목적</strong></h4>
-                                <p class="cate_con">회사는 다음의 목적을 위하여 개인정보를 수집 및 이용합니다.<br>
-                                    - 회원 가입 및 관리<br>
-                                    - 서비스 제공 및 운영<br>
-                                    - 고객 문의 및 민원 처리<br>
-                                    - 서비스 개선 및 마케팅 활용<br>
-                                </p>
-                                <h4 class="cate_tit"><strong>2. 수집하는 개인정보 항목</strong></h4>
-                                <p class="cate_con">
-                                    - 필수항목: 아이디, 비밀번호, 이름, 이메일, 휴대전화번호<br>
-                                    - 선택항목: 생년월일, 성별<br>
-                                    - 자동수집항목: IP주소, 쿠키, 서비스 이용 기록<br>
-                                </p>
-                                <h4 class="cate_tit"><strong>3. 개인정보의 보유 및 이용 기간</strong></h4>
-                                <p class="cate_con">
-                                    회사는 개인정보 수집 및 이용 목적이 달성된 후에는 해당 정보를 지체 없이 파기합니다.<br>
-                                    단, 관련 법령에 따라 보관이 필요한 경우 해당 기간 동안 보관합니다.<br>
-                                </p>
-                                <h4 class="cate_tit"><strong>4. 개인정보의 제3자 제공</strong></h4>
-                                <p class="cate_con">
-                                    회사는 이용자의 개인정보를 원칙적으로 외부에 제공하지 않습니다.<br>
-                                    다만, 법령에 근거하거나 이용자의 사전 동의를 받은 경우에는 예외로 합니다.<br>
-                                </p>
-                                <h4 class="cate_tit"><strong>5. 개인정보 처리의 위탁</strong></h4>
-                                <p class="cate_con">
-                                    회사는 원활한 서비스 제공을 위해 개인정보 처리 업무를 외부 업체에 위탁할 수 있으며, 위탁 시 관련 법령을 준수합니다.<br>
-                                    </p>
-                                <h4 class="cate_tit"><strong>6. 이용자의 권리</strong></h4>
-                                <p class="cate_con">
-                                    이용자는 언제든지 자신의 개인정보에 대해 열람, 수정, 삭제, 처리정지를 요청할 수 있습니다.<br>
-                                    </p>
-                                <h4 class="cate_tit"><strong>7. 개인정보의 파기 절차 및 방법</strong></h4>
-                                <p class="cate_con">
-                                    - 전자적 파일 형태: 복구 불가능한 방법으로 삭제<br>
-                                    - 종이 문서 형태: 분쇄 또는 소각<br>
-                                    </p>
-                                <h4 class="cate_tit"><strong>8. 개인정보 보호를 위한 조치</strong></h4>
-                                <p class="cate_con">
-                                    회사는 개인정보 보호를 위하여 기술적·관리적 보안 조치를 시행하고 있습니다.<br>
-                                    </p>
-                                <h4 class="cate_tit"><strong>9. 개인정보 보호책임자</strong></h4>
-                                <p class="cate_con">
-                                    - 책임자: [이름]<br>
-                                    - 소속/직위: [부서 / 직위]<br>
-                                    - 연락처: [이메일 / 전화번호]<br>
-                                    </p>
-                                <h4 class="cate_tit"><strong>10. 개인정보처리방침 변경</strong></h4>
-                                <p class="cate_con">
-                                    본 개인정보처리방침은 관련 법령 및 내부 정책에 따라 변경될 수 있으며, 변경 시 사전 공지합니다.
-                                    </p>
-                            </div>    
-                            <div class="check_group">
-                                <input type="checkbox" name="agree_ck2" id="agree_ck2" class="agree_ck">
-                                <label for="agree_ck2">개인정보처리 방침에 동의</label>
-                            </div>
-                            <div class="btn_con">
-                                <button class="btn_ctrl" type="button" onclick="fnc()">다음 단계</button>
-                            </div>
-                        </form>
-                        <script>
-                        function fnc() {
-                            var agree1 = document.getElementById("agree_ck1");
-                            var agree2 = document.getElementById("agree_ck2");
-
-                            if(!agree1.checked) {
-                                alert("회원약관에 동의해 주세요");
-                                agree1.focus();
-                                return;
-                            }
-
-                            if(!agree2.checked) {
-                                alert("개인정보처리 방침에 동의해 주세요");
-                                agree2.focus();
-                                return;
-                            }
-
-                            alert("회원가입 페이지로 이동합니다.");
-                            location.href = "join.html";
-                        }    
-                        </script>
-                    </div>
-                </section>
-            </div>
+        <div class="auth-benefit">
+          <div class="auth-benefit__icon">📝</div>
+          여행 후기 작성 및 여행 Q&amp;A 이용
         </div>
-    </main>             
-   <footer id="ft">
-         <div class="container">
-            <nav id="relation">
-                <ul>
-                    <li>
-                        <input type="radio" name="sel" id="ra11">
-                        <label for="ra11">관광사업소</label>
-                        <div class="sel" id="sel1">
-                            <a href="">기획예산담당관</a>
-                            <a href="">선택2</a>
-                            <a href="">선택3</a>
-                            <a href="">선택4</a>
-                            <a href="">선택5</a>
-                        </div>
-                    </li>
-                    <li>
-                        <input type="radio" name="sel" id="ra12">
-                        <label for="ra12">면/동</label>
-                        <div class="sel" id="sel2">
-                            <a href="">기획예산담당관</a>
-                            <a href="">선택2</a>
-                            <a href="">선택3</a>
-                            <a href="">선택4</a>
-                            <a href="">선택5</a>
-                        </div>
-                    </li>
-                    <li>
-                        <input type="radio" name="sel" id="ra13">
-                        <label for="ra13">시/군청</label>
-                        <div class="sel" id="sel3">
-                            <a href="">기획예산담당관</a>
-                            <a href="">선택2</a>
-                            <a href="">선택3</a>
-                            <a href="">선택4</a>
-                            <a href="">선택5</a>
-                        </div>
-                    </li>
-                    <li>
-                        <input type="radio" name="sel" id="ra14">
-                        <label for="ra14">패밀리사이트</label>
-                        <div class="sel" id="sel4">
-                            <a href="">기획예산담당관</a>
-                            <a href="">선택2</a>
-                            <a href="">선택3</a>
-                            <a href="">선택4</a>
-                            <a href="">선택5</a>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-            <nav id="banner_bar">
-                <ul>
-                    <li><a href="https://www.budongsan24.kr/" target="_blank"><img src="./images/ban01.gif" alt="통합신고센터"></a></li>
-                    <li><a href="https://www.laiis.go.kr/lips/mlo/lcl/organizationList.do" target="_blank"><img src="./images/ban02.gif" alt="행정안전부 내고장 알리미"></a></li>
-                    <li><a href="https://hometax.go.kr/websquare/websquare.html?w2xPath=/ui/pp/index_pp.xml&menuCd=index3" target="_blank"><img src="./images/ban03.png" alt="국세청홈택스"></a></li>
-                    <li><a href="https://www.nhis.or.kr/nbinfo/index.do" target="_blank"><img src="./images/ban04.png" alt="국민건강보험 비급여 정보 포털"></a></li>
-                    <li><a href="https://www.gov.kr/portal/main" target="_blank"><img src="./images/ban05.jpg" alt="행정안전부 공직비리 익명신고"></a></li>
-                    <li><a href="https://www.wetax.go.kr/static/sim/SimpleCar.html" target="_blank"><img src="./images/ban06.png" alt="WeTAX"></a></li>
-                </ul>
-            </nav>
-            <nav id="fnb">
-                <a href="privacy.html">개인정보처리방침</a>
-                <a href="#">이메일무단수집거부</a>
-                <a href="#">저작권정책</a>
-                <a href="#">홈페이지 의견접수</a>
-                <a href="#" download>뷰어 다운로드</a>
-            </nav>
-            <div class="copyright">
-                <p class="addr">(38330) 경상북도 청도군 화양읍 청화로 70 청도군청 / 대표전화 : 054)370-6114</p>
-                <p class="copy">Copyright ⓒ CHEONGDO city. All Rights Reserved.</p>
+        <div class="auth-benefit">
+          <div class="auth-benefit__icon">🔔</div>
+          청도 축제·이벤트 맞춤 알림 수신
+        </div>
+        <div class="auth-benefit">
+          <div class="auth-benefit__icon">🗺️</div>
+          모바일 스탬프 투어 참여
+        </div>
+      </div>
+    </div>
+
+    <div class="auth-form-panel">
+      <div class="auth-form-box">
+
+        <div class="auth-form-hd">
+          <h2>회원가입</h2>
+          <p>아래 정보를 입력하여 계정을 만드세요</p>
+        </div>
+
+        <div class="auth-steps">
+          <div class="auth-step is-active">① 정보 입력</div>
+          <div class="auth-step">② 약관 동의</div>
+          <div class="auth-step">③ 가입 완료</div>
+        </div>
+
+        <form action="#" method="post" onsubmit="return false;">
+
+          <div class="auth-row">
+            <div class="auth-fg auth-fg--green">
+              <label>이름 <span class="req">*</span></label>
+              <input type="text" placeholder="이름" required>
             </div>
-         </div>   
-    </footer>
-</div>
+            <div class="auth-fg auth-fg--green">
+              <label>생년월일</label>
+              <input type="date">
+            </div>
+          </div>
+
+          <div class="auth-fg auth-fg--green">
+            <label>이메일 <span class="req">*</span></label>
+            <div class="auth-fg__btn-row">
+              <input type="email" placeholder="이메일 주소" required>
+              <button type="button" class="btn btn--sm btn--green">중복확인</button>
+            </div>
+          </div>
+
+          <div class="auth-fg auth-fg--green">
+            <label>비밀번호 <span class="req">*</span></label>
+            <input type="password" placeholder="비밀번호 (8자 이상)" required>
+            <p class="auth-fg__hint">영문 대소문자, 숫자, 특수문자 중 2가지 이상 조합 · 8자 이상</p>
+          </div>
+
+          <div class="auth-fg auth-fg--green">
+            <label>비밀번호 확인 <span class="req">*</span></label>
+            <input type="password" placeholder="비밀번호 재입력" required>
+          </div>
+
+          <div class="auth-fg auth-fg--green">
+            <label>휴대폰 번호</label>
+            <div class="auth-fg__btn-row">
+              <input type="tel" placeholder="010-0000-0000">
+              <button type="button" class="btn btn--sm btn--green">인증요청</button>
+            </div>
+          </div>
+
+          <div class="auth-row">
+            <div class="auth-fg auth-fg--green">
+              <label>거주 지역</label>
+              <select>
+                <option value="">-- 선택 --</option>
+                <option>청도군</option>
+                <option>대구광역시</option>
+                <option>경상북도 기타</option>
+                <option>경상남도</option>
+                <option>서울/수도권</option>
+                <option>기타</option>
+              </select>
+            </div>
+            <div class="auth-fg auth-fg--green">
+              <label>성별</label>
+              <select>
+                <option value="">-- 선택 --</option>
+                <option>남성</option>
+                <option>여성</option>
+                <option>선택 안함</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="agree-box">
+            <label class="agree-all">
+              <input type="checkbox" id="agreeAll" onchange="toggleAll(this)">
+              전체 약관에 동의합니다
+            </label>
+            <label class="agree-item">
+              <input type="checkbox" class="agree-chk" required>
+              [필수] 이용약관에 동의합니다
+              <a href="#" target="_blank">보기</a>
+            </label>
+            <label class="agree-item">
+              <input type="checkbox" class="agree-chk" required>
+              [필수] 개인정보 수집 및 이용에 동의합니다
+              <a href="#" target="_blank">보기</a>
+            </label>
+            <label class="agree-item">
+              <input type="checkbox" class="agree-chk">
+              [선택] 마케팅 정보 수신에 동의합니다
+              <a href="#">보기</a>
+            </label>
+          </div>
+
+          <button type="submit" class="auth-submit auth-submit--green">회원가입 완료</button>
+        </form>
+
+        <p class="auth-link-row">
+          이미 계정이 있으신가요? <a href="log.html">로그인</a>
+        </p>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+  function toggleAll(el) {
+    document.querySelectorAll('.agree-chk').forEach(function(c) { c.checked = el.checked; });
+  }
+  </script>
 </body>
 </html>
