@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head('지도')}"></head>
+<body>
+<th:block th:replace="~{fragments/header :: header('info')}"></th:block>
+<div class="page-hero" th:style="'background-image:url(' + @{/images/sub3_1_2.jpg} + ')'">
+  <div class="page-hero__veil"></div>
+  <div class="u-container page-hero__inner">
+    <nav class="crumb"><a th:href="@{/}">HOME</a> <i class="xi-angle-right-min"></i> 여행정보 <i class="xi-angle-right-min"></i> 지도</nav>
+    <h1 class="page-hero__title">청도 관광 지도</h1>
+    <p class="page-hero__sub">주요 관광지 위치를 지도로 확인하세요</p>
+  </div>
+</div>
+<nav class="subnav">
+  <div class="u-container subnav__scroll">
+    <a class="subnav__item" th:href="@{/info/transport}">교통/접근</a>
+    <a class="subnav__item" th:href="@{/info/weather}">날씨/계절</a>
+    <a class="subnav__item is-active" th:href="@{/info/map}">지도</a>
+  </div>
+</nav>
+<div class="u-container sub-body">
+  <main class="sub-main">
+    <div class="sub-section">
+      <h2 class="sub-section__title sub-section__title--accent">청도 관광 지도</h2>
+      <div style="width:100%;height:450px;border-radius:var(--r-lg);overflow:hidden;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51780.31!2d128.73!3d35.63!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x356ee8f2a7e5a2c3%3A0x1!2z7LKt65-s6rOg!5e0!3m2!1sko!2skr!4v1"
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </main>
+  <aside class="sub-aside">
+    <div class="info-card"><div class="info-card__head">청도군청</div><div class="info-card__list"><div><dt>주소</dt><dd>경북 청도군 화양읍 청도로 219</dd></div><div><dt>전화</dt><dd>054-370-6114</dd></div></div></div>
+  </aside>
+</div>
+<th:block th:replace="~{fragments/footer :: footer}"></th:block>
+</body>
+</html>

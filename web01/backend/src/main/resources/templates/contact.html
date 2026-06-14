@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head('문의하기')}"></head>
+<body>
+<th:block th:replace="~{fragments/header :: header('')}"></th:block>
+<div class="page-hero" th:style="'background-image:url(' + @{/images/sub3_1_3.jpg} + ')'">
+  <div class="page-hero__veil"></div>
+  <div class="u-container page-hero__inner">
+    <nav class="crumb"><a th:href="@{/}">HOME</a> <i class="xi-angle-right-min"></i> Contact</nav>
+    <h1 class="page-hero__title">문의하기</h1>
+    <p class="page-hero__sub">청도 문화관광에 궁금한 점을 문의해 주세요</p>
+  </div>
+</div>
+<div class="u-container" style="padding-top:var(--sp-10);padding-bottom:var(--sp-16);">
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-5);margin-bottom:var(--sp-10);">
+    <div class="info-card"><div class="info-card__head"><i class="xi-call"></i> 전화</div><div class="info-card__list"><div><dt>문화관광과</dt><dd>054-370-6114</dd></div></div></div>
+    <div class="info-card"><div class="info-card__head"><i class="xi-email-o"></i> 이메일</div><div class="info-card__list"><div><dt>이메일</dt><dd>tour@cheongdo.go.kr</dd></div></div></div>
+    <div class="info-card"><div class="info-card__head"><i class="xi-clock-o"></i> 운영시간</div><div class="info-card__list"><div><dt>평일</dt><dd>09:00~18:00</dd></div></div></div>
+    <div class="info-card"><div class="info-card__head"><i class="xi-map-o"></i> 주소</div><div class="info-card__list"><div><dt>군청</dt><dd>경북 청도군 화양읍 청도로 219</dd></div></div></div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-10);">
+    <div class="form_section">
+      <h2 style="margin-bottom:var(--sp-6);">온라인 문의</h2>
+      <form>
+        <div class="form-group"><label class="form-label">이름</label><input type="text" class="form-control" placeholder="이름을 입력하세요"></div>
+        <div class="form-group"><label class="form-label">이메일</label><input type="email" class="form-control" placeholder="이메일을 입력하세요"></div>
+        <div class="form-group"><label class="form-label">연락처</label><input type="tel" class="form-control" placeholder="연락처를 입력하세요"></div>
+        <div class="form-group"><label class="form-label">문의 내용</label><textarea class="form-control" rows="6" placeholder="문의 내용을 입력해 주세요"></textarea></div>
+        <button type="submit" class="btn btn--primary btn--lg" style="width:100%;">문의 보내기</button>
+      </form>
+    </div>
+    <div>
+      <h2 style="margin-bottom:var(--sp-6);">오시는 길</h2>
+      <div style="border-radius:var(--r-lg);overflow:hidden;height:400px;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3263.12!2d128.73!3d35.63!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x356ee8f2a7e5a2c3%3A0x1!2z7LKt65-s6rOg!5e0!3m2!1sko!2skr!4v1"
+                width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+<th:block th:replace="~{fragments/footer :: footer}"></th:block>
+</body>
+</html>

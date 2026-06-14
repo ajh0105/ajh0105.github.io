@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head('쇼핑')}"></head>
+<body>
+<th:block th:replace="~{fragments/header :: header('stay')}"></th:block>
+<div class="page-hero" th:style="'background-image:url(' + @{/images/row03_3.jpg} + ')'">
+  <div class="page-hero__veil"></div>
+  <div class="u-container page-hero__inner">
+    <nav class="crumb"><a th:href="@{/}">HOME</a> <i class="xi-angle-right-min"></i> 숙박/맛집 <i class="xi-angle-right-min"></i> 쇼핑</nav>
+    <h1 class="page-hero__title">쇼핑</h1>
+    <p class="page-hero__sub">청도의 특산품과 기념품을 만나보세요</p>
+  </div>
+</div>
+<nav class="subnav">
+  <div class="u-container subnav__scroll">
+    <a class="subnav__item" th:href="@{/stay/accommodation}">숙박</a>
+    <a class="subnav__item" th:href="@{/stay/restaurant}">맛집</a>
+    <a class="subnav__item is-active" th:href="@{/stay/shopping}">쇼핑</a>
+  </div>
+</nav>
+<div class="u-container sub-body">
+  <main class="sub-main">
+    <div class="sub-section">
+      <h2 class="sub-section__title sub-section__title--accent">청도 특산물</h2>
+      <div class="shop_grid">
+        <div class="shop_card"><div class="shop_icon">🍊</div><h4>청도 반시</h4><p>씨 없는 청도의 대표 특산 감</p></div>
+        <div class="shop_card"><div class="shop_icon">🍷</div><h4>청도 와인</h4><p>반시로 만든 고급 와인</p></div>
+        <div class="shop_card"><div class="shop_icon">🥩</div><h4>청도 한우</h4><p>청정 자연에서 키운 최고급 한우</p></div>
+      </div>
+    </div>
+  </main>
+  <aside class="sub-aside">
+    <div class="info-card"><div class="info-card__head">쇼핑 안내</div><div class="info-card__list"><div><dt>문의</dt><dd>054-370-6114</dd></div></div></div>
+  </aside>
+</div>
+<th:block th:replace="~{fragments/footer :: footer}"></th:block>
+</body>
+</html>

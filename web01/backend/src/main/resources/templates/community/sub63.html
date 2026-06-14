@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head('여행후기')}"></head>
+<body>
+<th:block th:replace="~{fragments/header :: header('community')}"></th:block>
+<div class="page-hero" th:style="'background-image:url(' + @{/images/row03_1.jpg} + ')'">
+  <div class="page-hero__veil"></div>
+  <div class="u-container page-hero__inner">
+    <nav class="crumb"><a th:href="@{/}">HOME</a> <i class="xi-angle-right-min"></i> 여행커뮤니티 <i class="xi-angle-right-min"></i> 여행후기</nav>
+    <h1 class="page-hero__title">여행 후기</h1>
+    <p class="page-hero__sub">청도 여행을 다녀온 분들의 생생한 후기</p>
+  </div>
+</div>
+<nav class="subnav">
+  <div class="u-container subnav__scroll">
+    <a class="subnav__item" th:href="@{/community/notice}">공지사항</a>
+    <a class="subnav__item" th:href="@{/community/board}">자유게시판</a>
+    <a class="subnav__item is-active" th:href="@{/community/review}">여행후기</a>
+    <a class="subnav__item" th:href="@{/community/qna}">여행 Q&amp;A</a>
+  </div>
+</nav>
+<div class="u-container sub-body">
+  <main class="sub-main">
+    <div class="sub-section">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--sp-5);">
+        <h2 class="sub-section__title sub-section__title--accent" style="margin:0;">여행 후기</h2>
+        <a th:href="@{/community/review/write}" th:if="${session.loginMember != null}" class="btn btn--primary btn--sm">후기 작성</a>
+      </div>
+      <div class="review_list">
+        <div th:if="${posts.isEmpty()}" style="text-align:center;padding:var(--sp-8);">등록된 후기가 없습니다.</div>
+        <div class="review_item" th:each="post : ${posts}">
+          <div class="review_hd">
+            <h4><a th:href="@{/community/review/{id}(id=${post.id})}" th:text="${post.title}">제목</a></h4>
+            <div class="review_meta" th:text="${post.author?.name} + ' · ' + ${#temporals.format(post.createdAt, 'yyyy.MM.dd')}">작성자</div>
+          </div>
+          <p class="review_body" th:text="${#strings.abbreviate(post.content, 120)}">내용</p>
+        </div>
+      </div>
+      <div class="pagination" th:if="${posts.totalPages > 1}">
+        <a th:href="@{/community/review(page=${posts.number - 1})}" th:if="${posts.hasPrevious()}"><i class="xi-angle-left"></i></a>
+        <a th:each="i : ${#numbers.sequence(0, posts.totalPages - 1)}" th:href="@{/community/review(page=${i})}" th:text="${i + 1}" th:classappend="${i == posts.number} ? 'active'">1</a>
+        <a th:href="@{/community/review(page=${posts.number + 1})}" th:if="${posts.hasNext()}"><i class="xi-angle-right"></i></a>
+      </div>
+    </div>
+  </main>
+  <aside class="sub-aside">
+    <div class="info-card"><div class="info-card__head">후기 작성 안내</div><div class="info-card__list"><div><dt>자격</dt><dd>회원 로그인 후 작성</dd></div><div><dt>문의</dt><dd>054-370-6114</dd></div></div></div>
+  </aside>
+</div>
+<th:block th:replace="~{fragments/footer :: footer}"></th:block>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로그인 - 청도군 문화관광</title>
+  <link rel="stylesheet" th:href="@{/reset.css}">
+  <link rel="stylesheet" th:href="@{/font2.css}">
+  <link rel="stylesheet" th:href="@{/iconset.css}">
+  <link rel="stylesheet" th:href="@{/tokens.css}">
+  <link rel="stylesheet" th:href="@{/base.css}">
+  <link rel="stylesheet" th:href="@{/components.css}">
+  <link rel="stylesheet" th:href="@{/layout.css}">
+  <link rel="stylesheet" th:href="@{/auth.css}">
+</head>
+<body>
+<div class="auth-wrap">
+  <!-- 브랜드 패널 -->
+  <div class="auth-panel auth-panel--login">
+    <a class="auth-logo" th:href="@{/}">
+      <img th:src="@{/images/logo.png}" alt="청도군 문화관광">
+    </a>
+    <div class="auth-brand">
+      <div class="auth-brand__echo">WELCOME</div>
+      <h1 class="auth-brand__title">청도 문화관광에<br>오신 것을<br>환영합니다</h1>
+      <p class="auth-brand__sub">천년의 역사와 자연이 살아숨쉬는<br>경북 청도에서 특별한 여행을 시작하세요.</p>
+    </div>
+  </div>
+  <!-- 폼 패널 -->
+  <div class="auth-fg">
+    <div class="auth-fg__inner">
+      <h2 class="auth-fg__title">로그인</h2>
+      <p class="auth-fg__sub">이메일과 비밀번호를 입력해 주세요</p>
+
+      <!-- 에러 메시지 -->
+      <div th:if="${errorMsg}" class="auth-alert" style="background:rgba(191,52,52,0.08);border:1px solid var(--c-red);border-radius:var(--r-md);padding:var(--sp-4);margin-bottom:var(--sp-5);color:var(--c-red);font-size:var(--fs-sm);">
+        <i class="xi-error-o"></i> <span th:text="${errorMsg}">오류 메시지</span>
+      </div>
+
+      <form th:action="@{/login}" method="post">
+        <input type="hidden" name="redirectURL" th:value="${redirectURL}">
+        <div class="auth-field">
+          <label>이메일</label>
+          <input type="email" name="email" placeholder="이메일을 입력하세요" required autocomplete="email">
+        </div>
+        <div class="auth-field">
+          <label>비밀번호</label>
+          <input type="password" name="password" placeholder="비밀번호를 입력하세요" required>
+        </div>
+        <button type="submit" class="auth-submit">로그인</button>
+      </form>
+
+      <div class="auth-divider"><span>또는</span></div>
+      <div class="auth-footer-links">
+        <span>계정이 없으신가요?</span>
+        <a th:href="@{/signup}">회원가입</a>
+      </div>
+      <div style="margin-top:var(--sp-5);text-align:center;">
+        <a th:href="@{/}" style="font-size:var(--fs-sm);color:var(--c-text-mute);">← 메인으로 돌아가기</a>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

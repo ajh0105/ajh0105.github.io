@@ -276,6 +276,106 @@
 
 ---
 
+---
+
+## 백엔드 (`backend/` 폴더)
+
+### 기술 스택
+- **Spring Boot 3.5.0** / Java 21 / Gradle
+- **PostgreSQL** (DB) + Spring Data JPA + Hibernate
+- **Thymeleaf** + thymeleaf-layout-dialect
+- **BCrypt** (Spring Security crypto) — Spring Security 전체 미사용, 세션 기반 인터셉터로 인증
+- **Swagger (springdoc-openapi 2.5.0)** — `/swagger-ui.html`
+
+### 백엔드 구조
+```
+backend/
+├── build.gradle / settings.gradle
+├── Dockerfile
+├── docker-compose.yml   (app + PostgreSQL)
+└── src/main/
+    ├── java/com/cheongdo/tourism/
+    │   ├── CheongdoApplication.java
+    │   ├── config/          PasswordConfig, WebConfig
+    │   ├── controller/      HomeController, MemberController, SubPageController, CommunityController
+    │   ├── dto/             PostForm
+    │   ├── entity/          Member, Post, Role(enum), BoardType(enum)
+    │   ├── interceptor/     LoginCheckInterceptor
+    │   ├── repository/      MemberRepository, PostRepository
+    │   └── service/         MemberService, PostService
+    └── resources/
+        ├── application.yml
+        └── templates/
+            ├── fragments/   head.html, header.html, footer.html
+            ├── index.html
+            ├── contact.html
+            ├── member/      login.html, signup.html
+            ├── tour/        sub21~23.html
+            ├── festival/    sub31~32.html
+            ├── stay/        sub41~43.html
+            ├── info/        sub51~53.html
+            ├── intro/       sub11~13.html
+            └── community/   sub61~64.html, detail.html, write.html, edit.html
+```
+
+### URL 라우팅
+| URL | 설명 |
+|---|---|
+| `/` | 메인 홈 |
+| `/login`, `/signup`, `/logout` | 인증 |
+| `/tour/9gyeong`, `/tour/theme`, `/tour/course` | 청도관광 |
+| `/festival/regular`, `/festival/event` | 축제/행사 |
+| `/stay/accommodation`, `/stay/restaurant`, `/stay/shopping` | 숙박/맛집 |
+| `/info/transport`, `/info/weather`, `/info/map` | 여행정보 |
+| `/intro/story`, `/intro/history`, `/intro/people` | 청도소개 |
+| `/community/notice`, `/community/board`, `/community/review`, `/community/qna` | 게시판 목록 |
+| `/community/{type}/{id}` | 게시글 상세 |
+| `/community/{type}/write` | 글쓰기 (로그인 필요) |
+| `/contact` | 문의하기 |
+
+### 정적 파일 서빙 방식
+- **로컬 개발**: `application.yml`의 `spring.web.resources.static-locations: file:../` 으로 web01 루트 직접 참조
+- **Docker**: `docker-compose.yml`에서 `../:/app/static:ro` 볼륨 마운트
+
+### Docker 실행 방법
+```bash
+# web01/backend/ 디렉터리에서
+docker-compose up -d
+
+# 또는 web01/ 루트에서
+docker-compose -f backend/docker-compose.yml up -d
+```
+- 앱: `http://localhost:8080`
+- DB: `localhost:5433` (postgres / cheongdo / cheongdo1004)
+
+### 로컬 개발 실행 방법
+```bash
+# PostgreSQL 먼저 실행 후 (또는 Docker DB만 실행)
+docker-compose up -d db
+
+# backend/ 디렉터리에서
+./gradlew bootRun
+```
+
+### Thymeleaf 공통 패턴
+```html
+<!-- CSS/이미지 경로 -->
+<link rel="stylesheet" th:href="@{/tokens.css}">
+<img th:src="@{/images/logo.png}">
+
+<!-- 헤더/푸터 fragment 삽입 -->
+<th:block th:replace="~{fragments/header :: header('tour')}"></th:block>
+<th:block th:replace="~{fragments/footer :: footer}"></th:block>
+
+<!-- 로그인 여부 체크 -->
+<th:block th:if="${session.loginMember != null}">...</th:block>
+
+<!-- 동적 배경이미지 -->
+<div class="page-hero" th:style="'background-image:url(' + @{/images/xxx.jpg} + ')'">
+```
+
+---
+
 ## 작업 이력 (주요)
 
 | 시점 | 작업 내용 |

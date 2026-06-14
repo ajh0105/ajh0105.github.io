@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head('공지사항')}"></head>
+<body>
+<th:block th:replace="~{fragments/header :: header('community')}"></th:block>
+
+<div class="page-hero" th:style="'background-image:url(' + @{/images/bg_visual-9.jpg} + ')'">
+  <div class="page-hero__veil"></div>
+  <div class="u-container page-hero__inner">
+    <nav class="crumb"><a th:href="@{/}">HOME</a> <i class="xi-angle-right-min"></i> 여행커뮤니티 <i class="xi-angle-right-min"></i> 공지사항</nav>
+    <h1 class="page-hero__title">공지사항</h1>
+    <p class="page-hero__sub">청도 문화관광의 새로운 소식을 알려드립니다</p>
+  </div>
+</div>
+
+<nav class="subnav">
+  <div class="u-container subnav__scroll">
+    <a class="subnav__item is-active" th:href="@{/community/notice}">공지사항</a>
+    <a class="subnav__item" th:href="@{/community/board}">자유게시판</a>
+    <a class="subnav__item" th:href="@{/community/review}">여행후기</a>
+    <a class="subnav__item" th:href="@{/community/qna}">여행 Q&amp;A</a>
+  </div>
+</nav>
+
+<div class="u-container sub-body">
+  <main class="sub-main">
+    <div class="sub-section">
+      <h2 class="sub-section__title sub-section__title--accent">공지사항</h2>
+
+      <!-- 검색 -->
+      <form th:action="@{/community/notice}" method="get" class="search-bar" style="margin-bottom:var(--sp-6);display:flex;gap:var(--sp-3);">
+        <input type="text" name="keyword" th:value="${keyword}" placeholder="제목 검색" class="form-control" style="max-width:320px;">
+        <button type="submit" class="btn btn--primary btn--sm">검색</button>
+      </form>
+
+      <table class="list-table">
+        <thead>
+          <tr>
+            <th style="width:60px;">번호</th>
+            <th>제목</th>
+            <th style="width:120px;">등록일</th>
+            <th style="width:60px;">조회</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:if="${posts.isEmpty()}">
+            <td colspan="4" style="text-align:center;padding:var(--sp-8);">등록된 공지사항이 없습니다.</td>
+          </tr>
+          <tr th:each="post, stat : ${posts}">
+            <td class="td-center" th:text="${posts.totalElements - posts.number * posts.size - stat.index}">1</td>
+            <td class="td-title"><a th:href="@{/community/notice/{id}(id=${post.id})}" th:text="${post.title}">제목</a></td>
+            <td class="td-date" th:text="${#temporals.format(post.createdAt, 'yyyy.MM.dd')}">2025.01.01</td>
+            <td class="td-center" th:text="${post.views}">0</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- 페이지네이션 -->
+      <div class="pagination" th:if="${posts.totalPages > 1}">
+        <a th:href="@{/community/notice(page=${posts.number - 1}, keyword=${keyword})}" th:if="${posts.hasPrevious()}"><i class="xi-angle-left"></i></a>
+        <a th:each="i : ${#numbers.sequence(0, posts.totalPages - 1)}"
+           th:href="@{/community/notice(page=${i}, keyword=${keyword})}"
+           th:text="${i + 1}"
+           th:classappend="${i == posts.number} ? 'active'">1</a>
+        <a th:href="@{/community/notice(page=${posts.number + 1}, keyword=${keyword})}" th:if="${posts.hasNext()}"><i class="xi-angle-right"></i></a>
+      </div>
+    </div>
+  </main>
+
+  <aside class="sub-aside">
+    <div class="info-card">
+      <div class="info-card__head">커뮤니티</div>
+      <div class="info-card__list">
+        <div><dt>공지사항</dt><dd><a th:href="@{/community/notice}">바로가기</a></dd></div>
+        <div><dt>자유게시판</dt><dd><a th:href="@{/community/board}">바로가기</a></dd></div>
+        <div><dt>여행후기</dt><dd><a th:href="@{/community/review}">바로가기</a></dd></div>
+        <div><dt>여행 Q&amp;A</dt><dd><a th:href="@{/community/qna}">바로가기</a></dd></div>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<th:block th:replace="~{fragments/footer :: footer}"></th:block>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head('청도관광9경')}"></head>
+<body>
+<th:block th:replace="~{fragments/header :: header('tour')}"></th:block>
+<div class="page-hero" th:style="'background-image:url(' + @{/images/sub2_1_1.jpg} + ')'">
+  <div class="page-hero__veil"></div>
+  <div class="u-container page-hero__inner">
+    <nav class="crumb"><a th:href="@{/}">HOME</a> <i class="xi-angle-right-min"></i> 청도관광 <i class="xi-angle-right-min"></i> 청도관광9경</nav>
+    <h1 class="page-hero__title">청도 관광 9경</h1>
+    <p class="page-hero__sub">청도를 대표하는 아홉 가지 빼어난 경관</p>
+  </div>
+</div>
+<nav class="subnav">
+  <div class="u-container subnav__scroll">
+    <a class="subnav__item is-active" th:href="@{/tour/9gyeong}">청도관광9경</a>
+    <a class="subnav__item" th:href="@{/tour/theme}">테마관광</a>
+    <a class="subnav__item" th:href="@{/tour/course}">추천관광코스</a>
+  </div>
+</nav>
+<div class="u-container sub-body">
+  <main class="sub-main">
+    <div class="sub-section">
+      <h2 class="sub-section__title sub-section__title--accent">청도 관광 9경</h2>
+      <div class="card-grid card-grid--3">
+        <div class="card"><img class="card__img" th:src="@{/images/sub2_1_1.jpg}" alt="와인터널"><div class="card__body"><span class="eyebrow">01 경</span><h3 class="card__title">청도 와인터널</h3><p class="card__desc">화양읍 삼신리 · 대한민국 유일의 지하 동굴 와인 저장고</p></div></div>
+        <div class="card"><img class="card__img" th:src="@{/images/sub2_1_2.jpg}" alt="레일바이크"><div class="card__body"><span class="eyebrow">02 경</span><h3 class="card__title">청도 레일바이크</h3><p class="card__desc">청도읍 원리 · 옛 철로 위를 달리는 특별한 체험</p></div></div>
+        <div class="card"><img class="card__img" th:src="@{/images/sub1_1_1.jpg}" alt="운문사"><div class="card__body"><span class="eyebrow">03 경</span><h3 class="card__title">운문사</h3><p class="card__desc">운문면 신원리 · 천년 고찰, 비구니 사찰</p></div></div>
+        <div class="card"><img class="card__img" th:src="@{/images/sub3_1_1.jpg}" alt="청도읍성"><div class="card__body"><span class="eyebrow">04 경</span><h3 class="card__title">청도읍성</h3><p class="card__desc">화양읍 동천리 · 조선시대 석성</p></div></div>
+        <div class="card"><img class="card__img" th:src="@{/images/sub1_1_2.jpg}" alt="운문댐"><div class="card__body"><span class="eyebrow">05 경</span><h3 class="card__title">운문댐 생태공원</h3><p class="card__desc">운문면 지촌리 · 수변 생태 탐방</p></div></div>
+        <div class="card"><img class="card__img" th:src="@{/images/sub2_1_3.jpg}" alt="자계서원"><div class="card__body"><span class="eyebrow">06 경</span><h3 class="card__title">자계서원</h3><p class="card__desc">금천면 신지리 · 조선 유학의 흔적</p></div></div>
+        <div class="card"><img class="card__img" th:src="@{/images/sub3_1_2.jpg}" alt="박곡지"><div class="card__body"><span class="eyebrow">07 경</span><h3 class="card__title">박곡지 수변공원</h3><p class="card__desc">각북면 박곡리 · 잔잔한 수변 산책로</p></div></div>
+        <div class="card"><img class="card__img" th:src="@{/images/sub3_1_3.jpg}" alt="적천사"><div class="card__body"><span class="eyebrow">08 경</span><h3 class="card__title">적천사</h3><p class="card__desc">청도읍 원리 · 고즈넉한 사찰 풍경</p></div></div>
+        <div class="card"><img class="card__img" th:src="@{/images/row03_3.jpg}" alt="청도향교"><div class="card__body"><span class="eyebrow">09 경</span><h3 class="card__title">청도향교</h3><p class="card__desc">청도읍 고수리 · 전통 교육기관</p></div></div>
+      </div>
+    </div>
+  </main>
+  <aside class="sub-aside">
+    <div class="info-card"><div class="info-card__head">관광 안내</div><div class="info-card__list"><div><dt>문의</dt><dd>054-370-6114</dd></div><div><dt>운영</dt><dd>연중무휴</dd></div></div></div>
+  </aside>
+</div>
+<th:block th:replace="~{fragments/footer :: footer}"></th:block>
+</body>
+</html>

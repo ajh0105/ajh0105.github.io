@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head('이벤트/행사')}"></head>
+<body>
+<th:block th:replace="~{fragments/header :: header('festival')}"></th:block>
+<div class="page-hero" th:style="'background-image:url(' + @{/images/row01.jpg} + ')'">
+  <div class="page-hero__veil"></div>
+  <div class="u-container page-hero__inner">
+    <nav class="crumb"><a th:href="@{/}">HOME</a> <i class="xi-angle-right-min"></i> 축제/행사 <i class="xi-angle-right-min"></i> 이벤트/행사</nav>
+    <h1 class="page-hero__title">이벤트 / 행사</h1>
+    <p class="page-hero__sub">청도의 다양한 이벤트와 행사 정보</p>
+  </div>
+</div>
+<nav class="subnav">
+  <div class="u-container subnav__scroll">
+    <a class="subnav__item" th:href="@{/festival/regular}">정기축제</a>
+    <a class="subnav__item is-active" th:href="@{/festival/event}">이벤트/행사</a>
+  </div>
+</nav>
+<div class="u-container sub-body">
+  <main class="sub-main">
+    <div class="sub-section">
+      <h2 class="sub-section__title sub-section__title--accent">이벤트 / 행사</h2>
+      <div class="notice-list">
+        <div class="notice-item"><span class="badge badge--primary">진행중</span><a href="#">청도 봄꽃 사진 공모전 2025</a><span class="notice-date">2025.03.01 ~ 2025.05.31</span></div>
+        <div class="notice-item"><span class="badge badge--notice">예정</span><a href="#">여름 물놀이 이벤트</a><span class="notice-date">2025.07.01 ~ 2025.08.31</span></div>
+        <div class="notice-item"><span class="badge badge--notice">예정</span><a href="#">청도 단풍 사진전</a><span class="notice-date">2025.10.01 ~ 2025.11.30</span></div>
+      </div>
+    </div>
+  </main>
+  <aside class="sub-aside">
+    <div class="info-card"><div class="info-card__head">행사 문의</div><div class="info-card__list"><div><dt>전화</dt><dd>054-370-6114</dd></div></div></div>
+  </aside>
+</div>
+<th:block th:replace="~{fragments/footer :: footer}"></th:block>
+</body>
+</html>

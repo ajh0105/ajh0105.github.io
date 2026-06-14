@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head('글쓰기')}"></head>
+<body>
+<th:block th:replace="~{fragments/header :: header('community')}"></th:block>
+
+<div class="page-hero" th:style="'background-image:url(' + @{/images/bg_visual-9.jpg} + ')'">
+  <div class="page-hero__veil"></div>
+  <div class="u-container page-hero__inner">
+    <nav class="crumb"><a th:href="@{/}">HOME</a> <i class="xi-angle-right-min"></i> 여행커뮤니티 <i class="xi-angle-right-min"></i> 글쓰기</nav>
+    <h1 class="page-hero__title">글쓰기</h1>
+  </div>
+</div>
+
+<div class="u-container" style="padding-top:var(--sp-10);padding-bottom:var(--sp-16);">
+  <form th:action="@{/community/{type}/write(type=${boardType})}" method="post"
+        th:object="${postForm}" style="max-width:760px;margin:0 auto;">
+    <div style="margin-bottom:var(--sp-5);">
+      <label class="form-label">제목</label>
+      <input type="text" th:field="*{title}" class="form-control"
+             th:classappend="${#fields.hasErrors('title')} ? 'is-error'" placeholder="제목을 입력하세요">
+      <p class="form-error" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></p>
+    </div>
+    <div style="margin-bottom:var(--sp-6);">
+      <label class="form-label">내용</label>
+      <textarea th:field="*{content}" class="form-control" rows="14"
+                th:classappend="${#fields.hasErrors('content')} ? 'is-error'"
+                placeholder="내용을 입력하세요"></textarea>
+      <p class="form-error" th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></p>
+    </div>
+    <div style="display:flex;gap:var(--sp-3);">
+      <button type="submit" class="btn btn--primary">등록</button>
+      <a th:href="@{/community/{type}(type=${boardType})}" class="btn btn--line">취소</a>
+    </div>
+  </form>
+</div>
+
+<th:block th:replace="~{fragments/footer :: footer}"></th:block>
+</body>
+</html>

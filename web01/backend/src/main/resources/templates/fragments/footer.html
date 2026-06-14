@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="footer">
+<footer class="site-footer">
+  <div class="footer-banner">
+    <div class="u-container">
+      <a class="ft-banner-item" th:href="@{/info/map}"><i class="xi-map-o"></i>청도 관광지도</a>
+      <a class="ft-banner-item" th:href="@{/festival/regular}"><i class="xi-calendar"></i>축제 캘린더</a>
+      <a class="ft-banner-item" th:href="@{/info/transport}"><i class="xi-bus-o"></i>대중교통 안내</a>
+      <a class="ft-banner-item" th:href="@{/contact}"><i class="xi-mobile-o"></i>문의하기</a>
+    </div>
+  </div>
+  <div class="footer-body">
+    <div class="u-container">
+      <div class="footer-col footer-info">
+        <img th:src="@{/images/logo.png}" alt="청도군 문화관광" style="height:36px;margin-bottom:20px;opacity:0.7;">
+        <p><strong>청도군청 문화관광과</strong></p>
+        <p>경상북도 청도군 화양읍 청도로 219<br>TEL: 054-370-6114 / FAX: 054-373-8855</p>
+        <p>COPYRIGHT © 청도군. ALL RIGHTS RESERVED.</p>
+      </div>
+      <div class="footer-col">
+        <h4>청도관광</h4>
+        <ul>
+          <li><a th:href="@{/tour/9gyeong}">청도관광9경</a></li>
+          <li><a th:href="@{/tour/theme}">테마관광</a></li>
+          <li><a th:href="@{/tour/course}">추천관광코스</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>여행정보</h4>
+        <ul>
+          <li><a th:href="@{/stay/accommodation}">숙박</a></li>
+          <li><a th:href="@{/stay/restaurant}">맛집</a></li>
+          <li><a th:href="@{/info/transport}">교통/접근</a></li>
+          <li><a th:href="@{/info/map}">관광지도</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>고객센터</h4>
+        <ul>
+          <li><a th:href="@{/community/notice}">공지사항</a></li>
+          <li><a th:href="@{/community/qna}">여행 Q&amp;A</a></li>
+          <li><a th:href="@{/contact}">Contact US</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="u-container">
+      <p class="footer-copyright">© 2025 청도군 문화관광. All rights reserved.</p>
+      <nav class="footer-fnb">
+        <a href="#" class="strong">개인정보처리방침</a>
+        <a href="#">이용약관</a>
+        <a href="#">이메일무단수집거부</a>
+        <a th:href="@{/contact}">사이트맵</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+</html>

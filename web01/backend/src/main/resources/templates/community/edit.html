@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head('글수정')}"></head>
+<body>
+<th:block th:replace="~{fragments/header :: header('community')}"></th:block>
+
+<div class="u-container" style="padding-top:100px;padding-bottom:var(--sp-16);">
+  <h2 style="margin-bottom:var(--sp-6);">글 수정</h2>
+  <form th:action="@{/community/{type}/edit/{id}(type=${boardType},id=${postId})}" method="post"
+        th:object="${postForm}" style="max-width:760px;margin:0 auto;">
+    <div style="margin-bottom:var(--sp-5);">
+      <label class="form-label">제목</label>
+      <input type="text" th:field="*{title}" class="form-control" placeholder="제목을 입력하세요">
+      <p class="form-error" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></p>
+    </div>
+    <div style="margin-bottom:var(--sp-6);">
+      <label class="form-label">내용</label>
+      <textarea th:field="*{content}" class="form-control" rows="14" placeholder="내용을 입력하세요"></textarea>
+      <p class="form-error" th:if="${#fields.hasErrors('content')}" th:errors="*{content}"></p>
+    </div>
+    <div style="display:flex;gap:var(--sp-3);">
+      <button type="submit" class="btn btn--primary">수정완료</button>
+      <a th:href="@{/community/{type}/{id}(type=${boardType},id=${postId})}" class="btn btn--line">취소</a>
+    </div>
+  </form>
+</div>
+
+<th:block th:replace="~{fragments/footer :: footer}"></th:block>
+</body>
+</html>

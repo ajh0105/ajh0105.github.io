@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head('숙박')}"></head>
+<body>
+<th:block th:replace="~{fragments/header :: header('stay')}"></th:block>
+<div class="page-hero" th:style="'background-image:url(' + @{/images/row03_2.jpg} + ')'">
+  <div class="page-hero__veil"></div>
+  <div class="u-container page-hero__inner">
+    <nav class="crumb"><a th:href="@{/}">HOME</a> <i class="xi-angle-right-min"></i> 숙박/맛집 <i class="xi-angle-right-min"></i> 숙박</nav>
+    <h1 class="page-hero__title">숙박</h1>
+    <p class="page-hero__sub">청도에서의 편안한 하룻밤</p>
+  </div>
+</div>
+<nav class="subnav">
+  <div class="u-container subnav__scroll">
+    <a class="subnav__item is-active" th:href="@{/stay/accommodation}">숙박</a>
+    <a class="subnav__item" th:href="@{/stay/restaurant}">맛집</a>
+    <a class="subnav__item" th:href="@{/stay/shopping}">쇼핑</a>
+  </div>
+</nav>
+<div class="u-container sub-body">
+  <main class="sub-main">
+    <div class="sub-section">
+      <h2 class="sub-section__title sub-section__title--accent">추천 숙박</h2>
+      <div class="stay-grid">
+        <div class="stay-card"><img class="stay-card__img" th:src="@{/images/row01.jpg}" alt="청도 한옥 민박"><div class="stay-card__body"><h4 class="stay-card__name">청도 한옥 민박</h4><p class="stay-card__addr"><i class="xi-map-o"></i> 화양읍 동천리</p><div class="stay-card__info"><span>1박 50,000원~</span><span>주차 가능</span></div></div></div>
+        <div class="stay-card"><img class="stay-card__img" th:src="@{/images/row4.jpg}" alt="운문산 자연휴양림"><div class="stay-card__body"><h4 class="stay-card__name">운문산 자연휴양림</h4><p class="stay-card__addr"><i class="xi-map-o"></i> 운문면 신원리</p><div class="stay-card__info"><span>1박 70,000원~</span><span>자연 속 숙박</span></div></div></div>
+      </div>
+    </div>
+  </main>
+  <aside class="sub-aside">
+    <div class="info-card"><div class="info-card__head">숙박 안내</div><div class="info-card__list"><div><dt>문의</dt><dd>054-370-6114</dd></div></div></div>
+  </aside>
+</div>
+<th:block th:replace="~{fragments/footer :: footer}"></th:block>
+</body>
+</html>

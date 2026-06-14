@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head('맛집')}"></head>
+<body>
+<th:block th:replace="~{fragments/header :: header('stay')}"></th:block>
+<div class="page-hero" th:style="'background-image:url(' + @{/images/row03_1.jpg} + ')'">
+  <div class="page-hero__veil"></div>
+  <div class="u-container page-hero__inner">
+    <nav class="crumb"><a th:href="@{/}">HOME</a> <i class="xi-angle-right-min"></i> 숙박/맛집 <i class="xi-angle-right-min"></i> 맛집</nav>
+    <h1 class="page-hero__title">맛집</h1>
+    <p class="page-hero__sub">청도의 맛과 멋을 즐기는 곳</p>
+  </div>
+</div>
+<nav class="subnav">
+  <div class="u-container subnav__scroll">
+    <a class="subnav__item" th:href="@{/stay/accommodation}">숙박</a>
+    <a class="subnav__item is-active" th:href="@{/stay/restaurant}">맛집</a>
+    <a class="subnav__item" th:href="@{/stay/shopping}">쇼핑</a>
+  </div>
+</nav>
+<div class="u-container sub-body">
+  <main class="sub-main">
+    <div class="sub-section">
+      <h2 class="sub-section__title sub-section__title--accent">청도 추천 맛집</h2>
+      <p style="color:var(--c-text-mute);">청도 반시, 와인, 한우 등 청도만의 특별한 먹거리를 즐길 수 있는 식당을 안내합니다.</p>
+    </div>
+  </main>
+  <aside class="sub-aside">
+    <div class="info-card"><div class="info-card__head">맛집 안내</div><div class="info-card__list"><div><dt>문의</dt><dd>054-370-6114</dd></div></div></div>
+  </aside>
+</div>
+<th:block th:replace="~{fragments/footer :: footer}"></th:block>
+</body>
+</html>

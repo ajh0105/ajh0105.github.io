@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head('청도이야기')}"></head>
+<body>
+<th:block th:replace="~{fragments/header :: header('intro')}"></th:block>
+<div class="page-hero" th:style="'background-image:url(' + @{/images/sub1_1_1.jpg} + ')'">
+  <div class="page-hero__veil"></div>
+  <div class="u-container page-hero__inner">
+    <nav class="crumb"><a th:href="@{/}">HOME</a> <i class="xi-angle-right-min"></i> 청도소개 <i class="xi-angle-right-min"></i> 청도이야기</nav>
+    <h1 class="page-hero__title">청도 이야기</h1>
+    <p class="page-hero__sub">경북 청도군의 자연과 사람 이야기</p>
+  </div>
+</div>
+<nav class="subnav">
+  <div class="u-container subnav__scroll">
+    <a class="subnav__item is-active" th:href="@{/intro/story}">청도이야기</a>
+    <a class="subnav__item" th:href="@{/intro/history}">역사/문화</a>
+    <a class="subnav__item" th:href="@{/intro/people}">인물/인재</a>
+  </div>
+</nav>
+<div class="u-container sub-body">
+  <main class="sub-main">
+    <div class="sub-section">
+      <h2 class="sub-section__title sub-section__title--accent">청도 이야기</h2>
+      <div class="intro-grid">
+        <div class="intro-item"><h4>자연</h4><p>영남 알프스 자락에 위치한 청도는 맑은 계곡과 울창한 산림이 어우러진 천혜의 자연환경을 보유하고 있습니다.</p></div>
+        <div class="intro-item"><h4>역사</h4><p>삼한시대부터 이어온 유구한 역사를 가진 청도는 수많은 유적과 전통 문화가 살아 숨쉬는 고장입니다.</p></div>
+        <div class="intro-item"><h4>특산물</h4><p>씨 없는 반시(감)와 청도 와인, 한우가 유명하며 전국적으로 그 맛을 인정받고 있습니다.</p></div>
+      </div>
+      <div class="kpi-strip" style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-4);margin-top:var(--sp-8);">
+        <div class="kpi-item" style="text-align:center;"><div style="font-size:var(--fs-d3);font-weight:700;color:var(--c-primary);">9만</div><div style="font-size:var(--fs-sm);color:var(--c-text-mute);">인구</div></div>
+        <div class="kpi-item" style="text-align:center;"><div style="font-size:var(--fs-d3);font-weight:700;color:var(--c-primary);">693㎢</div><div style="font-size:var(--fs-sm);color:var(--c-text-mute);">면적</div></div>
+        <div class="kpi-item" style="text-align:center;"><div style="font-size:var(--fs-d3);font-weight:700;color:var(--c-primary);">1000년</div><div style="font-size:var(--fs-sm);color:var(--c-text-mute);">역사</div></div>
+        <div class="kpi-item" style="text-align:center;"><div style="font-size:var(--fs-d3);font-weight:700;color:var(--c-primary);">9경</div><div style="font-size:var(--fs-sm);color:var(--c-text-mute);">관광명소</div></div>
+      </div>
+    </div>
+  </main>
+  <aside class="sub-aside">
+    <div class="info-card"><div class="info-card__head">청도군청</div><div class="info-card__list"><div><dt>전화</dt><dd>054-370-6114</dd></div><div><dt>홈페이지</dt><dd>cheongdo.go.kr</dd></div></div></div>
+  </aside>
+</div>
+<th:block th:replace="~{fragments/footer :: footer}"></th:block>
+</body>
+</html>

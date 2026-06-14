@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head('메인')}">
+  <link rel="stylesheet" th:href="@{/home.css}">
+</head>
+<body>
+
+<th:block th:replace="~{fragments/header :: header('home')}"></th:block>
+
+<!-- 히어로 슬라이더 -->
+<section class="hero" id="heroSlider">
+  <div class="hero__track" id="heroTrack">
+    <div class="hero__slide">
+      <img class="hero__slide-bg" th:src="@{/images/vs01.jpg}" alt="청도 와인터널">
+      <div class="hero__slide-veil"></div>
+      <div class="hero__slide-content">
+        <span class="hero__badge">CHEONGDO WINE TUNNEL</span>
+        <h1 class="hero__title">천년의 시간이<br>흐르는 곳,<br><em>청도 와인터널</em></h1>
+        <p class="hero__desc">대한민국 유일의 지하 동굴 와인 저장고.<br>천정에서 흐르는 지하수와 청도 반시의 만남.</p>
+        <div class="hero__btns">
+          <a class="btn btn--primary" th:href="@{/tour/9gyeong}">관광지 둘러보기</a>
+          <a class="btn btn--ghost" th:href="@{/tour/course}">추천 코스 보기</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero__slide">
+      <img class="hero__slide-bg" th:src="@{/images/vs02.jpg}" alt="청도 레일바이크">
+      <div class="hero__slide-veil"></div>
+      <div class="hero__slide-content">
+        <span class="hero__badge">CHEONGDO RAIL BIKE</span>
+        <h1 class="hero__title">바람을 가르며<br>달리는<br><em>청도 레일바이크</em></h1>
+        <p class="hero__desc">옛 철로 위를 달리며 청도의 자연을 만끽.<br>가족·연인과 함께하는 특별한 하루.</p>
+        <div class="hero__btns">
+          <a class="btn btn--primary" th:href="@{/tour/9gyeong}">레일바이크 정보</a>
+          <a class="btn btn--ghost" th:href="@{/festival/regular}">축제 일정</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero__slide">
+      <img class="hero__slide-bg" th:src="@{/images/vs03.jpg}" alt="청도 운문사">
+      <div class="hero__slide-veil"></div>
+      <div class="hero__slide-content">
+        <span class="hero__badge">UNMUNSA TEMPLE</span>
+        <h1 class="hero__title">천년 고찰의<br>고요한 새벽,<br><em>운문사</em></h1>
+        <p class="hero__desc">비구니 사찰로 유명한 운문사.<br>솔숲과 계곡이 어우러진 사계절 명소.</p>
+        <div class="hero__btns">
+          <a class="btn btn--primary" th:href="@{/tour/9gyeong}">운문사 안내</a>
+          <a class="btn btn--ghost" th:href="@{/intro/story}">청도 이야기</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="hero__arrow hero__arrow--prev" id="heroPrev" aria-label="이전 슬라이드"><i class="xi-angle-left"></i></button>
+  <button class="hero__arrow hero__arrow--next" id="heroNext" aria-label="다음 슬라이드"><i class="xi-angle-right"></i></button>
+  <div class="hero__dots" id="heroDots">
+    <button class="hero__dot is-active" data-index="0" aria-label="슬라이드 1"></button>
+    <button class="hero__dot" data-index="1" aria-label="슬라이드 2"></button>
+    <button class="hero__dot" data-index="2" aria-label="슬라이드 3"></button>
+  </div>
+  <div class="hero__count" id="heroCount">01 / 03</div>
+</section>
+
+<script th:src="@{/home.css}" th:remove="all"><!-- home.css는 link로 로드됨 --></script>
+<script>
+(function(){var track=document.getElementById('heroTrack'),dots=document.querySelectorAll('#heroDots .hero__dot'),count=document.getElementById('heroCount'),orig=Array.from(track.children),total=orig.length,DURATION='0.75s cubic-bezier(0.22,0.61,0.36,1)',timer,pos=1;
+track.appendChild(orig[0].cloneNode(true));track.insertBefore(orig[total-1].cloneNode(true),orig[0]);
+track.style.transition='none';
+function en(){track.style.transition='transform '+DURATION;}
+function dis(cb){track.style.transition='none';requestAnimationFrame(function(){requestAnimationFrame(cb);});}
+function mv(p,a){if(a){en();track.style.transform='translateX(-'+(p*100)+'vw)';}else{dis(function(){track.style.transform='translateX(-'+(p*100)+'vw)';});}}
+function ui(){var r=((pos-1)%total+total)%total;dots.forEach(function(d,i){d.classList.toggle('is-active',i===r);});count.textContent=String(r+1).padStart(2,'0')+' / 0'+total;}
+function go(p){pos=p;mv(pos,true);ui();}
+track.addEventListener('transitionend',function(){if(pos===0){pos=total;mv(pos,false);}else if(pos===total+1){pos=1;mv(pos,false);}});
+function auto(){clearInterval(timer);timer=setInterval(function(){go(pos+1);},5000);}
+document.getElementById('heroNext').addEventListener('click',function(){go(pos+1);auto();});
+document.getElementById('heroPrev').addEventListener('click',function(){go(pos-1);auto();});
+dots.forEach(function(d){d.addEventListener('click',function(){go(parseInt(this.dataset.index)+1);auto();});});
+mv(1,false);ui();auto();
+})();
+</script>
+
+<!-- 통계 바 -->
+<section class="stat-bar">
+  <div class="u-container">
+    <div class="stat-bar__inner">
+      <div class="stat-item"><div class="stat-item__num">9<sup>경</sup></div><div class="stat-item__label">청도 대표 관광명소</div></div>
+      <div class="stat-item"><div class="stat-item__num">4<sup>+</sup></div><div class="stat-item__label">연간 정기 축제</div></div>
+      <div class="stat-item"><div class="stat-item__num">1000<sup>년</sup></div><div class="stat-item__label">유구한 역사와 전통</div></div>
+      <div class="stat-item"><div class="stat-item__num">30<sup>분</sup></div><div class="stat-item__label">대구에서 KTX 이동시간</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 관광 9경 -->
+<section class="u-section u-section--dark">
+  <div class="sec-hd">
+    <div class="sec-hd__echo sec-hd__echo--light">9GYEONG</div>
+    <h2 class="sec-hd__title sec-hd__title--light">청도 관광 9경</h2>
+    <p class="sec-hd__sub sec-hd__sub--light">청도를 대표하는 아홉 가지 빼어난 경관</p>
+  </div>
+  <div class="nine-grid">
+    <a class="nine-card" th:href="@{/tour/9gyeong}"><div class="nine-card__bg"><img th:src="@{/images/sub2_1_1.jpg}" alt="와인터널"></div><div class="nine-card__body"><div class="nine-card__num">01 KYEONG</div><h3 class="nine-card__name">청도 와인터널</h3><p class="nine-card__sub">화양읍 삼신리</p></div></a>
+    <a class="nine-card" th:href="@{/tour/9gyeong}"><div class="nine-card__bg"><img th:src="@{/images/sub2_1_2.jpg}" alt="레일바이크"></div><div class="nine-card__body"><div class="nine-card__num">02 KYEONG</div><h3 class="nine-card__name">청도 레일바이크</h3><p class="nine-card__sub">청도읍 원리</p></div></a>
+    <a class="nine-card" th:href="@{/tour/9gyeong}"><div class="nine-card__bg"><img th:src="@{/images/sub1_1_1.jpg}" alt="운문사"></div><div class="nine-card__body"><div class="nine-card__num">03 KYEONG</div><h3 class="nine-card__name">운문사</h3><p class="nine-card__sub">운문면 신원리</p></div></a>
+    <a class="nine-card" th:href="@{/tour/9gyeong}"><div class="nine-card__bg"><img th:src="@{/images/sub3_1_1.jpg}" alt="청도읍성"></div><div class="nine-card__body"><div class="nine-card__num">04 KYEONG</div><h3 class="nine-card__name">청도읍성</h3><p class="nine-card__sub">화양읍 동천리</p></div></a>
+    <a class="nine-card" th:href="@{/tour/9gyeong}"><div class="nine-card__bg"><img th:src="@{/images/sub1_1_2.jpg}" alt="운문댐"></div><div class="nine-card__body"><div class="nine-card__num">05 KYEONG</div><h3 class="nine-card__name">운문댐 생태공원</h3><p class="nine-card__sub">운문면 지촌리</p></div></a>
+    <a class="nine-card" th:href="@{/tour/9gyeong}"><div class="nine-card__bg"><img th:src="@{/images/sub2_1_3.jpg}" alt="자계서원"></div><div class="nine-card__body"><div class="nine-card__num">06 KYEONG</div><h3 class="nine-card__name">자계서원</h3><p class="nine-card__sub">금천면 신지리</p></div></a>
+    <a class="nine-card" th:href="@{/tour/9gyeong}"><div class="nine-card__bg"><img th:src="@{/images/sub3_1_2.jpg}" alt="박곡지"></div><div class="nine-card__body"><div class="nine-card__num">07 KYEONG</div><h3 class="nine-card__name">박곡지 수변공원</h3><p class="nine-card__sub">각북면 박곡리</p></div></a>
+    <a class="nine-card" th:href="@{/tour/9gyeong}"><div class="nine-card__bg"><img th:src="@{/images/sub3_1_3.jpg}" alt="적천사"></div><div class="nine-card__body"><div class="nine-card__num">08 KYEONG</div><h3 class="nine-card__name">적천사</h3><p class="nine-card__sub">청도읍 원리</p></div></a>
+    <a class="nine-card" th:href="@{/tour/9gyeong}"><div class="nine-card__bg"><img th:src="@{/images/row03_3.jpg}" alt="청도향교"></div><div class="nine-card__body"><div class="nine-card__num">09 KYEONG</div><h3 class="nine-card__name">청도향교</h3><p class="nine-card__sub">청도읍 고수리</p></div></a>
+  </div>
+</section>
+
+<!-- 축제 & 행사 -->
+<section class="u-section u-section--white">
+  <div class="u-container">
+    <div class="sec-hd">
+      <div class="sec-hd__echo">FESTIVAL</div>
+      <h2 class="sec-hd__title">축제 &amp; 행사</h2>
+      <p class="sec-hd__sub">사계절 청도를 더욱 풍성하게 만드는 축제와 이벤트</p>
+    </div>
+    <div class="fest-grid">
+      <a class="fest-card fest-card--main" th:href="@{/festival/regular}"><img class="fest-card__img" th:src="@{/images/bigthum01.jpg}" alt="청도 소싸움축제"><div class="fest-card__overlay"></div><div class="fest-card__body"><span class="badge badge--event badge--pill">매년 2~3월</span><h3 class="fest-card__title">청도 소싸움 축제</h3></div></a>
+      <a class="fest-card" th:href="@{/festival/regular}"><img class="fest-card__img" th:src="@{/images/row02.jpg}" alt="청도 와인축제"><div class="fest-card__overlay"></div><div class="fest-card__body"><div class="fest-card__date">10월</div><h3 class="fest-card__title">청도 와인 축제</h3></div></a>
+      <a class="fest-card" th:href="@{/festival/regular}"><img class="fest-card__img" th:src="@{/images/row03.jpg}" alt="청도 감 축제"><div class="fest-card__overlay"></div><div class="fest-card__body"><div class="fest-card__date">11월</div><h3 class="fest-card__title">청도 반시 감 축제</h3></div></a>
+    </div>
+    <div class="more-wrap"><a class="btn btn--line" th:href="@{/festival/regular}">축제 전체 보기</a></div>
+  </div>
+</section>
+
+<!-- 빠른 메뉴 -->
+<section class="u-section u-section--alt">
+  <div class="u-container">
+    <div class="sec-hd">
+      <div class="sec-hd__echo">QUICK MENU</div>
+      <h2 class="sec-hd__title">청도 여행 바로가기</h2>
+    </div>
+    <div class="quick-grid">
+      <a class="quick-item" th:href="@{/tour/9gyeong}"><div class="quick-item__icon"><img th:src="@{/images/box_icon1.png}" alt="관광명소"></div><span class="quick-item__label">관광명소</span></a>
+      <a class="quick-item" th:href="@{/festival/regular}"><div class="quick-item__icon"><img th:src="@{/images/box_icon2.png}" alt="축제/행사"></div><span class="quick-item__label">축제/행사</span></a>
+      <a class="quick-item" th:href="@{/stay/accommodation}"><div class="quick-item__icon"><img th:src="@{/images/box_icon3.png}" alt="숙박"></div><span class="quick-item__label">숙박</span></a>
+      <a class="quick-item" th:href="@{/stay/restaurant}"><div class="quick-item__icon"><img th:src="@{/images/box_icon4.png}" alt="맛집"></div><span class="quick-item__label">맛집</span></a>
+      <a class="quick-item" th:href="@{/tour/course}"><div class="quick-item__icon"><img th:src="@{/images/box_icon5.png}" alt="추천코스"></div><span class="quick-item__label">추천코스</span></a>
+      <a class="quick-item" th:href="@{/info/transport}"><div class="quick-item__icon"><img th:src="@{/images/box_icon6.png}" alt="교통정보"></div><span class="quick-item__label">교통정보</span></a>
+      <a class="quick-item" th:href="@{/community/review}"><div class="quick-item__icon"><img th:src="@{/images/box_icon7.png}" alt="여행후기"></div><span class="quick-item__label">여행후기</span></a>
+      <a class="quick-item" th:href="@{/contact}"><div class="quick-item__icon"><img th:src="@{/images/box_icon8.png}" alt="문의하기"></div><span class="quick-item__label">문의하기</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 최신 소식 -->
+<section class="u-section u-section--white">
+  <div class="u-container">
+    <div class="sec-hd">
+      <div class="sec-hd__echo">NEWS</div>
+      <h2 class="sec-hd__title">청도 최신 소식</h2>
+      <p class="sec-hd__sub">청도군의 새로운 소식과 이벤트 정보를 만나보세요</p>
+    </div>
+    <div class="news-grid">
+      <a class="news-card" th:href="@{/community/notice}"><img class="news-card__img" th:src="@{/images/row01.jpg}" alt="소싸움축제 개최"><div class="news-card__body"><div class="news-card__meta"><span class="badge badge--event badge--pill">축제</span><span class="news-card__date">2025. 02. 15</span></div><h3 class="news-card__title">2025 청도 소싸움 축제 개최 안내</h3><p class="news-card__desc">전통과 힘의 대결! 청도의 봄을 알리는 소싸움 축제가 2월 중순 개막합니다.</p></div></a>
+      <a class="news-card" th:href="@{/community/notice}"><img class="news-card__img" th:src="@{/images/row4.jpg}" alt="와인터널 리뉴얼"><div class="news-card__body"><div class="news-card__meta"><span class="badge badge--primary badge--pill">공지</span><span class="news-card__date">2025. 01. 20</span></div><h3 class="news-card__title">청도 와인터널 신규 체험 공간 오픈</h3><p class="news-card__desc">리뉴얼 된 와인터널 체험 공간과 함께 더욱 풍성한 청도 여행을 즐기세요.</p></div></a>
+      <a class="news-card" th:href="@{/community/notice}"><img class="news-card__img" th:src="@{/images/row03_4.jpg}" alt="관광코스"><div class="news-card__body"><div class="news-card__meta"><span class="badge badge--notice badge--pill">이벤트</span><span class="news-card__date">2025. 01. 10</span></div><h3 class="news-card__title">2025년 청도 추천 봄 여행 코스 발표</h3><p class="news-card__desc">봄꽃과 함께 즐기는 청도 1박2일 추천 코스를 공개합니다.</p></div></a>
+    </div>
+    <div class="more-wrap"><a class="btn btn--line" th:href="@{/community/notice}">공지사항 전체 보기</a></div>
+  </div>
+</section>
+
+<th:block th:replace="~{fragments/footer :: footer}"></th:block>
+
+</body>
+</html>

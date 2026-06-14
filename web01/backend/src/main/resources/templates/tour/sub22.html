@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head('테마관광')}"></head>
+<body>
+<th:block th:replace="~{fragments/header :: header('tour')}"></th:block>
+<div class="page-hero" th:style="'background-image:url(' + @{/images/sub1_1_2.jpg} + ')'">
+  <div class="page-hero__veil"></div>
+  <div class="u-container page-hero__inner">
+    <nav class="crumb"><a th:href="@{/}">HOME</a> <i class="xi-angle-right-min"></i> 청도관광 <i class="xi-angle-right-min"></i> 테마관광</nav>
+    <h1 class="page-hero__title">테마관광</h1>
+    <p class="page-hero__sub">청도의 다양한 테마별 관광 코스</p>
+  </div>
+</div>
+<nav class="subnav">
+  <div class="u-container subnav__scroll">
+    <a class="subnav__item" th:href="@{/tour/9gyeong}">청도관광9경</a>
+    <a class="subnav__item is-active" th:href="@{/tour/theme}">테마관광</a>
+    <a class="subnav__item" th:href="@{/tour/course}">추천관광코스</a>
+  </div>
+</nav>
+<div class="u-container sub-body">
+  <main class="sub-main">
+    <div class="sub-section">
+      <h2 class="sub-section__title sub-section__title--accent">테마관광</h2>
+      <p style="color:var(--c-text-mute);">청도의 자연, 문화, 역사를 테마별로 즐기는 특별한 여행을 제안합니다.</p>
+    </div>
+  </main>
+  <aside class="sub-aside">
+    <div class="info-card"><div class="info-card__head">관광 안내</div><div class="info-card__list"><div><dt>문의</dt><dd>054-370-6114</dd></div></div></div>
+  </aside>
+</div>
+<th:block th:replace="~{fragments/footer :: footer}"></th:block>
+</body>
+</html>

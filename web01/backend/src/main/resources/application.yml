@@ -1,0 +1,54 @@
+spring:
+  application:
+    name: cheongdo-tourism
+
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:cheongdo}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASS:1004}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  thymeleaf:
+    cache: false
+    check-template-location: true
+    prefix: classpath:/templates/
+    suffix: .html
+    encoding: UTF-8
+
+  web:
+    resources:
+      static-locations:
+        - file:../         # web01 루트 (로컬 개발: backend/ 디렉터리에서 실행 시)
+        - classpath:/static/
+
+  devtools:
+    livereload:
+      enabled: true
+
+server:
+  port: ${SERVER_PORT:8080}
+  servlet:
+    session:
+      timeout: 30m
+      cookie:
+        name: CHEONGDOSESSION
+        http-only: true
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    com.cheongdo.tourism: DEBUG

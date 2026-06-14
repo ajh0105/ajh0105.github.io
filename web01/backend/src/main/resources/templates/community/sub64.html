@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head('여행 Q&A')}"></head>
+<body>
+<th:block th:replace="~{fragments/header :: header('community')}"></th:block>
+<div class="page-hero" th:style="'background-image:url(' + @{/images/bg_visual-9.jpg} + ')'">
+  <div class="page-hero__veil"></div>
+  <div class="u-container page-hero__inner">
+    <nav class="crumb"><a th:href="@{/}">HOME</a> <i class="xi-angle-right-min"></i> 여행커뮤니티 <i class="xi-angle-right-min"></i> 여행 Q&amp;A</nav>
+    <h1 class="page-hero__title">여행 Q&amp;A</h1>
+    <p class="page-hero__sub">청도 여행에 관한 궁금증을 해결하세요</p>
+  </div>
+</div>
+<nav class="subnav">
+  <div class="u-container subnav__scroll">
+    <a class="subnav__item" th:href="@{/community/notice}">공지사항</a>
+    <a class="subnav__item" th:href="@{/community/board}">자유게시판</a>
+    <a class="subnav__item" th:href="@{/community/review}">여행후기</a>
+    <a class="subnav__item is-active" th:href="@{/community/qna}">여행 Q&amp;A</a>
+  </div>
+</nav>
+<div class="u-container sub-body">
+  <main class="sub-main">
+    <div class="sub-section">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--sp-5);">
+        <h2 class="sub-section__title sub-section__title--accent" style="margin:0;">자주 묻는 질문</h2>
+        <a th:href="@{/community/qna/write}" th:if="${session.loginMember != null}" class="btn btn--primary btn--sm">문의 작성</a>
+      </div>
+      <div class="qna_item" th:each="post : ${posts}">
+        <div class="qna_q">
+          <a th:href="@{/community/qna/{id}(id=${post.id})}" th:text="${post.title}">질문</a>
+        </div>
+        <div class="qna_a" th:text="${#strings.abbreviate(post.content, 150)}">답변 미리보기</div>
+      </div>
+      <div th:if="${posts.isEmpty()}" style="text-align:center;padding:var(--sp-8);">등록된 Q&amp;A가 없습니다.</div>
+    </div>
+  </main>
+  <aside class="sub-aside">
+    <div class="info-card"><div class="info-card__head">Q&amp;A 문의</div><div class="info-card__list"><div><dt>전화</dt><dd>054-370-6114</dd></div><div><dt>이메일</dt><dd>tour@cheongdo.go.kr</dd></div></div></div>
+  </aside>
+</div>
+<th:block th:replace="~{fragments/footer :: footer}"></th:block>
+</body>
+</html>

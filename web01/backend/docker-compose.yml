@@ -1,0 +1,48 @@
+version: '3.9'
+
+services:
+  # ── PostgreSQL ────────────────────────────────
+  db:
+    image: postgres:16-alpine
+    container_name: cheongdo-db
+    environment:
+      POSTGRES_DB: cheongdo
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: cheongdo1004
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"        # 호스트 5433 → 컨테이너 5432 (충돌 방지)
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  # ── Spring Boot App ────────────────────────────
+  app:
+    build:
+      context: ..           # web01/ 을 빌드 컨텍스트로 (정적 파일 접근)
+      dockerfile: backend/Dockerfile
+    container_name: cheongdo-app
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: cheongdo
+      DB_USER: postgres
+      DB_PASS: cheongdo1004
+      SERVER_PORT: 8080
+      SPRING_PROFILES_ACTIVE: prod
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    volumes:
+      # 로컬 개발 시 web01 정적 파일 마운트 (이미지 재빌드 없이 CSS/이미지 반영)
+      - ../:/app/static:ro
+
+volumes:
+  postgres-data:

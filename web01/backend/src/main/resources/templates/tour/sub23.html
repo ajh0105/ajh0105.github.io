@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head('추천관광코스')}"></head>
+<body>
+<th:block th:replace="~{fragments/header :: header('tour')}"></th:block>
+<div class="page-hero" th:style="'background-image:url(' + @{/images/row03_4.jpg} + ')'">
+  <div class="page-hero__veil"></div>
+  <div class="u-container page-hero__inner">
+    <nav class="crumb"><a th:href="@{/}">HOME</a> <i class="xi-angle-right-min"></i> 청도관광 <i class="xi-angle-right-min"></i> 추천관광코스</nav>
+    <h1 class="page-hero__title">추천 관광 코스</h1>
+    <p class="page-hero__sub">청도 여행을 더욱 알차게 즐기는 추천 코스</p>
+  </div>
+</div>
+<nav class="subnav">
+  <div class="u-container subnav__scroll">
+    <a class="subnav__item" th:href="@{/tour/9gyeong}">청도관광9경</a>
+    <a class="subnav__item" th:href="@{/tour/theme}">테마관광</a>
+    <a class="subnav__item is-active" th:href="@{/tour/course}">추천관광코스</a>
+  </div>
+</nav>
+<div class="u-container sub-body">
+  <main class="sub-main">
+    <div class="sub-section">
+      <h2 class="sub-section__title sub-section__title--accent">추천 관광 코스</h2>
+      <div class="course_steps">
+        <div class="step_item"><div class="step_num">01</div><div class="step_body"><h4>청도 와인터널</h4><p>화양읍 삼신리 · 지하 와인 동굴 탐방 (1시간)</p></div></div>
+        <div class="step_arrow"><i class="xi-angle-down"></i></div>
+        <div class="step_item"><div class="step_num">02</div><div class="step_body"><h4>청도 레일바이크</h4><p>청도읍 원리 · 철로 위 자전거 체험 (1시간 30분)</p></div></div>
+        <div class="step_arrow"><i class="xi-angle-down"></i></div>
+        <div class="step_item"><div class="step_num">03</div><div class="step_body"><h4>청도읍성</h4><p>화양읍 동천리 · 조선시대 석성 탐방 (30분)</p></div></div>
+        <div class="step_arrow"><i class="xi-angle-down"></i></div>
+        <div class="step_item"><div class="step_num">04</div><div class="step_body"><h4>운문사</h4><p>운문면 신원리 · 천년 고찰 방문 (1시간)</p></div></div>
+      </div>
+    </div>
+  </main>
+  <aside class="sub-aside">
+    <div class="info-card"><div class="info-card__head">코스 안내</div><div class="info-card__list"><div><dt>총 소요</dt><dd>약 5~6시간</dd></div><div><dt>문의</dt><dd>054-370-6114</dd></div></div></div>
+  </aside>
+</div>
+<th:block th:replace="~{fragments/footer :: footer}"></th:block>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head('교통/접근')}"></head>
+<body>
+<th:block th:replace="~{fragments/header :: header('info')}"></th:block>
+<div class="page-hero" th:style="'background-image:url(' + @{/images/sub3_1_1.jpg} + ')'">
+  <div class="page-hero__veil"></div>
+  <div class="u-container page-hero__inner">
+    <nav class="crumb"><a th:href="@{/}">HOME</a> <i class="xi-angle-right-min"></i> 여행정보 <i class="xi-angle-right-min"></i> 교통/접근</nav>
+    <h1 class="page-hero__title">교통 / 접근</h1>
+    <p class="page-hero__sub">청도로 오는 다양한 교통편 안내</p>
+  </div>
+</div>
+<nav class="subnav">
+  <div class="u-container subnav__scroll">
+    <a class="subnav__item is-active" th:href="@{/info/transport}">교통/접근</a>
+    <a class="subnav__item" th:href="@{/info/weather}">날씨/계절</a>
+    <a class="subnav__item" th:href="@{/info/map}">지도</a>
+  </div>
+</nav>
+<div class="u-container sub-body">
+  <main class="sub-main">
+    <div class="sub-section">
+      <h2 class="sub-section__title sub-section__title--accent">교통 안내</h2>
+      <div class="kpi-strip" style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-5);margin-bottom:var(--sp-8);">
+        <div class="kpi-item"><div class="kpi-num">30분</div><div class="kpi-label">대구 → KTX</div></div>
+        <div class="kpi-item"><div class="kpi-num">60분</div><div class="kpi-label">부산 → 버스</div></div>
+        <div class="kpi-item"><div class="kpi-num">90분</div><div class="kpi-label">서울 → KTX</div></div>
+      </div>
+      <div class="transport-grid">
+        <div class="transport-item"><h4><i class="xi-train"></i> KTX / 기차</h4><p>동대구역 → 청도역 (약 30분) · 하루 20여 편 운행</p></div>
+        <div class="transport-item"><h4><i class="xi-bus-o"></i> 버스</h4><p>동대구 터미널 → 청도 · 부산 노포동 → 청도 운행</p></div>
+        <div class="transport-item"><h4><i class="xi-car-o"></i> 자가용</h4><p>경부고속도로 청도IC · 밀양IC 이용</p></div>
+      </div>
+    </div>
+  </main>
+  <aside class="sub-aside">
+    <div class="info-card"><div class="info-card__head">교통 문의</div><div class="info-card__list"><div><dt>청도역</dt><dd>1544-7788</dd></div><div><dt>군청</dt><dd>054-370-6114</dd></div></div></div>
+  </aside>
+</div>
+<th:block th:replace="~{fragments/footer :: footer}"></th:block>
+</body>
+</html>

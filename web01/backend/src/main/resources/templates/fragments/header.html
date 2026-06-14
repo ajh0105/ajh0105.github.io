@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="header(activeMenu)">
+<header class="gnb-header">
+  <div class="u-container">
+    <a class="gnb-logo" th:href="@{/}">
+      <img th:src="@{/images/logo.png}" alt="청도군 문화관광">
+    </a>
+    <ul class="gnb-nav">
+      <li th:classappend="${activeMenu == 'tour'} ? 'is-active'">
+        <a th:href="@{/tour/9gyeong}">청도관광</a>
+        <div class="gnb-drop">
+          <a th:href="@{/tour/9gyeong}">청도관광9경</a>
+          <a th:href="@{/tour/theme}">테마관광</a>
+          <a th:href="@{/tour/course}">추천관광코스</a>
+        </div>
+      </li>
+      <li th:classappend="${activeMenu == 'festival'} ? 'is-active'">
+        <a th:href="@{/festival/regular}">축제/행사</a>
+        <div class="gnb-drop">
+          <a th:href="@{/festival/regular}">정기축제</a>
+          <a th:href="@{/festival/event}">이벤트/행사</a>
+        </div>
+      </li>
+      <li th:classappend="${activeMenu == 'stay'} ? 'is-active'">
+        <a th:href="@{/stay/accommodation}">숙박/맛집</a>
+        <div class="gnb-drop">
+          <a th:href="@{/stay/accommodation}">숙박</a>
+          <a th:href="@{/stay/restaurant}">맛집</a>
+          <a th:href="@{/stay/shopping}">쇼핑</a>
+        </div>
+      </li>
+      <li th:classappend="${activeMenu == 'info'} ? 'is-active'">
+        <a th:href="@{/info/transport}">여행정보</a>
+        <div class="gnb-drop">
+          <a th:href="@{/info/transport}">교통/접근</a>
+          <a th:href="@{/info/weather}">날씨/계절</a>
+          <a th:href="@{/info/map}">지도</a>
+        </div>
+      </li>
+      <li th:classappend="${activeMenu == 'intro'} ? 'is-active'">
+        <a th:href="@{/intro/story}">청도소개</a>
+        <div class="gnb-drop">
+          <a th:href="@{/intro/story}">청도이야기</a>
+          <a th:href="@{/intro/history}">역사/문화</a>
+          <a th:href="@{/intro/people}">인물/인재</a>
+        </div>
+      </li>
+      <li th:classappend="${activeMenu == 'community'} ? 'is-active'">
+        <a th:href="@{/community/notice}">여행커뮤니티</a>
+        <div class="gnb-drop">
+          <a th:href="@{/community/notice}">공지사항</a>
+          <a th:href="@{/community/board}">자유게시판</a>
+          <a th:href="@{/community/review}">여행후기</a>
+          <a th:href="@{/community/qna}">여행 Q&amp;A</a>
+        </div>
+      </li>
+    </ul>
+    <div class="gnb-util">
+      <th:block th:if="${session.loginMember == null}">
+        <a th:href="@{/login}">로그인</a>
+        <span class="sep">|</span>
+        <a th:href="@{/signup}">회원가입</a>
+      </th:block>
+      <th:block th:if="${session.loginMember != null}">
+        <span th:text="${session.loginMember.name}">사용자</span>님
+        <span class="sep">|</span>
+        <a th:href="@{/logout}">로그아웃</a>
+      </th:block>
+      <span class="sep">|</span>
+      <a th:href="@{/contact}">Contact</a>
+    </div>
+  </div>
+</header>
+</html>

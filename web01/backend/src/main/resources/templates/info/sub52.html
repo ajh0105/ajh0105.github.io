@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/head :: head('날씨/계절')}"></head>
+<body>
+<th:block th:replace="~{fragments/header :: header('info')}"></th:block>
+<div class="page-hero" th:style="'background-image:url(' + @{/images/sub1_1_2.jpg} + ')'">
+  <div class="page-hero__veil"></div>
+  <div class="u-container page-hero__inner">
+    <nav class="crumb"><a th:href="@{/}">HOME</a> <i class="xi-angle-right-min"></i> 여행정보 <i class="xi-angle-right-min"></i> 날씨/계절</nav>
+    <h1 class="page-hero__title">날씨 / 계절</h1>
+    <p class="page-hero__sub">청도의 사계절 기후와 여행 시즌 안내</p>
+  </div>
+</div>
+<nav class="subnav">
+  <div class="u-container subnav__scroll">
+    <a class="subnav__item" th:href="@{/info/transport}">교통/접근</a>
+    <a class="subnav__item is-active" th:href="@{/info/weather}">날씨/계절</a>
+    <a class="subnav__item" th:href="@{/info/map}">지도</a>
+  </div>
+</nav>
+<div class="u-container sub-body">
+  <main class="sub-main">
+    <div class="sub-section">
+      <h2 class="sub-section__title sub-section__title--accent">사계절 청도</h2>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:var(--sp-5);">
+        <div class="info-card"><div class="info-card__head">🌸 봄 (3~5월)</div><div class="info-card__list"><div><dt>평균기온</dt><dd>8~18°C</dd></div><div><dt>추천</dt><dd>벚꽃, 소싸움 축제</dd></div></div></div>
+        <div class="info-card"><div class="info-card__head">☀️ 여름 (6~8월)</div><div class="info-card__list"><div><dt>평균기온</dt><dd>22~30°C</dd></div><div><dt>추천</dt><dd>운문댐, 계곡 피서</dd></div></div></div>
+        <div class="info-card"><div class="info-card__head">🍂 가을 (9~11월)</div><div class="info-card__list"><div><dt>평균기온</dt><dd>8~22°C</dd></div><div><dt>추천</dt><dd>단풍, 반시 수확, 와인 축제</dd></div></div></div>
+        <div class="info-card"><div class="info-card__head">❄️ 겨울 (12~2월)</div><div class="info-card__list"><div><dt>평균기온</dt><dd>-3~7°C</dd></div><dt>추천</dt><dd>와인터널, 운문사 설경</dd></div></div>
+      </div>
+    </div>
+  </main>
+  <aside class="sub-aside">
+    <div class="info-card"><div class="info-card__head">날씨 정보</div><div class="info-card__list"><div><dt>최적 시기</dt><dd>봄·가을</dd></div></div></div>
+  </aside>
+</div>
+<th:block th:replace="~{fragments/footer :: footer}"></th:block>
+</body>
+</html>
