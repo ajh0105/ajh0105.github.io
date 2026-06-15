@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="~{fragments/head :: head('날씨/계절')}"></head>
 <body>
 <th:block th:replace="~{fragments/header :: header('info')}"></th:block>
-<div class="page-hero" th:style="'background-image:url(' + @{/images/sub1_1_2.jpg} + ')'">
+<div class="page-hero">
   <div class="page-hero__veil"></div>
   <div class="u-container page-hero__inner">
-    <nav class="crumb"><a th:href="@{/}">HOME</a> <i class="xi-angle-right-min"></i> 여행정보 <i class="xi-angle-right-min"></i> 날씨/계절</nav>
+    <nav class="crumb"><a th:href="@{/}">HOME</a> <span class="crumb__sep">▶</span> 여행정보 <span class="crumb__sep">▶</span> 날씨/계절</nav>
     <h1 class="page-hero__title">날씨 / 계절</h1>
     <p class="page-hero__sub">청도의 사계절 기후와 여행 시즌 안내</p>
   </div>

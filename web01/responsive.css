@@ -187,7 +187,7 @@
   /* 퀵 */
   .quick-grid { grid-template-columns:repeat(4,1fr); gap:var(--sp-2); }
   .quick-item { padding:var(--sp-4) var(--sp-2); }
-  .quick-item__icon { width:44px; height:44px; font-size:22px; }
+  .quick-item__icon { width:88px; height:88px; font-size:44px; }
 
   /* 카드 */
   .card-grid--2,

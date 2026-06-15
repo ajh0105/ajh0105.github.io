@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="~{fragments/head :: head('자유게시판')}"></head>
 <body>
 <th:block th:replace="~{fragments/header :: header('community')}"></th:block>
-<div class="page-hero" th:style="'background-image:url(' + @{/images/bg_visual-9.jpg} + ')'">
+<div class="page-hero">
   <div class="page-hero__veil"></div>
   <div class="u-container page-hero__inner">
-    <nav class="crumb"><a th:href="@{/}">HOME</a> <i class="xi-angle-right-min"></i> 여행커뮤니티 <i class="xi-angle-right-min"></i> 자유게시판</nav>
+    <nav class="crumb"><a th:href="@{/}">HOME</a> <span class="crumb__sep">▶</span> 여행커뮤니티 <span class="crumb__sep">▶</span> 자유게시판</nav>
     <h1 class="page-hero__title">자유게시판</h1>
     <p class="page-hero__sub">청도 여행 관련 자유롭게 이야기를 나눠보세요</p>
   </div>

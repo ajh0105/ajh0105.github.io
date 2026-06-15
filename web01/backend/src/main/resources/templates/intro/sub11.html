@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="~{fragments/head :: head('청도이야기')}"></head>
 <body>
 <th:block th:replace="~{fragments/header :: header('intro')}"></th:block>
-<div class="page-hero" th:style="'background-image:url(' + @{/images/sub1_1_1.jpg} + ')'">
+<div class="page-hero">
   <div class="page-hero__veil"></div>
   <div class="u-container page-hero__inner">
-    <nav class="crumb"><a th:href="@{/}">HOME</a> <i class="xi-angle-right-min"></i> 청도소개 <i class="xi-angle-right-min"></i> 청도이야기</nav>
+    <nav class="crumb"><a th:href="@{/}">HOME</a> <span class="crumb__sep">▶</span> 청도소개 <span class="crumb__sep">▶</span> 청도이야기</nav>
     <h1 class="page-hero__title">청도 이야기</h1>
     <p class="page-hero__sub">경북 청도군의 자연과 사람 이야기</p>
   </div>

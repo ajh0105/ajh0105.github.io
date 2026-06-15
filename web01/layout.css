@@ -9,7 +9,7 @@
 .gnb-header {
   position:fixed;
   top:0; left:0; right:0;
-  height:72px;
+  height:60px;
   background:rgba(255,255,255,0.97);
   backdrop-filter:blur(12px);
   border-bottom:1px solid rgba(228,236,247,0.6);
@@ -18,9 +18,12 @@
   align-items:center;
 }
 .gnb-header .u-container {
+  position:relative;
   display:flex;
   align-items:center;
   height:100%;
+  padding-left:var(--sp-14);
+  padding-right:var(--sp-14);
 }
 
 /* 로고 */
@@ -29,16 +32,17 @@
   align-items:center;
   text-decoration:none;
   flex-shrink:0;
-  margin-right:var(--sp-12);
 }
 .gnb-logo img { height:40px; display:block; }
 
 /* 메인 메뉴 */
 .gnb-nav {
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
   display:flex;
   align-items:stretch;
   height:100%;
-  flex:1;
   list-style:none;
   margin:0;
   padding:0;
@@ -134,7 +138,7 @@
 .gnb-util .sep { color:var(--c-border-strong); font-size:12px; }
 
 /* 헤더 아래 공간 확보 */
-.header-spacer { height:72px; }
+.header-spacer { height:60px; }
 
 /* ────────────────────────────────────────────
    FOOTER
@@ -208,6 +212,7 @@
 .ft-banner-item {
   display:flex;
   align-items:center;
+  justify-content:center;
   gap:var(--sp-3);
   padding:var(--sp-4) var(--sp-5);
   background:rgba(255,255,255,0.04);
@@ -306,13 +311,14 @@
 .page-hero__veil {
   position:absolute;
   inset:0;
-  background:var(--g-overlay-dark);
+  background:linear-gradient(rgba(7,16,38,0.45), rgba(7,16,38,0.78));
 }
 .page-hero__inner {
   position:relative;
   z-index:1;
   padding-bottom:var(--sp-8);
 }
+.page-hero__inner .crumb { margin-bottom:var(--sp-5); }
 .page-hero__title {
   font-family:var(--ff-display);
   font-size:var(--fs-d1);
@@ -332,7 +338,7 @@
 ──────────────────────────────────────────── */
 .subnav {
   position:sticky;
-  top:72px;
+  top:60px;
   z-index:60;
   background:#fff;
   border-bottom:1.5px solid var(--c-border);

@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="~{fragments/head :: head(${post.title})}"></head>
 <body>
 <th:block th:replace="~{fragments/header :: header('community')}"></th:block>
 
-<div class="page-hero" th:style="'background-image:url(' + @{/images/bg_visual-9.jpg} + ')'">
+<div class="page-hero">
   <div class="page-hero__veil"></div>
   <div class="u-container page-hero__inner">
-    <nav class="crumb"><a th:href="@{/}">HOME</a> <i class="xi-angle-right-min"></i> 여행커뮤니티</nav>
+    <nav class="crumb"><a th:href="@{/}">HOME</a> <span class="crumb__sep">▶</span> 여행커뮤니티</nav>
     <h1 class="page-hero__title" th:text="${post.title}">게시글 제목</h1>
   </div>
 </div>

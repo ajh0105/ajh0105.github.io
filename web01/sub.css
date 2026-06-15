@@ -56,7 +56,7 @@
 ──────────────────────────────────────────── */
 .event-grid {
   display:grid;
-  grid-template-columns:repeat(2,1fr);
+  grid-template-columns:1fr;
   gap:var(--sp-6);
 }
 .event-card {
@@ -76,7 +76,9 @@
   box-shadow:var(--sh-card-hover);
 }
 .event-card__thumb {
-  min-width:180px;
+  flex:0 0 561px;
+  width:561px;
+  height:500px;
   background:var(--c-bg-alt);
   overflow:hidden;
 }

@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="~{fragments/head :: head('문의하기')}"></head>
 <body>
 <th:block th:replace="~{fragments/header :: header('')}"></th:block>
-<div class="page-hero" th:style="'background-image:url(' + @{/images/sub3_1_3.jpg} + ')'">
+<div class="page-hero">
   <div class="page-hero__veil"></div>
   <div class="u-container page-hero__inner">
-    <nav class="crumb"><a th:href="@{/}">HOME</a> <i class="xi-angle-right-min"></i> Contact</nav>
+    <nav class="crumb"><a th:href="@{/}">HOME</a> <span class="crumb__sep">▶</span> Contact</nav>
     <h1 class="page-hero__title">문의하기</h1>
     <p class="page-hero__sub">청도 문화관광에 궁금한 점을 문의해 주세요</p>
   </div>

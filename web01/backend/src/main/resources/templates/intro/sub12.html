@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="~{fragments/head :: head('역사/문화')}"></head>
 <body>
 <th:block th:replace="~{fragments/header :: header('intro')}"></th:block>
-<div class="page-hero" th:style="'background-image:url(' + @{/images/sub3_1_1.jpg} + ')'">
+<div class="page-hero">
   <div class="page-hero__veil"></div>
   <div class="u-container page-hero__inner">
-    <nav class="crumb"><a th:href="@{/}">HOME</a> <i class="xi-angle-right-min"></i> 청도소개 <i class="xi-angle-right-min"></i> 역사/문화</nav>
+    <nav class="crumb"><a th:href="@{/}">HOME</a> <span class="crumb__sep">▶</span> 청도소개 <span class="crumb__sep">▶</span> 역사/문화</nav>
     <h1 class="page-hero__title">역사 / 문화</h1>
     <p class="page-hero__sub">청도의 유구한 역사와 전통 문화</p>
   </div>

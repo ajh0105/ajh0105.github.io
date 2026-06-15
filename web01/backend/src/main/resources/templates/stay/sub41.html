@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="~{fragments/head :: head('숙박')}"></head>
 <body>
 <th:block th:replace="~{fragments/header :: header('stay')}"></th:block>
-<div class="page-hero" th:style="'background-image:url(' + @{/images/row03_2.jpg} + ')'">
+<div class="page-hero">
   <div class="page-hero__veil"></div>
   <div class="u-container page-hero__inner">
-    <nav class="crumb"><a th:href="@{/}">HOME</a> <i class="xi-angle-right-min"></i> 숙박/맛집 <i class="xi-angle-right-min"></i> 숙박</nav>
+    <nav class="crumb"><a th:href="@{/}">HOME</a> <span class="crumb__sep">▶</span> 숙박/맛집 <span class="crumb__sep">▶</span> 숙박</nav>
     <h1 class="page-hero__title">숙박</h1>
     <p class="page-hero__sub">청도에서의 편안한 하룻밤</p>
   </div>

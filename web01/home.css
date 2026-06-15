@@ -45,8 +45,9 @@
   display:flex;
   flex-direction:column;
   justify-content:center;
-  padding:0 var(--sp-14);
+  padding:var(--sp-16) var(--sp-14);
   max-width:680px;
+  overflow:hidden;
 }
 .hero__badge {
   display:inline-flex;
@@ -66,7 +67,7 @@
 }
 .hero__title {
   font-family:var(--ff-display);
-  font-size:clamp(40px,6vw,var(--fs-hero));
+  font-size:clamp(28px,min(5.5vw,9vh),80px);
   font-weight:var(--fw-black);
   color:#fff;
   line-height:var(--lh-tight);
@@ -418,6 +419,10 @@
 /* ────────────────────────────────────────────
    06. 관광 9경 (다크 그리드)
 ──────────────────────────────────────────── */
+.nine-sec { padding-top:calc(var(--section-pad) * 2); }
+.nine-sec .sec-hd__echo  { color:rgba(10,23,62,0.06); }
+.nine-sec .sec-hd__title { color:var(--c-bg-dark); }
+.nine-sec .sec-hd__sub   { color:var(--c-bg-dark); }
 .nine-grid {
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -503,18 +508,25 @@
   color:var(--c-primary);
 }
 .quick-item__icon {
-  width:56px;
-  height:56px;
+  width:112px;
+  height:112px;
   background:var(--c-bg-alt);
   border-radius:var(--r-lg);
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:26px;
+  font-size:52px;
   transition:background var(--t-fast);
 }
-.quick-item:hover .quick-item__icon { background:var(--c-primary-100); }
-.quick-item__icon img { width:36px; height:36px; object-fit:contain; }
+.quick-item:hover .quick-item__icon { background:var(--c-bg-dark); }
+.quick-item__icon img {
+  width:144px;
+  height:144px;
+  object-fit:contain;
+  filter:brightness(0) saturate(100%) invert(8%) sepia(54%) saturate(3067%) hue-rotate(207deg) brightness(94%) contrast(110%);
+  transition:filter var(--t-fast);
+}
+.quick-item:hover .quick-item__icon img { filter:brightness(0) invert(1); }
 .quick-item__label {
   font-size:var(--fs-xs);
   font-weight:var(--fw-bold);

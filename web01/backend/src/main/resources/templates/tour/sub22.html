@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="~{fragments/head :: head('테마관광')}"></head>
 <body>
 <th:block th:replace="~{fragments/header :: header('tour')}"></th:block>
-<div class="page-hero" th:style="'background-image:url(' + @{/images/sub1_1_2.jpg} + ')'">
+<div class="page-hero">
   <div class="page-hero__veil"></div>
   <div class="u-container page-hero__inner">
-    <nav class="crumb"><a th:href="@{/}">HOME</a> <i class="xi-angle-right-min"></i> 청도관광 <i class="xi-angle-right-min"></i> 테마관광</nav>
+    <nav class="crumb"><a th:href="@{/}">HOME</a> <span class="crumb__sep">▶</span> 청도관광 <span class="crumb__sep">▶</span> 테마관광</nav>
     <h1 class="page-hero__title">테마관광</h1>
     <p class="page-hero__sub">청도의 다양한 테마별 관광 코스</p>
   </div>

@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="~{fragments/head :: head('쇼핑')}"></head>
 <body>
 <th:block th:replace="~{fragments/header :: header('stay')}"></th:block>
-<div class="page-hero" th:style="'background-image:url(' + @{/images/row03_3.jpg} + ')'">
+<div class="page-hero">
   <div class="page-hero__veil"></div>
   <div class="u-container page-hero__inner">
-    <nav class="crumb"><a th:href="@{/}">HOME</a> <i class="xi-angle-right-min"></i> 숙박/맛집 <i class="xi-angle-right-min"></i> 쇼핑</nav>
+    <nav class="crumb"><a th:href="@{/}">HOME</a> <span class="crumb__sep">▶</span> 숙박/맛집 <span class="crumb__sep">▶</span> 쇼핑</nav>
     <h1 class="page-hero__title">쇼핑</h1>
     <p class="page-hero__sub">청도의 특산품과 기념품을 만나보세요</p>
   </div>

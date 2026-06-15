@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="~{fragments/head :: head('인물/인재')}"></head>
 <body>
 <th:block th:replace="~{fragments/header :: header('intro')}"></th:block>
-<div class="page-hero" th:style="'background-image:url(' + @{/images/sub2_1_3.jpg} + ')'">
+<div class="page-hero">
   <div class="page-hero__veil"></div>
   <div class="u-container page-hero__inner">
-    <nav class="crumb"><a th:href="@{/}">HOME</a> <i class="xi-angle-right-min"></i> 청도소개 <i class="xi-angle-right-min"></i> 인물/인재</nav>
+    <nav class="crumb"><a th:href="@{/}">HOME</a> <span class="crumb__sep">▶</span> 청도소개 <span class="crumb__sep">▶</span> 인물/인재</nav>
     <h1 class="page-hero__title">인물 / 인재</h1>
     <p class="page-hero__sub">청도를 빛낸 역사적 인물들</p>
   </div>
